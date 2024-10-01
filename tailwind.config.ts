@@ -11,9 +11,13 @@ const config: Config = {
       fontFamily: {
         Pretendard: ["Pretendard", "sans-serif"],
       },
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      fontSize: {
+        "title/32px": ["32px", { lineHeight: "110%", fontWeight: "700" }],
+        "title/40px": ["40px", { lineHeight: "110%", fontWeight: "700" }],
+        "title/48px": ["48px", { lineHeight: "110%", fontWeight: "700" }],
+        "body/18px": ["18px", { lineHeight: "100%", fontWeight: "400" }],
+        "body/22px": ["22px", { lineHeight: "100%", fontWeight: "400" }],
+        "body/26px": ["26px", { lineHeight: "100%", fontWeight: "400" }],
       },
     },
   },
