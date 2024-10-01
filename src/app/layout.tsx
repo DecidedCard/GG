@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
+import Header from "@/components/common/Header";
 
 export const metadata: Metadata = {
   title: "game-information",
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className="font-Pretendard antialiased">{children}</body>
+      <body className="font-Pretendard antialiased">
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
