@@ -9,7 +9,7 @@ const UnionRankingBar = ({ item }: { item: UnionRanking }) => {
         <p>{item.ranking}</p>
         <p className="w-32 text-center">{item.character_name}</p>
       </div>
-      <div className="flex justify-between w-56">
+      <div className="flex justify-between w-60">
         <p>{item.union_level}</p>
         <p className="w-32 text-center">
           {item.sub_class_name || item.class_name}
