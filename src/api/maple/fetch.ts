@@ -1,5 +1,3 @@
-import axios from "axios";
-
 import formatDate from "@/util/formatDate";
 
 import type {
@@ -14,11 +12,6 @@ const apiKey = process.env.NEXT_PUBLIC_NEXON_API_1;
 const today = formatDate(new Date());
 
 const baseURL = "https://open.api.nexon.com";
-
-const maple = axios.create({
-  baseURL: baseURL,
-  headers: { "x-nxopen-api-key": apiKey },
-});
 
 //ISR을 사용하기 위해 fetch를 활용해서 작성
 export const overallRanking = async (): Promise<ResponseOverallRanking> => {

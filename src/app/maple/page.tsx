@@ -10,7 +10,7 @@ import {
   RebootOverallRanking,
   seedRanking,
   unionRanking,
-} from "@/api/maple";
+} from "@/api/maple/fetch";
 import SeedRankingList from "@/components/maple/main/seed/SeedRankingList";
 
 const Maple = async () => {
