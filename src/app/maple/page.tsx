@@ -1,8 +1,8 @@
 import React from "react";
 
-import RankingList from "@/components/maple/common/RankingList";
-import UnionRankingList from "@/components/maple/common/union/UnionRankingList";
-import DojangRankingList from "@/components/maple/common/dojang/DojangRankingList";
+import RankingList from "@/components/maple/main/RankingList";
+import UnionRankingList from "@/components/maple/main/union/UnionRankingList";
+import DojangRankingList from "@/components/maple/main/dojang/DojangRankingList";
 
 import {
   dojangRanking,
@@ -11,7 +11,7 @@ import {
   seedRanking,
   unionRanking,
 } from "@/api/maple";
-import SeedRankingList from "@/components/maple/common/seed/SeedRankingList";
+import SeedRankingList from "@/components/maple/main/seed/SeedRankingList";
 
 const Maple = async () => {
   const { ranking } = await overallRanking();
