@@ -1,6 +1,10 @@
 import React from "react";
 
-const Maple = () => {
+import { overallRanking } from "@/api/maple";
+
+const Maple = async () => {
+  const res = await overallRanking();
+  console.log(res);
   return <div>Maple</div>;
 };
 
