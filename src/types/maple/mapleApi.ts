@@ -1,5 +1,5 @@
 // 종합 랭킹 type
-export interface OverallRanking {
+export type OverallRanking = {
   date: string;
   ranking: number;
   character_name: string;
@@ -10,14 +10,14 @@ export interface OverallRanking {
   character_exp: number;
   character_popularity: number;
   character_guildname: string;
-}
+};
 
 export interface ResponseOverallRanking {
   ranking: OverallRanking[];
 }
 
 // 유니온 랭킹 type
-export interface UnionRanking {
+export type UnionRanking = {
   date: string;
   ranking: number;
   character_name: string;
@@ -26,13 +26,13 @@ export interface UnionRanking {
   sub_class_name: string;
   union_level: number;
   union_power: number;
-}
+};
 
 export interface ResponseUnionRanking {
   ranking: UnionRanking[];
 }
 
-export interface DojangRanking {
+export type DojangRanking = {
   date: string;
   ranking: number;
   character_name: string;
@@ -42,7 +42,7 @@ export interface DojangRanking {
   character_level: number;
   dojang_floor: number;
   dojang_time_record: number;
-}
+};
 
 export interface ResponseDojangRanking {
   ranking: DojangRanking[];
