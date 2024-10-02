@@ -30,3 +30,19 @@ export const overallRanking = async (): Promise<ResponseOverallRanking> => {
     return Promise.reject(error);
   }
 };
+
+export const RebootOverallRanking =
+  async (): Promise<ResponseOverallRanking> => {
+    try {
+      const res = await fetch(
+        `${baseURL}/maplestory/v1/ranking/overall?date=${today}&world_type=1`,
+        {
+          headers: { "x-nxopen-api-key": apiKey } as HeadersInit,
+          next: { revalidate: 60 * 60 * 24 },
+        }
+      );
+      return await res.json();
+    } catch (error) {
+      return Promise.reject(error);
+    }
+  };
