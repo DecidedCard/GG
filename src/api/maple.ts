@@ -3,6 +3,7 @@ import axios from "axios";
 import formatDate from "@/util/formatDate";
 
 import type {
+  ResponseDojangRanking,
   ResponseOverallRanking,
   ResponseUnionRanking,
 } from "@/types/maple/mapleApi";
@@ -65,7 +66,7 @@ export const unionRanking = async (): Promise<ResponseUnionRanking> => {
   }
 };
 
-export const dojangRanking = async (): Promise<ResponseUnionRanking> => {
+export const dojangRanking = async (): Promise<ResponseDojangRanking> => {
   try {
     const res = await fetch(
       `${baseURL}/maplestory/v1/ranking/dojang?date=${today}&difficulty=1`,
