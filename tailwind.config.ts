@@ -12,6 +12,7 @@ const config: Config = {
         Pretendard: ["Pretendard", "sans-serif"],
       },
       fontSize: {
+        "title/28px": ["28px", { lineHeight: "110%", fontWeight: "700" }],
         "title/32px": ["32px", { lineHeight: "110%", fontWeight: "700" }],
         "title/40px": ["40px", { lineHeight: "110%", fontWeight: "700" }],
         "title/48px": ["48px", { lineHeight: "110%", fontWeight: "700" }],
