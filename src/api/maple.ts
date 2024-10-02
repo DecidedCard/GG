@@ -5,6 +5,7 @@ import formatDate from "@/util/formatDate";
 import type {
   ResponseDojangRanking,
   ResponseOverallRanking,
+  ResponseSeedRanking,
   ResponseUnionRanking,
 } from "@/types/maple/mapleApi";
 
@@ -70,6 +71,21 @@ export const dojangRanking = async (): Promise<ResponseDojangRanking> => {
   try {
     const res = await fetch(
       `${baseURL}/maplestory/v1/ranking/dojang?date=${today}&difficulty=1`,
+      {
+        headers: { "x-nxopen-api-key": apiKey } as HeadersInit,
+        next: { revalidate: 60 * 60 * 24 },
+      }
+    );
+    return await res.json();
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};
+
+export const seedRanking = async (): Promise<ResponseSeedRanking> => {
+  try {
+    const res = await fetch(
+      `${baseURL}/maplestory/v1/ranking/theseed?date=${today}`,
       {
         headers: { "x-nxopen-api-key": apiKey } as HeadersInit,
         next: { revalidate: 60 * 60 * 24 },
