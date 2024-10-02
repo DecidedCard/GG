@@ -20,6 +20,9 @@ const config: Config = {
         "body/22px": ["22px", { lineHeight: "100%", fontWeight: "400" }],
         "body/26px": ["26px", { lineHeight: "100%", fontWeight: "400" }],
       },
+      screens: {
+        md: { max: "1200px" },
+      },
     },
   },
   plugins: [],
