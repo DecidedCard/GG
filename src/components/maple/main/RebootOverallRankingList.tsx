@@ -1,14 +1,15 @@
 import React from "react";
 
-import { overallRanking } from "@/api/maple";
 import RankingBar from "../common/RankingBar";
 
-const OverallRankinList = async () => {
-  const { ranking } = await overallRanking();
+import { RebootOverallRanking } from "@/api/maple";
+
+const RebootOverallRankingList = async () => {
+  const { ranking } = await RebootOverallRanking();
 
   return (
     <div className="flex flex-col gap-2 p-3 bg-gray-300">
-      <h2 className="text-title/28px">TODAY 일반월드 종합랭킹</h2>
+      <h2 className="text-title/28px">TODAY 리부트 종합랭킹</h2>
       {ranking.slice(0, 10).map((item) => (
         <RankingBar key={item.ranking} item={item} />
       ))}
@@ -16,4 +17,4 @@ const OverallRankinList = async () => {
   );
 };
 
-export default OverallRankinList;
+export default RebootOverallRankingList;
