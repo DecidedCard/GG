@@ -7,7 +7,7 @@ import {
   RebootOverallRanking,
   unionRanking,
 } from "@/api/maple";
-import UnionRankingList from "@/components/maple/common/Union/UnionRankingList";
+import UnionRankingList from "@/components/maple/common/union/UnionRankingList";
 
 const Maple = async () => {
   const { ranking } = await overallRanking();
