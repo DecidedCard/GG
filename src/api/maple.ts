@@ -2,7 +2,7 @@ import axios from "axios";
 
 import formatDate from "@/util/formatDate";
 
-import type { ResponseOverallRanking } from "@/types/mapleApi";
+import type { ResponseOverallRanking } from "@/types/maple/mapleApi";
 
 const apiKey = process.env.NEXT_PUBLIC_NEXON_API_1;
 

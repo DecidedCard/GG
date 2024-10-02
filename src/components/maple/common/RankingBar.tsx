@@ -1,6 +1,6 @@
 import React from "react";
 
-import type { OverallRanking } from "@/types/mapleApi";
+import { OverallRanking } from "@/types/maple/mapleApi";
 
 const RankingBar = ({ item }: { item: OverallRanking }) => {
   return (
