@@ -12,3 +12,12 @@ const maple = axios.create({
   baseURL: baseURL,
   headers: { "x-nxopen-api-key": apiKey },
 });
+
+export const getCharacterId = async (name: string) => {
+  try {
+    const res = await maple.get(`/maplestory/v1/id?character_name=${name}`);
+    return res.data;
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};
