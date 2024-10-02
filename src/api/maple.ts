@@ -2,7 +2,10 @@ import axios from "axios";
 
 import formatDate from "@/util/formatDate";
 
-import type { ResponseOverallRanking } from "@/types/maple/mapleApi";
+import type {
+  ResponseOverallRanking,
+  ResponseUnionRanking,
+} from "@/types/maple/mapleApi";
 
 const apiKey = process.env.NEXT_PUBLIC_NEXON_API_1;
 
@@ -46,3 +49,18 @@ export const RebootOverallRanking =
       return Promise.reject(error);
     }
   };
+
+export const unionRanking = async (): Promise<ResponseUnionRanking> => {
+  try {
+    const res = await fetch(
+      `${baseURL}/maplestory/v1/ranking/union?date=${today}`,
+      {
+        headers: { "x-nxopen-api-key": apiKey } as HeadersInit,
+        next: { revalidate: 60 * 60 * 24 },
+      }
+    );
+    return await res.json();
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};
