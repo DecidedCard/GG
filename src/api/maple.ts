@@ -18,7 +18,7 @@ const maple = axios.create({
   headers: { "x-nxopen-api-key": apiKey },
 });
 
-//isr을 사용하기 위해 fetch를 활용해서 작성
+//ISR을 사용하기 위해 fetch를 활용해서 작성
 export const overallRanking = async (): Promise<ResponseOverallRanking> => {
   try {
     const res = await fetch(
@@ -54,6 +54,21 @@ export const unionRanking = async (): Promise<ResponseUnionRanking> => {
   try {
     const res = await fetch(
       `${baseURL}/maplestory/v1/ranking/union?date=${today}`,
+      {
+        headers: { "x-nxopen-api-key": apiKey } as HeadersInit,
+        next: { revalidate: 60 * 60 * 24 },
+      }
+    );
+    return await res.json();
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};
+
+export const dojangRanking = async (): Promise<ResponseUnionRanking> => {
+  try {
+    const res = await fetch(
+      `${baseURL}/maplestory/v1/ranking/dojang?date=${today}&difficulty=1`,
       {
         headers: { "x-nxopen-api-key": apiKey } as HeadersInit,
         next: { revalidate: 60 * 60 * 24 },
