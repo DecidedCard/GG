@@ -1,8 +1,15 @@
 import React from "react";
 
-import { InputProps } from "@/types/commonProps";
+import type { InputProps } from "@/types/commonProps";
+import type { FieldValues, Path } from "react-hook-form";
 
-const Input = ({ size, type, placeholder }: InputProps) => {
+const Input = <T extends FieldValues>({
+  size,
+  type,
+  placeholder,
+  register,
+  value,
+}: InputProps<T>) => {
   const height =
     (size === "big" && "h-14 text-body/22px") ||
     (size === "small" && "h-10 text-body/18px") ||
@@ -17,7 +24,8 @@ const Input = ({ size, type, placeholder }: InputProps) => {
     <input
       type={inputType}
       placeholder={placeholder || ""}
-      className={`p-4 w-full ${height} border border-solid border-black rounded-lg focus:outline-none `}
+      className={`p-4 w-full ${height} border border-solid border-black rounded-lg focus:outline-none`}
+      {...register(value as Path<T>)}
     />
   );
 };
