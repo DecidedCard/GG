@@ -4,7 +4,9 @@ import { InputProps } from "@/types/commonProps";
 
 const Input = ({ size, type, placeholder }: InputProps) => {
   const height =
-    (size === "big" && "h-14") || (size === "small" && "h-10") || "h-10";
+    (size === "big" && "h-14 text-body/22px") ||
+    (size === "small" && "h-10 text-body/18px") ||
+    "h-10 text-body/18px";
 
   const inputType =
     (type === "text" && "text") ||
@@ -15,7 +17,7 @@ const Input = ({ size, type, placeholder }: InputProps) => {
     <input
       type={inputType}
       placeholder={placeholder || ""}
-      className={`w-full ${height} rounded-lg focus:outline-none`}
+      className={`p-4 w-full ${height} border border-solid border-black rounded-lg focus:outline-none `}
     />
   );
 };

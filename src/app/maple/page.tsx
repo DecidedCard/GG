@@ -3,6 +3,8 @@ import React from "react";
 import RankingList from "@/components/maple/main/RankingList";
 import UnionRankingList from "@/components/maple/main/union/UnionRankingList";
 import DojangRankingList from "@/components/maple/main/dojang/DojangRankingList";
+import SeedRankingList from "@/components/maple/main/seed/SeedRankingList";
+import SearchInputBox from "@/components/maple/main/SearchInputBox";
 
 import {
   dojangRanking,
@@ -11,7 +13,6 @@ import {
   seedRanking,
   unionRanking,
 } from "@/api/maple/fetch";
-import SeedRankingList from "@/components/maple/main/seed/SeedRankingList";
 
 const Maple = async () => {
   const { ranking } = await overallRanking();
@@ -21,13 +22,16 @@ const Maple = async () => {
   const { ranking: seed } = await seedRanking();
 
   return (
-    <div className="grid grid-cols-2 gap-5 p-4 md:grid-cols-1">
-      <RankingList ranking={ranking} text="TODAY 일반월드 종합 랭킹" />
-      <RankingList ranking={Reboot} text="TODAY 일반월드 종합 랭킹" />
-      <UnionRankingList ranking={union} />
-      <DojangRankingList ranking={dojang} />
-      <SeedRankingList ranking={seed} />
-    </div>
+    <>
+      <SearchInputBox />
+      <div className="grid grid-cols-2 gap-5 p-4 md:grid-cols-1">
+        <RankingList ranking={ranking} text="TODAY 일반월드 종합 랭킹" />
+        <RankingList ranking={Reboot} text="TODAY 일반월드 종합 랭킹" />
+        <UnionRankingList ranking={union} />
+        <DojangRankingList ranking={dojang} />
+        <SeedRankingList ranking={seed} />
+      </div>
+    </>
   );
 };
 
