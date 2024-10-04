@@ -18,8 +18,7 @@ const useSearchInputBox = () => {
   const onSubmitSearchHandler: SubmitHandler<SearchBox> = async (data) => {
     try {
       // 캐릭터 id 검색으로 캐릭터가 있는지 검사
-      const res = await getCharacterId(data.text);
-      localStorage.setItem("characterId", res.ocid);
+      await getCharacterId(data.text);
       navigation.push(`/maple/result?character_name=${data.text}`);
     } catch (error) {
       console.error(error);

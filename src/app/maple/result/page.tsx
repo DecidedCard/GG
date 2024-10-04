@@ -2,12 +2,10 @@
 
 import React from "react";
 
-import { useSearchParams } from "next/navigation";
+import useResult from "@/hooks/maple/result/useResult";
 
 const Result = () => {
-  const params = useSearchParams();
-  const characterName = params.get("character_name") as string;
-  console.log(characterName);
+  const { characterName } = useResult();
 
   return <div>Result</div>;
 };
