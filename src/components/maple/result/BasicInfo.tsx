@@ -4,8 +4,6 @@ import Image from "next/image";
 import type { CharacterBasicInfo } from "@/types/maple/mapleApi";
 
 const BasicInfo = ({ info }: { info: CharacterBasicInfo }) => {
-  console.log(info);
-
   return (
     <div className="flex items-center mx-auto py-10 px-20 w-[1280px] border border-solid border-black rounded-lg">
       <div className="flex gap-3">
