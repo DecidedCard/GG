@@ -64,11 +64,11 @@ export interface ResponseSeedRanking {
   ranking: SeedRanking[];
 }
 
-export interface CharacterId {
+export type CharacterId = {
   ocid: string;
-}
+};
 
-export interface CharacterBasicInfo {
+export type CharacterBasicInfo = {
   date: string;
   character_name: string;
   world_name: string;
@@ -83,17 +83,19 @@ export interface CharacterBasicInfo {
   character_date_create: string;
   access_flag: string;
   liberation_quest_clear_flag: string;
-}
+};
 
-export interface CharacterStatInfo {
+export type FinalStat = {
+  stat_name: string;
+  stat_value: string;
+};
+
+export type CharacterStatInfo = {
   date: string;
   character_class: string;
-  final_stat: {
-    stat_name: string;
-    stat_value: string;
-  }[];
+  final_stat: FinalStat[];
   remain_ap: number;
-}
+};
 
 export interface CharacterInfo {
   basicInfo: CharacterBasicInfo;
