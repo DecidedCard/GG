@@ -24,8 +24,9 @@ const Input = <T extends FieldValues>({
     <input
       type={inputType}
       placeholder={placeholder || ""}
-      className={`p-4 w-full ${height} border border-solid border-black rounded-lg focus:outline-none`}
       {...register(value as Path<T>)}
+      autoComplete="off"
+      className={`p-4 w-full ${height} border border-solid border-black rounded-lg focus:outline-none`}
     />
   );
 };
