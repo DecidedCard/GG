@@ -7,8 +7,6 @@ const useResult = () => {
   const [characterId, setCharacterId] = useState("");
   const { data, isError, isLoading } = useCharacterQuery(characterId);
 
-  console.log(data);
-
   const params = useSearchParams();
   const characterName = params.get("character_name") as string;
 
@@ -32,7 +30,13 @@ const useResult = () => {
     }
   }, [characterName]);
 
-  return { characterName };
+  const query = {
+    data,
+    isError,
+    isLoading,
+  };
+
+  return { query };
 };
 
 export default useResult;
