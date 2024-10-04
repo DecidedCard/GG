@@ -2,6 +2,8 @@ import axios from "axios";
 
 import formatDate from "@/util/formatDate";
 
+import type { CharacterId } from "@/types/maple/mapleApi";
+
 const apiKey = process.env.NEXT_PUBLIC_NEXON_API_1;
 
 const today = formatDate(new Date());
@@ -13,7 +15,7 @@ const maple = axios.create({
   headers: { "x-nxopen-api-key": apiKey },
 });
 
-export const getCharacterId = async (name: string) => {
+export const getCharacterId = async (name: string): Promise<CharacterId> => {
   try {
     const res = await maple.get(`/maplestory/v1/id?character_name=${name}`);
     return res.data;

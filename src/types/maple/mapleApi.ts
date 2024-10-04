@@ -63,3 +63,7 @@ export type SeedRanking = {
 export interface ResponseSeedRanking {
   ranking: SeedRanking[];
 }
+
+export interface CharacterId {
+  ocid: string;
+}
