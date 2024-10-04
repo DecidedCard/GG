@@ -1,7 +1,5 @@
 import axios from "axios";
 
-import formatDate from "@/util/formatDate";
-
 import type {
   CharacterBasicInfo,
   CharacterId,
@@ -9,8 +7,6 @@ import type {
 } from "@/types/maple/mapleApi";
 
 const apiKey = process.env.NEXT_PUBLIC_NEXON_API_1;
-
-const today = formatDate(new Date());
 
 const baseURL = "https://open.api.nexon.com";
 
