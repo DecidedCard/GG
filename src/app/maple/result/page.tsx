@@ -3,6 +3,7 @@
 import React from "react";
 
 import BasicInfo from "@/components/maple/result/BasicInfo";
+import StatInfo from "@/components/maple/result/StatInfo";
 
 import useResult from "@/hooks/maple/result/useResult";
 
@@ -19,8 +20,9 @@ const Result = () => {
 
   return (
     query.data && (
-      <div className="p-4">
+      <div className="flex flex-col gap-4 p-4">
         <BasicInfo info={query.data.basicInfo} />
+        <StatInfo info={query.data.statInfo} />
       </div>
     )
   );
