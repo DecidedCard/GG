@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { getCharacterId } from "@/api/maple/axios";
+import { useCharacterQuery } from "../useQuery";
 
 const useResult = () => {
   const [characterId, setCharacterId] = useState("");
+  const { data, isError, isLoading } = useCharacterQuery(characterId);
+
+  console.log(data);
 
   const params = useSearchParams();
   const characterName = params.get("character_name") as string;

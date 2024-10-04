@@ -67,3 +67,37 @@ export interface ResponseSeedRanking {
 export interface CharacterId {
   ocid: string;
 }
+
+export interface CharacterBasicInfo {
+  date: string;
+  character_name: string;
+  world_name: string;
+  character_gender: string;
+  character_class: string;
+  character_class_level: string;
+  character_level: 0;
+  character_exp: 0;
+  character_exp_rate: string;
+  character_guild_name: string;
+  character_image: string;
+  character_date_create: string;
+  access_flag: string;
+  liberation_quest_clear_flag: string;
+}
+
+export interface CharacterStatInfo {
+  date: string;
+  character_class: string;
+  final_stat: [
+    {
+      stat_name: string;
+      stat_value: string;
+    }
+  ];
+  remain_ap: number;
+}
+
+export interface CharacterInfo {
+  basicInfo: CharacterBasicInfo;
+  statInfo: CharacterStatInfo;
+}
