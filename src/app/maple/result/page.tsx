@@ -2,6 +2,8 @@
 
 import React from "react";
 
+import BasicInfo from "@/components/maple/result/BasicInfo";
+
 import useResult from "@/hooks/maple/result/useResult";
 
 const Result = () => {
@@ -15,7 +17,13 @@ const Result = () => {
     return <div>에러!</div>;
   }
 
-  return <div>Result</div>;
+  return (
+    query.data && (
+      <div className="p-4">
+        <BasicInfo info={query.data.basicInfo} />
+      </div>
+    )
+  );
 };
 
 export default Result;
