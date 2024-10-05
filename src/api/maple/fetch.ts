@@ -1,4 +1,5 @@
 import formatDate from "@/util/formatDate";
+import timeCheck from "@/util/timeCheck";
 
 import type {
   ResponseDojangRanking,
@@ -9,12 +10,11 @@ import type {
 
 const apiKey = process.env.NEXT_PUBLIC_NEXON_API_1;
 
-const today = formatDate(new Date());
-
 const baseURL = "https://open.api.nexon.com";
 
 //ISR을 사용하기 위해 fetch를 활용해서 작성
 export const overallRanking = async (): Promise<ResponseOverallRanking> => {
+  const today = timeCheck(formatDate(new Date()), "08-30");
   try {
     const res = await fetch(
       `${baseURL}/maplestory/v1/ranking/overall?date=${today}`,
@@ -31,6 +31,7 @@ export const overallRanking = async (): Promise<ResponseOverallRanking> => {
 
 export const RebootOverallRanking =
   async (): Promise<ResponseOverallRanking> => {
+    const today = timeCheck(formatDate(new Date()), "08-30");
     try {
       const res = await fetch(
         `${baseURL}/maplestory/v1/ranking/overall?date=${today}&world_type=1`,
@@ -46,6 +47,7 @@ export const RebootOverallRanking =
   };
 
 export const unionRanking = async (): Promise<ResponseUnionRanking> => {
+  const today = timeCheck(formatDate(new Date()), "08-30");
   try {
     const res = await fetch(
       `${baseURL}/maplestory/v1/ranking/union?date=${today}`,
@@ -61,6 +63,7 @@ export const unionRanking = async (): Promise<ResponseUnionRanking> => {
 };
 
 export const dojangRanking = async (): Promise<ResponseDojangRanking> => {
+  const today = timeCheck(formatDate(new Date()), "08-30");
   try {
     const res = await fetch(
       `${baseURL}/maplestory/v1/ranking/dojang?date=${today}&difficulty=1`,
@@ -76,6 +79,7 @@ export const dojangRanking = async (): Promise<ResponseDojangRanking> => {
 };
 
 export const seedRanking = async (): Promise<ResponseSeedRanking> => {
+  const today = timeCheck(formatDate(new Date()), "08-30");
   try {
     const res = await fetch(
       `${baseURL}/maplestory/v1/ranking/theseed?date=${today}`,
