@@ -16,7 +16,7 @@ const StatInfo = ({ info }: { info: CharacterStatInfo }) => {
   return (
     <section className="flex flex-col gap-3">
       <div
-        className={`flex flex-col border p-1 w-60 border-solid border-black rounded-lg overflow-hidden ease-in-out duration-300 ${
+        className={`flex flex-col border p-1 w-60 border-solid border-black rounded-lg overflow-hidden ease-in-out duration-150 ${
           isView ? "max-h-[1000px]" : "max-h-[500px]"
         }`}
       >
