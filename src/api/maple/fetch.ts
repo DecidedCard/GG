@@ -9,8 +9,8 @@ import type {
 } from "@/types/maple/mapleApi";
 
 const apiKey = process.env.NEXT_PUBLIC_NEXON_API_1;
-
 const baseURL = "https://open.api.nexon.com";
+const revalidate = 60 * 60 * 8;
 
 //ISR을 사용하기 위해 fetch를 활용해서 작성
 export const overallRanking = async (): Promise<ResponseOverallRanking> => {
@@ -20,7 +20,7 @@ export const overallRanking = async (): Promise<ResponseOverallRanking> => {
       `${baseURL}/maplestory/v1/ranking/overall?date=${today}`,
       {
         headers: { "x-nxopen-api-key": apiKey } as HeadersInit,
-        next: { revalidate: 60 * 60 * 24 },
+        next: { revalidate },
       }
     );
     return await res.json();
@@ -37,7 +37,7 @@ export const RebootOverallRanking =
         `${baseURL}/maplestory/v1/ranking/overall?date=${today}&world_type=1`,
         {
           headers: { "x-nxopen-api-key": apiKey } as HeadersInit,
-          next: { revalidate: 60 * 60 * 24 },
+          next: { revalidate },
         }
       );
       return await res.json();
@@ -53,7 +53,7 @@ export const unionRanking = async (): Promise<ResponseUnionRanking> => {
       `${baseURL}/maplestory/v1/ranking/union?date=${today}`,
       {
         headers: { "x-nxopen-api-key": apiKey } as HeadersInit,
-        next: { revalidate: 60 * 60 * 24 },
+        next: { revalidate },
       }
     );
     return await res.json();
@@ -69,7 +69,7 @@ export const dojangRanking = async (): Promise<ResponseDojangRanking> => {
       `${baseURL}/maplestory/v1/ranking/dojang?date=${today}&difficulty=1`,
       {
         headers: { "x-nxopen-api-key": apiKey } as HeadersInit,
-        next: { revalidate: 60 * 60 * 24 },
+        next: { revalidate },
       }
     );
     return await res.json();
@@ -85,7 +85,7 @@ export const seedRanking = async (): Promise<ResponseSeedRanking> => {
       `${baseURL}/maplestory/v1/ranking/theseed?date=${today}`,
       {
         headers: { "x-nxopen-api-key": apiKey } as HeadersInit,
-        next: { revalidate: 60 * 60 * 24 },
+        next: { revalidate },
       }
     );
     return await res.json();
