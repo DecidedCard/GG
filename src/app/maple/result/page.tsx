@@ -6,6 +6,7 @@ import BasicInfo from "@/components/maple/result/BasicInfo";
 import StatInfo from "@/components/maple/result/StatInfo";
 
 import useResult from "@/hooks/maple/result/useResult";
+import ItemList from "@/components/maple/result/ItemList";
 
 const Result = () => {
   const { query } = useResult();
@@ -25,8 +26,9 @@ const Result = () => {
           info={query.data.basicInfo}
           popularity={query.data.popularityInfo.popularity}
         />
-        <div className="mx-auto w-[1280px]">
+        <div className="flex gap-3 mx-auto w-[1280px]">
           <StatInfo info={query.data.statInfo} />
+          <ItemList item={query.data.itemInfo} />
         </div>
       </div>
     )
