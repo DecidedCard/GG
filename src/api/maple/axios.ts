@@ -6,6 +6,7 @@ import type {
   CharacterStatInfo,
   Popularity,
 } from "@/types/maple/mapleApi";
+import type { Item } from "@/types/maple/item";
 
 const apiKey = process.env.NEXT_PUBLIC_NEXON_API_1;
 
@@ -54,6 +55,17 @@ export const statCharacterInfo = async (
 ): Promise<CharacterStatInfo> => {
   try {
     const res = await maple.get(`/maplestory/v1/character/stat?ocid=${id}`);
+    return res.data;
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};
+
+export const itemCharacterInfo = async (id: string): Promise<Item> => {
+  try {
+    const res = await maple.get(
+      `/maplestory/v1/character/item-equipment?ocid=${id}`
+    );
     return res.data;
   } catch (error) {
     return Promise.reject(error);
