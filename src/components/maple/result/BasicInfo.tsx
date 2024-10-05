@@ -3,7 +3,13 @@ import Image from "next/image";
 
 import type { Basic } from "@/types/maple/mapleApi";
 
-const BasicInfo = ({ info }: { info: Basic }) => {
+const BasicInfo = ({
+  info,
+  popularity,
+}: {
+  info: Basic;
+  popularity: number;
+}) => {
   return (
     <div className="flex items-center mx-auto py-10 px-20 w-[1280px] border border-solid border-black rounded-lg">
       <div className="flex gap-3">
@@ -32,8 +38,9 @@ const BasicInfo = ({ info }: { info: Basic }) => {
             </p>
           </div>
           <div className="flex gap-3 text-body/14px text-gray-400">
-            <p>{info.character_level}Lv</p>
+            <p>Lv.{info.character_level}</p>
             <p>{info.character_class}</p>
+            <p>인기도 {popularity}</p>
             <p>{info.character_guild_name}</p>
           </div>
         </div>

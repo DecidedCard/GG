@@ -21,7 +21,10 @@ const Result = () => {
   return (
     query.data && (
       <div className="flex flex-col gap-4 p-4">
-        <BasicInfo info={query.data.basicInfo} />
+        <BasicInfo
+          info={query.data.basicInfo}
+          popularity={query.data.popularityInfo.popularity}
+        />
         <div className="mx-auto w-[1280px]">
           <StatInfo info={query.data.statInfo} />
         </div>
