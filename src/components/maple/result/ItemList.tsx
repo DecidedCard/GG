@@ -13,7 +13,7 @@ const ItemList = ({ item }: { item: Item }) => {
   return (
     <section className="flex flex-col gap-3 w-full">
       <div
-        className={`grid grid-cols-3 gap-4 p-4 w-full border border-solid border-black rounded-md overflow-hidden ease-in-out duration-150 ${
+        className={`grid grid-cols-3 gap-4 p-4 w-full border border-solid border-black rounded-md overflow-hidden ease-in-out duration-150 md:grid-cols-2 ${
           isView ? "max-h-[1500px]" : "max-h-[500px]"
         }`}
       >

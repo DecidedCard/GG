@@ -26,7 +26,7 @@ const Result = () => {
           info={query.data.basicInfo}
           popularity={query.data.popularityInfo.popularity}
         />
-        <div className="flex gap-3 mx-auto w-[1280px]">
+        <div className="flex gap-3 mx-auto w-[1280px] md:w-full">
           <StatInfo info={query.data.statInfo} />
           <ItemList item={query.data.itemInfo} />
         </div>

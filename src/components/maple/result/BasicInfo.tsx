@@ -11,7 +11,7 @@ const BasicInfo = ({
   popularity: number;
 }) => {
   return (
-    <div className="flex items-center mx-auto py-10 px-20 w-[1280px] border border-solid border-black rounded-lg">
+    <div className="flex items-center mx-auto py-10 px-20 w-[1280px] border border-solid border-black rounded-lg md:w-full">
       <div className="flex gap-3">
         <div className="flex flex-col gap-1">
           <Image
