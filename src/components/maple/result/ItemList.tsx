@@ -9,7 +9,7 @@ const ItemList = ({ item }: { item: Item }) => {
   const onClickToggle = () => {
     setIsView(!isView);
   };
-  console.log(item);
+
   return (
     <section className="flex flex-col gap-3 w-full">
       <div
@@ -34,6 +34,28 @@ const ItemList = ({ item }: { item: Item }) => {
                 <p>{item.item_equipment_part}</p>
                 <p>{item.item_name}</p>
                 {item.starforce !== "0" && <p>⭐{item.starforce}</p>}
+              </div>
+            </div>
+            <div className="flex justify-between px-3 py-1 text-body/14px border-t border-solid border-gray-300">
+              <span className="w-10 text-center">잠재</span>
+              <div className="flex gap-1">
+                {item.potential_option_1 && <p>{item.potential_option_1}</p>}
+                {item.potential_option_2 && <p>{item.potential_option_2}</p>}
+                {item.potential_option_3 && <p>{item.potential_option_3}</p>}
+              </div>
+            </div>
+            <div className="flex justify-between px-3 py-1 text-body/14px border-t border-solid border-gray-300">
+              <span className="w-10 text-center">에디</span>
+              <div className="flex gap-1">
+                {item.additional_potential_option_1 && (
+                  <p>{item.additional_potential_option_1}</p>
+                )}
+                {item.additional_potential_option_2 && (
+                  <p>{item.additional_potential_option_2}</p>
+                )}
+                {item.additional_potential_option_3 && (
+                  <p>{item.additional_potential_option_3}</p>
+                )}
               </div>
             </div>
           </ul>
