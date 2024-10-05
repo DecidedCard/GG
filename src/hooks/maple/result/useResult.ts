@@ -11,11 +11,12 @@ const useResult = () => {
   const characterName = params.get("character_name") as string;
 
   useEffect(() => {
-    const localStorageCharacterId = localStorage.getItem("characterId");
+    const localStorageCharacterId = localStorage.getItem("character_id");
+    const localStorageCharacterName = localStorage.getItem("character_name");
 
-    const CharacterId = async () => {
+    const CharacterId = async (name: string) => {
       try {
-        const res = await getCharacterId(characterName);
+        const res = await getCharacterId(name);
         setCharacterId(res.ocid);
       } catch (error) {
         console.error(error);
@@ -23,10 +24,15 @@ const useResult = () => {
       }
     };
 
-    if (localStorageCharacterId) {
-      setCharacterId(localStorageCharacterId);
+    if (localStorageCharacterName === characterName) {
+      if (localStorageCharacterId) {
+        setCharacterId(localStorageCharacterId);
+      } else {
+        CharacterId(localStorageCharacterName);
+      }
     } else {
-      CharacterId();
+      console.log("검색결과가 다릅니다.");
+      CharacterId(characterName);
     }
   }, [characterName]);
 

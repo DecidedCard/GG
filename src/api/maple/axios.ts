@@ -20,6 +20,7 @@ export const getCharacterId = async (name: string): Promise<CharacterId> => {
   try {
     const res = await maple.get(`/maplestory/v1/id?character_name=${name}`);
     localStorage.setItem("character_id", res.data.ocid);
+    localStorage.setItem("character_name", name);
     return res.data;
   } catch (error) {
     return Promise.reject(error);
