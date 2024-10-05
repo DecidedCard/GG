@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 
-import type { CharacterBasicInfo } from "@/types/maple/mapleApi";
+import type { Basic } from "@/types/maple/mapleApi";
 
-const BasicInfo = ({ info }: { info: CharacterBasicInfo }) => {
+const BasicInfo = ({ info }: { info: Basic }) => {
   return (
     <div className="flex items-center mx-auto py-10 px-20 w-[1280px] border border-solid border-black rounded-lg">
       <div className="flex gap-3">

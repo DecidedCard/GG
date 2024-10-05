@@ -68,7 +68,7 @@ export type CharacterId = {
   ocid: string;
 };
 
-export type CharacterBasicInfo = {
+export type Basic = {
   date: string;
   character_name: string;
   world_name: string;
@@ -85,6 +85,11 @@ export type CharacterBasicInfo = {
   liberation_quest_clear_flag: string;
 };
 
+export type Popularity = {
+  date: string;
+  popularity: number;
+};
+
 export type FinalStat = {
   stat_name: string;
   stat_value: string;
@@ -98,6 +103,6 @@ export type CharacterStatInfo = {
 };
 
 export interface CharacterInfo {
-  basicInfo: CharacterBasicInfo;
+  basicInfo: Basic;
   statInfo: CharacterStatInfo;
 }
