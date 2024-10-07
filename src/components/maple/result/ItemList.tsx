@@ -15,19 +15,19 @@ const ItemList = ({ item }: { item: Item }) => {
       <div className="flex justify-end items-center gap-5 px-4 w-full h-10 text-body/14px border border-solid border-black rounded-lg">
         <p
           onClick={() => onClickSetItemHandler(item.item_equipment_preset_1)}
-          className="p-1 border border-solid border-black rounded"
+          className="p-1 border border-solid border-black rounded cursor-pointer"
         >
           프리셋1
         </p>
         <p
           onClick={() => onClickSetItemHandler(item.item_equipment_preset_2)}
-          className="p-1 border border-solid border-black rounded"
+          className="p-1 border border-solid border-black rounded cursor-pointer"
         >
           프리셋2
         </p>
         <p
           onClick={() => onClickSetItemHandler(item.item_equipment_preset_3)}
-          className="p-1 border border-solid border-black rounded"
+          className="p-1 border border-solid border-black rounded cursor-pointer"
         >
           프리셋3
         </p>
