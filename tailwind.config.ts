@@ -23,7 +23,8 @@ const config: Config = {
         "body/26px": ["26px", { lineHeight: "100%", fontWeight: "400" }],
       },
       screens: {
-        md: { max: "1200px" },
+        md: { min: "801px", max: "1200px" },
+        sm: { max: "800px" },
       },
     },
   },

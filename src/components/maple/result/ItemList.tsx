@@ -33,8 +33,8 @@ const ItemList = ({ item }: { item: Item }) => {
         </p>
       </div>
       <div
-        className={`grid grid-cols-3 gap-4 p-4 w-full border border-solid border-black rounded-md overflow-hidden ease-in-out duration-150 md:grid-cols-2 ${
-          isView ? "max-h-[1500px]" : "max-h-[500px]"
+        className={`grid grid-cols-3 gap-4 p-4 w-full border border-solid border-black rounded-md overflow-hidden ease-in-out duration-150 md:grid-cols-2 sm:grid-cols-1 ${
+          isView ? "max-h-[4500px]" : "max-h-[500px]"
         }`}
       >
         {preset.map((i) => (

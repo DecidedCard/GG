@@ -23,10 +23,10 @@ const Result = () => {
 
   return (
     query.data && (
-      <div className="relative flex flex-col gap-4 p-4">
+      <div className="relative flex flex-col gap-4 mx-auto p-4 w-[1440px] md:w-full sm:w-full">
         <Link
           href={"/maple"}
-          className="absolute top-1 left-1 text-blue-500 cursor-pointer"
+          className="absolute top-4 left-4 text-blue-500 cursor-pointer"
         >
           <ArrowRoundBack />
         </Link>
@@ -34,7 +34,7 @@ const Result = () => {
           info={query.data.basicInfo}
           popularity={query.data.popularityInfo.popularity}
         />
-        <div className="flex gap-3 mx-auto w-[1280px] md:w-full">
+        <div className="flex gap-3 mx-auto w-[1280px] md:w-full sm:w-full">
           <StatInfo info={query.data.statInfo} />
           <ItemList item={query.data.itemInfo} />
         </div>
