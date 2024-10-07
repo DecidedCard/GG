@@ -9,6 +9,8 @@ import type { CharacterStatInfo } from "@/types/maple/mapleApi";
 const StatInfo = ({ info }: { info: CharacterStatInfo }) => {
   const [isView, setIsView] = useState(false);
 
+  // console.log(info);
+
   const onClickToggle = () => {
     setIsView(!isView);
   };
