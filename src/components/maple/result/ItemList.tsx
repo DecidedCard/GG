@@ -1,6 +1,6 @@
 import React from "react";
 
-import ItemCard from "./itemCard";
+import ItemCard from "./ItemCard";
 
 import useItemList from "@/hooks/maple/result/useItemList";
 
