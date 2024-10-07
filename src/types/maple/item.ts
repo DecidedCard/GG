@@ -62,7 +62,7 @@ interface Title {
   date_option_expire: string;
 }
 
-interface ItemEquipmentPreset {
+export interface ItemEquipmentPreset {
   item_equipment_part: string;
   equipment_slot: string;
   item_name: string;
@@ -101,7 +101,7 @@ interface ItemEquipmentPreset {
   date_expire: string;
 }
 
-interface ItemEquipment {
+export interface ItemEquipment {
   item_equipment_part: string;
   item_equipment_slot: string;
   item_name: string;

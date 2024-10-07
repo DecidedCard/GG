@@ -1,26 +1,60 @@
 import React, { useState } from "react";
-
-import type { Item } from "@/types/maple/item";
 import Image from "next/image";
+
 import formatItemStat from "@/util/maple/formatItemStat";
+
+import type {
+  Item,
+  ItemEquipment,
+  ItemEquipmentPreset,
+} from "@/types/maple/item";
 
 const ItemList = ({ item }: { item: Item }) => {
   const [isView, setIsView] = useState(false);
+  const [preset, setPreset] = useState<ItemEquipmentPreset[] | ItemEquipment[]>(
+    item.item_equipment
+  );
 
   const onClickToggle = () => {
     setIsView(!isView);
   };
 
-  console.log(item);
+  const onClickSetItemHandler = (presetItem: ItemEquipmentPreset[]) => {
+    if (presetItem === preset) {
+      setPreset(item.item_equipment);
+      return;
+    }
+    setPreset(presetItem);
+  };
 
   return (
     <section className="flex flex-col gap-3 w-full">
+      <div className="flex justify-end items-center gap-5 px-4 w-full h-10 text-body/14px border border-solid border-black rounded-lg">
+        <p
+          onClick={() => onClickSetItemHandler(item.item_equipment_preset_1)}
+          className="p-1 border border-solid border-black rounded"
+        >
+          프리셋1
+        </p>
+        <p
+          onClick={() => onClickSetItemHandler(item.item_equipment_preset_2)}
+          className="p-1 border border-solid border-black rounded"
+        >
+          프리셋2
+        </p>
+        <p
+          onClick={() => onClickSetItemHandler(item.item_equipment_preset_3)}
+          className="p-1 border border-solid border-black rounded"
+        >
+          프리셋3
+        </p>
+      </div>
       <div
         className={`grid grid-cols-3 gap-4 p-4 w-full border border-solid border-black rounded-md overflow-hidden ease-in-out duration-150 md:grid-cols-2 ${
           isView ? "max-h-[1500px]" : "max-h-[500px]"
         }`}
       >
-        {item.item_equipment.map((item) => (
+        {preset.map((item) => (
           <ul
             key={item.item_name}
             className="flex flex-col justify-center w-full h-40 border border-solid border-black rounded-lg"
