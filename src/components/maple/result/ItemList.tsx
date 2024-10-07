@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import type { Item } from "@/types/maple/item";
 import Image from "next/image";
+import formatItemStat from "@/util/maple/formatItemStat";
 
 const ItemList = ({ item }: { item: Item }) => {
   const [isView, setIsView] = useState(false);
@@ -9,6 +10,8 @@ const ItemList = ({ item }: { item: Item }) => {
   const onClickToggle = () => {
     setIsView(!isView);
   };
+
+  console.log(item);
 
   return (
     <section className="flex flex-col gap-3 w-full">
@@ -36,28 +39,39 @@ const ItemList = ({ item }: { item: Item }) => {
                 {item.starforce !== "0" && <p>⭐{item.starforce}</p>}
               </div>
             </div>
-            <div className="flex justify-between px-3 py-1 text-body/14px border-t border-solid border-gray-300">
-              <span className="w-10 text-center">잠재</span>
-              <div className="flex gap-1">
-                {item.potential_option_1 && <p>{item.potential_option_1}</p>}
-                {item.potential_option_2 && <p>{item.potential_option_2}</p>}
-                {item.potential_option_3 && <p>{item.potential_option_3}</p>}
+            {item.potential_option_grade && (
+              <div className="flex justify-between px-3 py-1 text-body/14px border-t border-solid border-gray-300">
+                <span className="w-10 text-center">잠재</span>
+                <div className="flex gap-1">
+                  {item.potential_option_1 && (
+                    <p>{formatItemStat(item.potential_option_1)}</p>
+                  )}
+                  {item.potential_option_1 && (
+                    <p>{formatItemStat(item.potential_option_2)}</p>
+                  )}
+                  {item.potential_option_1 && (
+                    <p>{formatItemStat(item.potential_option_3)}</p>
+                  )}
+                </div>
               </div>
-            </div>
-            <div className="flex justify-between px-3 py-1 text-body/14px border-t border-solid border-gray-300">
-              <span className="w-10 text-center">에디</span>
-              <div className="flex gap-1">
-                {item.additional_potential_option_1 && (
-                  <p>{item.additional_potential_option_1}</p>
-                )}
-                {item.additional_potential_option_2 && (
-                  <p>{item.additional_potential_option_2}</p>
-                )}
-                {item.additional_potential_option_3 && (
-                  <p>{item.additional_potential_option_3}</p>
-                )}
+            )}
+
+            {item.additional_potential_option_grade && (
+              <div className="flex justify-between px-3 py-1 text-body/14px border-t border-solid border-gray-300">
+                <span className="w-10 text-center">에디</span>
+                <div className="flex gap-1">
+                  {item.additional_potential_option_1 && (
+                    <p>{formatItemStat(item.additional_potential_option_1)}</p>
+                  )}
+                  {item.additional_potential_option_2 && (
+                    <p>{formatItemStat(item.additional_potential_option_2)}</p>
+                  )}
+                  {item.additional_potential_option_3 && (
+                    <p>{formatItemStat(item.additional_potential_option_3)}</p>
+                  )}
+                </div>
               </div>
-            </div>
+            )}
           </ul>
         ))}
       </div>
