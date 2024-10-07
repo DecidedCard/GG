@@ -15,6 +15,10 @@ const formatItemStat = (arg: string) => {
     return `9렙당${arg.slice(13)}`;
   }
 
+  if (arg.indexOf("모든 스킬") !== -1) {
+    return `쿨감${arg.slice(17, 21)}`;
+  }
+
   if (arg.indexOf("아이템") !== -1) {
     return `아획${arg.slice(9)}`;
   }
