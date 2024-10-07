@@ -1,13 +1,13 @@
 import React from "react";
 
 import type { FinalStat } from "@/types/maple/mapleApi";
-import statFormat from "@/util/maple/statFormat";
+import formatCharacterStat from "@/util/maple/formatCharacterStat";
 
 const DetailStatInfo = ({ stat }: { stat: FinalStat[] }) => {
   return (
     <div className="flex flex-col gap-3 p-3 border-b border-solid border-black">
       {stat.map((item) => {
-        const stat = statFormat(item);
+        const stat = formatCharacterStat(item);
         return (
           <div
             key={item.stat_name}
