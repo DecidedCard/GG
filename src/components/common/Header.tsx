@@ -1,18 +1,17 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import ArrowRoundDown from "@/assets/ArrowRoundDown";
-
-import Logo from "@/../public/assets/maple/GG_logo.png";
 import ArrowRoundUp from "@/assets/ArrowRoundUp";
+import Logo from "@/../public/assets/maple/GG_logo.png";
 
 const Header = () => {
   const [selectGame, setSelectGame] = useState("");
   const [isSelectView, setIsSelectView] = useState(false);
-
+  const navigation = useRouter();
   const gameArr = [{ game: "메이플스토리" }];
 
   useEffect(() => {
@@ -22,11 +21,25 @@ const Header = () => {
     }
   }, []);
 
+  const onClickMoveHomeHandler = () => {
+    setSelectGame("");
+    navigation.push("/");
+  };
+
   const onClickIsSelectViewToggleHandler = () => {
     setIsSelectView(!isSelectView);
   };
 
   const onClickGameSet = (game: string) => {
+    if (selectGame === game) {
+      onClickIsSelectViewToggleHandler();
+      return;
+    }
+
+    if (game === "메이플스토리") {
+      navigation.push("/maple");
+    }
+
     setSelectGame(game);
     onClickIsSelectViewToggleHandler();
   };
@@ -34,13 +47,16 @@ const Header = () => {
   return (
     <header className="py-3 px-10 w-full h-28 border-b border-solid border-black">
       <div className="flex items-center gap-10 h-full">
-        <Link href={"/"} className="flex items-center gap-3 w-fit h-full">
+        <button
+          onClick={onClickMoveHomeHandler}
+          className="flex items-center gap-3 w-fit h-full"
+        >
           <Image src={Logo} alt="로고" className="w-auto h-full" />
-          <p className="text-title/32px">Good_Game</p>
-        </Link>
+          <p className="text-title/32px font-DungGeunMo">Good_Game</p>
+        </button>
         <div
           onClick={onClickIsSelectViewToggleHandler}
-          className="relative flex justify-between items-center p-3 w-48 border border-solid border-black rounded-xl text-body/18px"
+          className="relative flex justify-between items-center p-3 w-48 border border-solid border-black rounded-xl text-body/18px cursor-pointer"
         >
           {selectGame ? selectGame : "전체 게임"}
           {isSelectView ? (

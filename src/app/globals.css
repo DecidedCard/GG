@@ -7,6 +7,13 @@
   font-weight: 45 920;
   font-style: normal;
   font-display: swap;
-  src: url("../../public//font/PretendardVariable.woff2")
+  src: url("../../public/font/PretendardVariable.woff2")
     format("woff2-variations");
+}
+
+@font-face {
+  font-family: "DungGeunMo";
+  src: url("../../public/font/DungGeunMo.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }

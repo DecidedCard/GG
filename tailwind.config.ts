@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         Pretendard: ["Pretendard", "sans-serif"],
+        DungGeunMo: ["DungGeunMo", "sans-serif"],
       },
       fontSize: {
         "title/28px": ["28px", { lineHeight: "110%", fontWeight: "700" }],
