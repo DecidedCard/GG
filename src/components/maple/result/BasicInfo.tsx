@@ -40,9 +40,9 @@ const BasicInfo = ({
           <div className="flex items-center gap-3">
             <p className="text-title/28px">{info.character_name}</p>
             <p className="flex items-center gap-2 py-1 px-2 h-fit text-body/14px bg-gray-200 rounded-3xl">
-              <div className="w-4">
+              <span className="w-4">
                 <ServerImage server={info.world_name} />
-              </div>
+              </span>
               {info.world_name}
             </p>
           </div>
