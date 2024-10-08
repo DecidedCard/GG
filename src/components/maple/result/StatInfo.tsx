@@ -20,12 +20,9 @@ const StatInfo = ({ info }: { info: CharacterStatInfo }) => {
           isView ? "max-h-[1100px]" : "max-h-[500px]"
         }`}
       >
-        <div className="flex items-center gap-3 py-4 px-10 w-fit">
-          <div className="w-14 h-14 rounded-full bg-gray-500"></div>
-          <div>
-            <p className="text-body/18px">전투력</p>
-            <p>{info.final_stat[42].stat_value}</p>
-          </div>
+        <div className="flex flex-col justify-center items-center py-4 px-10 w-full">
+          <p className="text-body/18px">전투력</p>
+          <p>{info.final_stat[42].stat_value}</p>
         </div>
         <div className="flex flex-col gap-1 p-2 border-t border-b border-solid border-black">
           <p>

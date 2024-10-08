@@ -4,6 +4,7 @@ import Image from "next/image";
 import ServerImage from "../ServerImage";
 
 import type { Basic } from "@/types/maple/mapleApi";
+import JopImage from "../JopImage";
 
 const BasicInfo = ({
   info,
@@ -13,8 +14,11 @@ const BasicInfo = ({
   popularity: number;
 }) => {
   return (
-    <div className="flex items-center py-10 px-20 w-full border border-solid border-black rounded-lg">
-      <div className="flex gap-3">
+    <div className="relative flex items-center py-10 px-20 w-full h-[400px] border border-solid border-black rounded-lg overflow-hidden">
+      <div className="absolute -top-28 right-0 opacity-40">
+        <JopImage jop={info.character_class} />
+      </div>
+      <div className="flex gap-3 z-10">
         <div className="flex flex-col gap-1">
           <Image
             src={info.character_image}
