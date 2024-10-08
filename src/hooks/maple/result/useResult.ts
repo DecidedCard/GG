@@ -5,7 +5,7 @@ import { useCharacterQuery } from "../useQuery";
 
 const useResult = () => {
   const [characterId, setCharacterId] = useState("");
-  const { data, isError, isLoading } = useCharacterQuery(characterId);
+  const { data, isError, isFetching } = useCharacterQuery(characterId);
 
   const params = useSearchParams();
   const characterName = params.get("character_name") as string;
@@ -39,7 +39,7 @@ const useResult = () => {
   const query = {
     data,
     isError,
-    isLoading,
+    isFetching,
   };
 
   return { query };

@@ -4,7 +4,7 @@ import fetchCharacterInfo from "@/util/maple/fetchCharacterInfo";
 import QUERY_KEY from "@/util/maple/QUERY_KEY";
 
 export const useCharacterQuery = (id: string) => {
-  const { data, isError, isLoading } = useQuery({
+  const { data, isError, isFetching } = useQuery({
     queryKey: [QUERY_KEY.characterInfo],
     queryFn: () => fetchCharacterInfo(id),
     enabled: !!id,
@@ -12,5 +12,5 @@ export const useCharacterQuery = (id: string) => {
     refetchOnWindowFocus: false,
   });
 
-  return { isLoading, isError, data };
+  return { isFetching, isError, data };
 };

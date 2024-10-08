@@ -5,16 +5,22 @@ import Link from "next/link";
 
 import BasicInfo from "@/components/maple/result/BasicInfo";
 import StatInfo from "@/components/maple/result/StatInfo";
-import ArrowRoundBack from "@/assets/ArrowRoundBack";
+import ItemList from "@/components/maple/result/ItemList";
+import Spinner from "@/components/common/Spinner";
 
 import useResult from "@/hooks/maple/result/useResult";
-import ItemList from "@/components/maple/result/ItemList";
+
+import ArrowRoundBack from "@/assets/ArrowRoundBack";
 
 const Result = () => {
   const { query } = useResult();
 
-  if (query.isLoading) {
-    return <div>로딩 중....</div>;
+  if (query.isFetching) {
+    return (
+      <div className="flex justify-center items-center w-full h-[90vh]">
+        <Spinner />
+      </div>
+    );
   }
 
   if (query.isError) {
