@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -14,6 +14,13 @@ const Header = () => {
   const [isSelectView, setIsSelectView] = useState(false);
 
   const gameArr = [{ game: "메이플스토리" }];
+
+  useEffect(() => {
+    const checkGame = window.location.pathname.split("/");
+    if (checkGame[1] === "maple") {
+      setSelectGame("메이플스토리");
+    }
+  }, []);
 
   const onClickIsSelectViewToggleHandler = () => {
     setIsSelectView(!isSelectView);
