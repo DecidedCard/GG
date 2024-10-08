@@ -11,20 +11,29 @@ const useItemList = (item: Item) => {
   const [preset, setPreset] = useState<ItemEquipmentPreset[] | ItemEquipment[]>(
     item.item_equipment
   );
+  const [checkPreset, setCheckPreset] = useState(0);
 
   const onClickToggle = () => {
     setIsView(!isView);
   };
 
-  const onClickSetItemHandler = (presetItem: ItemEquipmentPreset[]) => {
+  const onClickSetItemHandler = ({
+    presetItem,
+    presetNumber,
+  }: {
+    presetItem: ItemEquipmentPreset[];
+    presetNumber: number;
+  }) => {
     if (presetItem === preset) {
       setPreset(item.item_equipment);
+      setCheckPreset(0);
       return;
     }
     setPreset(presetItem);
+    setCheckPreset(presetNumber);
   };
 
-  return { isView, preset, onClickToggle, onClickSetItemHandler };
+  return { isView, preset, checkPreset, onClickToggle, onClickSetItemHandler };
 };
 
 export default useItemList;

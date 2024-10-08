@@ -7,27 +7,48 @@ import useItemList from "@/hooks/maple/result/useItemList";
 import type { Item } from "@/types/maple/item";
 
 const ItemList = ({ item }: { item: Item }) => {
-  const { isView, preset, onClickSetItemHandler, onClickToggle } =
+  const { isView, preset, checkPreset, onClickSetItemHandler, onClickToggle } =
     useItemList(item);
 
   return (
     <section className="flex flex-col gap-3 w-full">
       <div className="flex justify-end items-center gap-5 px-4 w-full h-10 text-body/14px border border-solid border-black rounded-lg">
         <p
-          onClick={() => onClickSetItemHandler(item.item_equipment_preset_1)}
-          className="p-1 border border-solid border-black rounded cursor-pointer"
+          onClick={() =>
+            onClickSetItemHandler({
+              presetItem: item.item_equipment_preset_1,
+              presetNumber: 1,
+            })
+          }
+          className={`p-1 border border-solid border-black rounded cursor-pointer ${
+            checkPreset === 1 && "bg-black text-white"
+          }`}
         >
           프리셋1
         </p>
         <p
-          onClick={() => onClickSetItemHandler(item.item_equipment_preset_2)}
-          className="p-1 border border-solid border-black rounded cursor-pointer"
+          onClick={() =>
+            onClickSetItemHandler({
+              presetItem: item.item_equipment_preset_2,
+              presetNumber: 2,
+            })
+          }
+          className={`p-1 border border-solid border-black rounded cursor-pointer ${
+            checkPreset === 2 && "bg-black text-white"
+          }`}
         >
           프리셋2
         </p>
         <p
-          onClick={() => onClickSetItemHandler(item.item_equipment_preset_3)}
-          className="p-1 border border-solid border-black rounded cursor-pointer"
+          onClick={() =>
+            onClickSetItemHandler({
+              presetItem: item.item_equipment_preset_3,
+              presetNumber: 3,
+            })
+          }
+          className={`p-1 border border-solid border-black rounded cursor-pointer ${
+            checkPreset === 3 && "bg-black text-white"
+          }`}
         >
           프리셋3
         </p>
