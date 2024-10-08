@@ -68,7 +68,7 @@ const JopImage = ({ jop }: { jop: string }) => {
     (jop === "듀얼블레이더" && Dual_Blade) ||
     (jop === "은월" && Eunwol) ||
     (jop === "에반" && Evan) ||
-    (jop === "플레임 위자드" && Flame_Wizard) ||
+    (jop === "플레임위자드" && Flame_Wizard) ||
     (jop === "히어로" && Hero) ||
     (jop === "호영" && Ho_Young) ||
     (jop === "일리움" && Illium) ||
