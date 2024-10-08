@@ -26,7 +26,7 @@ const formatItemStat = (arg: string) => {
       return `쿨감${arg.slice(17, 21)}`;
     }
 
-    if (result.indexOf("아이템") !== -1) {
+    if (result.indexOf("드롭률") !== -1) {
       return `아획${arg.slice(9)}`;
     }
 
@@ -34,7 +34,7 @@ const formatItemStat = (arg: string) => {
       return `메획${arg.slice(8)}`;
     }
 
-    if (result.indexOf("확률") !== -1) {
+    if (result.indexOf("확률") !== -1 || result.indexOf("효율") !== -1) {
       return "기타";
     }
 
