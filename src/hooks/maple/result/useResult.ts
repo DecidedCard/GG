@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { getCharacterId } from "@/api/maple/axios";
+
 import { useCharacterQuery } from "../useQuery";
+
+import { getCharacterId } from "@/api/maple/axios";
 
 const useResult = () => {
   const [characterId, setCharacterId] = useState("");
