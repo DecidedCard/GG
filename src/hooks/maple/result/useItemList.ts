@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 import type {
   Item,
@@ -13,9 +13,9 @@ const useItemList = (item: Item) => {
   );
   const [checkPreset, setCheckPreset] = useState(0);
 
-  const onClickToggle = () => {
+  const onClickToggle = useCallback(() => {
     setIsView(!isView);
-  };
+  }, [isView]);
 
   const onClickSetItemHandler = ({
     presetItem,
