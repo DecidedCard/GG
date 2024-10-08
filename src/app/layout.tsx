@@ -6,8 +6,8 @@ import Provider from "./Provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "game-information",
-  description: "game-information",
+  title: "GG",
+  description: "good-game information",
 };
 
 export default function RootLayout({
