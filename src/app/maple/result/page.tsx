@@ -30,11 +30,8 @@ const Result = () => {
   return (
     query.data && (
       <div className="relative flex flex-col gap-4 mx-auto p-4 w-[1440px] md:w-full sm:w-full">
-        <Link
-          href={"/maple"}
-          className="absolute top-4 left-4 z-20 text-blue-500 cursor-pointer"
-        >
-          <ArrowRoundBack />
+        <Link href={"/maple"} className="absolute top-4 left-4 z-20">
+          <ArrowRoundBack className="w-9 h-9 text-blue-500 cursor-pointer" />
         </Link>
         <BasicInfo
           info={query.data.basicInfo}
