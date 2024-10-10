@@ -228,6 +228,29 @@
   resolved "https://registry.yarnpkg.com/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-14.2.14.tgz#9d6446b3a8d5e67e199049d59ce7c0b8bd33ab51"
   integrity sha512-MZom+OvZ1NZxuRovKt1ApevjiUJTcU2PmdJKL66xUPaJeRywnbGGRWUlaAOwunD6dX+pm83vj979NTC8QXjGWg==
 
+"@nextui-org/aria-utils@2.0.26":
+  version "2.0.26"
+  resolved "https://registry.yarnpkg.com/@nextui-org/aria-utils/-/aria-utils-2.0.26.tgz#0113247f80bc558aea650c15e38ee0ab7c7ac9f8"
+  integrity sha512-e81HxkNI3/HCPPJT9OVK0g0ivTkuqeeQ043WlAxvgf+upFTEvNN5vmsSKBfWGgfZpsVHgNyHIzwbHjy9zKePLQ==
+  dependencies:
+    "@nextui-org/react-rsc-utils" "2.0.14"
+    "@nextui-org/shared-utils" "2.0.8"
+    "@nextui-org/system" "2.2.6"
+    "@react-aria/utils" "3.24.1"
+    "@react-stately/collections" "3.10.7"
+    "@react-stately/overlays" "3.6.7"
+    "@react-types/overlays" "3.8.7"
+    "@react-types/shared" "3.23.1"
+
+"@nextui-org/framer-utils@2.0.25":
+  version "2.0.25"
+  resolved "https://registry.yarnpkg.com/@nextui-org/framer-utils/-/framer-utils-2.0.25.tgz#f8abb375ab4efe9a6514c7219e8b8ae32398f5fa"
+  integrity sha512-bhQKDg4c5Da4II4UYLKyvYagusTd62eVwPqpfUP+GHZKKZcmRaS6MQZTh4xJYbpyh298S4jRSH/AUAiN/OK3TQ==
+  dependencies:
+    "@nextui-org/shared-utils" "2.0.8"
+    "@nextui-org/system" "2.2.6"
+    "@nextui-org/use-measure" "2.0.2"
+
 "@nextui-org/react-rsc-utils@2.0.14":
   version "2.0.14"
   resolved "https://registry.yarnpkg.com/@nextui-org/react-rsc-utils/-/react-rsc-utils-2.0.14.tgz#277523854e594858c0b713df783f2d5228915f83"
@@ -254,7 +277,7 @@
     "@react-types/shared" "3.23.1"
     clsx "^1.2.1"
 
-"@nextui-org/system@^2.2.6":
+"@nextui-org/system@2.2.6", "@nextui-org/system@^2.2.6":
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/@nextui-org/system/-/system-2.2.6.tgz#837223d2acbfb6499fbd03d6345387897fa3d2a0"
   integrity sha512-tjIkOI0w32g68CGWleuSyIbEz8XBbeoNogR2lu7MWk3QovHCqgr4VVrP1cwMRYnwDPFQP3OpmH+NR9yzt+pIfg==
@@ -284,6 +307,34 @@
     lodash.omit "^4.5.0"
     tailwind-merge "^1.14.0"
     tailwind-variants "^0.1.20"
+
+"@nextui-org/tooltip@^2.0.41":
+  version "2.0.41"
+  resolved "https://registry.yarnpkg.com/@nextui-org/tooltip/-/tooltip-2.0.41.tgz#a2027bf1e0f836c98bfd6bcc541cfbdda711f4be"
+  integrity sha512-1c+vkCCszKcKl15HywlZ7UOL7c1UFgLudqBB/dEdWZiclT01BRiracMbcQ7McKHQCRl77Aa7LFv5x4wHOicWHQ==
+  dependencies:
+    "@nextui-org/aria-utils" "2.0.26"
+    "@nextui-org/framer-utils" "2.0.25"
+    "@nextui-org/react-utils" "2.0.17"
+    "@nextui-org/shared-utils" "2.0.8"
+    "@nextui-org/use-safe-layout-effect" "2.0.6"
+    "@react-aria/interactions" "3.21.3"
+    "@react-aria/overlays" "3.22.1"
+    "@react-aria/tooltip" "3.7.4"
+    "@react-aria/utils" "3.24.1"
+    "@react-stately/tooltip" "3.4.9"
+    "@react-types/overlays" "3.8.7"
+    "@react-types/tooltip" "3.4.9"
+
+"@nextui-org/use-measure@2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@nextui-org/use-measure/-/use-measure-2.0.2.tgz#94f998c0e59819c0632b43ca8ddc4877e12a47bb"
+  integrity sha512-H/RSPPA9B5sZ10wiXR3jLlYFEuiVnc0O/sgLLQfrb5M0hvHoaqMThnsZpm//5iyS7tD7kxPeYNLa1EhzlQKxDA==
+
+"@nextui-org/use-safe-layout-effect@2.0.6":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@nextui-org/use-safe-layout-effect/-/use-safe-layout-effect-2.0.6.tgz#29a6c5afa1e3955420c681cdf7cec99eaa4a030f"
+  integrity sha512-xzEJXf/g9GaSqjLpQ4+Z2/pw1GPq2Fc5cWRGqEXbGauEMXuH8UboRls1BmIV1RuOpqI6FgxkEmxL1EuVIRVmvQ==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -355,6 +406,16 @@
     "@react-types/shared" "^3.25.0"
     "@swc/helpers" "^0.5.0"
 
+"@react-aria/interactions@3.21.3":
+  version "3.21.3"
+  resolved "https://registry.yarnpkg.com/@react-aria/interactions/-/interactions-3.21.3.tgz#a2a3e354a8b894bed7a46e1143453f397f2538d7"
+  integrity sha512-BWIuf4qCs5FreDJ9AguawLVS0lV9UU+sK4CCnbCNNmYqOWY+1+gRXCsnOM32K+oMESBxilAjdHW5n1hsMqYMpA==
+  dependencies:
+    "@react-aria/ssr" "^3.9.4"
+    "@react-aria/utils" "^3.24.1"
+    "@react-types/shared" "^3.23.1"
+    "@swc/helpers" "^0.5.0"
+
 "@react-aria/interactions@^3.21.3", "@react-aria/interactions@^3.22.3":
   version "3.22.3"
   resolved "https://registry.yarnpkg.com/@react-aria/interactions/-/interactions-3.22.3.tgz#3ba50db12f6ed443ae061eed79e41509eaa3d8e6"
@@ -389,6 +450,19 @@
   dependencies:
     "@swc/helpers" "^0.5.0"
 
+"@react-aria/tooltip@3.7.4":
+  version "3.7.4"
+  resolved "https://registry.yarnpkg.com/@react-aria/tooltip/-/tooltip-3.7.4.tgz#0efe8b4cc543a39395e99861ad6f0c64cd746026"
+  integrity sha512-+XRx4HlLYqWY3fB8Z60bQi/rbWDIGlFUtXYbtoa1J+EyRWfhpvsYImP8qeeNO/vgjUtDy1j9oKa8p6App9mBMQ==
+  dependencies:
+    "@react-aria/focus" "^3.17.1"
+    "@react-aria/interactions" "^3.21.3"
+    "@react-aria/utils" "^3.24.1"
+    "@react-stately/tooltip" "^3.4.9"
+    "@react-types/shared" "^3.23.1"
+    "@react-types/tooltip" "^3.4.9"
+    "@swc/helpers" "^0.5.0"
+
 "@react-aria/utils@3.24.1":
   version "3.24.1"
   resolved "https://registry.yarnpkg.com/@react-aria/utils/-/utils-3.24.1.tgz#9d16023f07c23c41793c9030a9bd203a9c8cf0a7"
@@ -421,13 +495,48 @@
     "@react-types/shared" "^3.25.0"
     "@swc/helpers" "^0.5.0"
 
-"@react-stately/overlays@^3.6.7":
+"@react-stately/collections@3.10.7":
+  version "3.10.7"
+  resolved "https://registry.yarnpkg.com/@react-stately/collections/-/collections-3.10.7.tgz#b1add46cb8e2f2a0d33938ef1b232fb2d0fd11eb"
+  integrity sha512-KRo5O2MWVL8n3aiqb+XR3vP6akmHLhLWYZEmPKjIv0ghQaEebBTrN3wiEjtd6dzllv0QqcWvDLM1LntNfJ2TsA==
+  dependencies:
+    "@react-types/shared" "^3.23.1"
+    "@swc/helpers" "^0.5.0"
+
+"@react-stately/overlays@3.6.7":
+  version "3.6.7"
+  resolved "https://registry.yarnpkg.com/@react-stately/overlays/-/overlays-3.6.7.tgz#d4aa1b709e6e72306c33308bb031466730dd0480"
+  integrity sha512-6zp8v/iNUm6YQap0loaFx6PlvN8C0DgWHNlrlzMtMmNuvjhjR0wYXVaTfNoUZBWj25tlDM81ukXOjpRXg9rLrw==
+  dependencies:
+    "@react-stately/utils" "^3.10.1"
+    "@react-types/overlays" "^3.8.7"
+    "@swc/helpers" "^0.5.0"
+
+"@react-stately/overlays@^3.6.11", "@react-stately/overlays@^3.6.7":
   version "3.6.11"
   resolved "https://registry.yarnpkg.com/@react-stately/overlays/-/overlays-3.6.11.tgz#67d413853d47d49ed2687c6b74b1749f4b26da6e"
   integrity sha512-usuxitwOx4FbmOW7Og4VM8R8ZjerbHZLLbFaxZW7pWLs7Ypway1YhJ3SWcyNTYK7NEk4o602kSoU6MSev1Vgag==
   dependencies:
     "@react-stately/utils" "^3.10.4"
     "@react-types/overlays" "^3.8.10"
+    "@swc/helpers" "^0.5.0"
+
+"@react-stately/tooltip@3.4.9":
+  version "3.4.9"
+  resolved "https://registry.yarnpkg.com/@react-stately/tooltip/-/tooltip-3.4.9.tgz#a6161db77bd5ad606caa1a302622f92bc381b4ac"
+  integrity sha512-P7CDJsdoKarz32qFwf3VNS01lyC+63gXpDZG31pUu+EO5BeQd4WKN/AH1Beuswpr4GWzxzFc1aXQgERFGVzraA==
+  dependencies:
+    "@react-stately/overlays" "^3.6.7"
+    "@react-types/tooltip" "^3.4.9"
+    "@swc/helpers" "^0.5.0"
+
+"@react-stately/tooltip@^3.4.9":
+  version "3.4.13"
+  resolved "https://registry.yarnpkg.com/@react-stately/tooltip/-/tooltip-3.4.13.tgz#72381ef42afd6731d4a1b51c30632bb8d07f1757"
+  integrity sha512-zQ+8FQ7Pi0Cz852dltXb6yaryjE18K3byK4tIO3e5vnrZHEGvfdxowc+v9ak5UV93kVrYoOVmfZHRcEaTXTBNA==
+  dependencies:
+    "@react-stately/overlays" "^3.6.11"
+    "@react-types/tooltip" "^3.4.12"
     "@swc/helpers" "^0.5.0"
 
 "@react-stately/utils@3.10.1":
@@ -451,6 +560,13 @@
   dependencies:
     "@react-types/shared" "^3.25.0"
 
+"@react-types/overlays@3.8.7":
+  version "3.8.7"
+  resolved "https://registry.yarnpkg.com/@react-types/overlays/-/overlays-3.8.7.tgz#a43faf524cb3fce74acceee43898b265e8dfee05"
+  integrity sha512-zCOYvI4at2DkhVpviIClJ7bRrLXYhSg3Z3v9xymuPH3mkiuuP/dm8mUCtkyY4UhVeUTHmrQh1bzaOP00A+SSQA==
+  dependencies:
+    "@react-types/shared" "^3.23.1"
+
 "@react-types/overlays@^3.8.10", "@react-types/overlays@^3.8.7":
   version "3.8.10"
   resolved "https://registry.yarnpkg.com/@react-types/overlays/-/overlays-3.8.10.tgz#9315b7d376f2877ef531cb42217327833eabcd15"
@@ -467,6 +583,22 @@
   version "3.25.0"
   resolved "https://registry.yarnpkg.com/@react-types/shared/-/shared-3.25.0.tgz#7223baf72256e918a3c29081bb1ecc6fad4fbf58"
   integrity sha512-OZSyhzU6vTdW3eV/mz5i6hQwQUhkRs7xwY2d1aqPvTdMe0+2cY7Fwp45PAiwYLEj73i9ro2FxF9qC4DvHGSCgQ==
+
+"@react-types/tooltip@3.4.9":
+  version "3.4.9"
+  resolved "https://registry.yarnpkg.com/@react-types/tooltip/-/tooltip-3.4.9.tgz#fb2291bd0b915f7c7f5024ce146412405843ec9b"
+  integrity sha512-wZ+uF1+Zc43qG+cOJzioBmLUNjRa7ApdcT0LI1VvaYvH5GdfjzUJOorLX9V/vAci0XMJ50UZ+qsh79aUlw2yqg==
+  dependencies:
+    "@react-types/overlays" "^3.8.7"
+    "@react-types/shared" "^3.23.1"
+
+"@react-types/tooltip@^3.4.12", "@react-types/tooltip@^3.4.9":
+  version "3.4.12"
+  resolved "https://registry.yarnpkg.com/@react-types/tooltip/-/tooltip-3.4.12.tgz#70f5f1552a8c68fc21e5c400481c0f7fedc5ce30"
+  integrity sha512-FwsdSQ3UDIDORanQMGMLyzSUabw4AkKhwcRdPv4d5OT8GmJr7mBdZynfcsrKLJ0fzskIypMqspoutZidsI0MQg==
+  dependencies:
+    "@react-types/overlays" "^3.8.10"
+    "@react-types/shared" "^3.25.0"
 
 "@rtsao/scc@^1.1.0":
   version "1.1.0"
