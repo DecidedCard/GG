@@ -4,6 +4,7 @@ import type { ItemEquipmentPreset } from "@/types/maple/item";
 import StarForceCheck from "../StarForceCheck";
 import Image from "next/image";
 import ItemStat from "./ItemStat";
+import ItemPotential from "./ItemPotential";
 
 const ItemDetail = ({ item }: { item: ItemEquipmentPreset }) => {
   console.log(item);
@@ -101,6 +102,7 @@ const ItemDetail = ({ item }: { item: ItemEquipmentPreset }) => {
           <p>가위 사용 가능 횟수 : {item.cuttable_count}회</p>
         )}
       </div>
+      <ItemPotential item={item} />
     </div>
   );
 };
