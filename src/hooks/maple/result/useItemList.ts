@@ -1,17 +1,17 @@
 import { useCallback, useState } from "react";
 
-import type {
-  Item,
-  ItemEquipment,
-  ItemEquipmentPreset,
-} from "@/types/maple/item";
+import type { Item, ItemEquipmentPreset } from "@/types/maple/item";
 
 const useItemList = (item: Item) => {
   const [isView, setIsView] = useState(false);
-  const [preset, setPreset] = useState<ItemEquipmentPreset[] | ItemEquipment[]>(
-    item.item_equipment
+  const [preset, setPreset] = useState<ItemEquipmentPreset[]>(
+    (item.preset_no === 1 && item.item_equipment_preset_1) ||
+      (item.preset_no === 2 && item.item_equipment_preset_2) ||
+      (item.preset_no === 3 && item.item_equipment_preset_3) ||
+      item.item_equipment_preset_1
   );
-  const [checkPreset, setCheckPreset] = useState(0);
+
+  const [checkPreset, setCheckPreset] = useState<number>(item.preset_no);
 
   const onClickToggle = useCallback(() => {
     setIsView(!isView);
@@ -25,8 +25,6 @@ const useItemList = (item: Item) => {
     presetNumber: number;
   }) => {
     if (presetItem === preset) {
-      setPreset(item.item_equipment);
-      setCheckPreset(0);
       return;
     }
     setPreset(presetItem);

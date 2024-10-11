@@ -7,9 +7,9 @@ import ItemDetail from "./ItemDetail";
 
 import formatItemStat from "@/util/maple/formatItemStat";
 
-import type { ItemEquipment, ItemEquipmentPreset } from "@/types/maple/item";
+import type { ItemEquipmentPreset } from "@/types/maple/item";
 
-const ItemCard = ({ item }: { item: ItemEquipment | ItemEquipmentPreset }) => {
+const ItemCard = ({ item }: { item: ItemEquipmentPreset }) => {
   return (
     <Tooltip content={<ItemDetail item={item} />}>
       <ul
