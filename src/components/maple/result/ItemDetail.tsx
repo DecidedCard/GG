@@ -87,12 +87,18 @@ const ItemDetail = ({ item }: { item: ItemEquipmentPreset }) => {
         item.scroll_upgradeable_count === "0" ? (
           false
         ) : (
-          <p className="flex gap-1">
-            업그레이드 가능 횟수 : {item.scroll_upgradeable_count}
-            <span className="text-yellow-300">
-              (복구 가능 횟수 : {item.scroll_resilience_count})
-            </span>
-          </p>
+          <>
+            <p className="flex gap-1">
+              업그레이드 가능 횟수 : {item.scroll_upgradeable_count}
+              <span className="text-yellow-300">
+                (복구 가능 횟수 : {item.scroll_resilience_count})
+              </span>
+            </p>
+            <p>{item.golden_hammer_flag === "적용" && "황금망치 제련 적용"}</p>
+          </>
+        )}
+        {parseInt(item.cuttable_count) <= 10 && (
+          <p>가위 사용 가능 횟수 : {item.cuttable_count}회</p>
         )}
       </div>
     </div>
