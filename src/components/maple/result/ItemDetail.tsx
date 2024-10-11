@@ -4,6 +4,7 @@ import type { ItemEquipmentPreset } from "@/types/maple/item";
 import StarForceCheck from "../StarForceCheck";
 import Image from "next/image";
 import ItemStat from "./ItemStat";
+import ItemPotential from "./ItemPotential";
 
 const ItemDetail = ({ item }: { item: ItemEquipmentPreset }) => {
   console.log(item);
@@ -101,38 +102,7 @@ const ItemDetail = ({ item }: { item: ItemEquipmentPreset }) => {
           <p>가위 사용 가능 횟수 : {item.cuttable_count}회</p>
         )}
       </div>
-      {item.potential_option_grade && (
-        <div className="flex flex-col gap-1 py-2 px-4 w-full text-body/14px border-t border-solid border-gray-400">
-          <p className="flex items-center gap-2">
-            <span className="flex justify-center items-center w-5 h-5 bg-blue-300 rounded">
-              {(item.potential_option_grade === "레어" && "R") ||
-                (item.potential_option_grade === "에픽" && "E") ||
-                (item.potential_option_grade === "유니크" && "U") ||
-                (item.potential_option_grade === "레전드리" && "L")}
-            </span>
-            잠재옵션
-          </p>
-          <p>{item.potential_option_1}</p>
-          <p>{item.potential_option_2}</p>
-          <p>{item.potential_option_3}</p>
-        </div>
-      )}
-      {item.additional_potential_option_grade && (
-        <div className="flex flex-col gap-1 py-2 px-4 w-full text-body/14px border-t border-solid border-gray-400">
-          <p className="flex items-center gap-2">
-            <span className="flex justify-center items-center w-5 h-5 bg-blue-300 rounded">
-              {(item.additional_potential_option_grade === "레어" && "R") ||
-                (item.additional_potential_option_grade === "에픽" && "E") ||
-                (item.additional_potential_option_grade === "유니크" && "U") ||
-                (item.additional_potential_option_grade === "레전드리" && "L")}
-            </span>
-            잠재옵션
-          </p>
-          <p>{item.additional_potential_option_1}</p>
-          <p>{item.additional_potential_option_2}</p>
-          <p>{item.additional_potential_option_3}</p>
-        </div>
-      )}
+      <ItemPotential item={item} />
     </div>
   );
 };
