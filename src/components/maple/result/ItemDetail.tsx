@@ -103,6 +103,12 @@ const ItemDetail = ({ item }: { item: ItemEquipmentPreset }) => {
         )}
       </div>
       <ItemPotential item={item} />
+      {item.soul_name && (
+        <div className="p-4 w-full border-t border-solid border-gray-400">
+          <p>{item.soul_name}</p>
+          <p>{item.soul_option}</p>
+        </div>
+      )}
     </div>
   );
 };
