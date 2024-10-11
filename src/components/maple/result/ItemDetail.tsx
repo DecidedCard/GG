@@ -1,15 +1,10 @@
 import React from "react";
 
-import type { ItemEquipment, ItemEquipmentPreset } from "@/types/maple/item";
+import type { ItemEquipmentPreset } from "@/types/maple/item";
 import StarForceCheck from "../StarForceCheck";
 import Image from "next/image";
 
-const ItemDetail = ({
-  item,
-}: {
-  item: ItemEquipment | ItemEquipmentPreset;
-}) => {
-  // console.log(item.item_total_option);
+const ItemDetail = ({ item }: { item: ItemEquipmentPreset }) => {
   const potentialBorderColor =
     (item.potential_option_grade === "레어" &&
       "border-4 border-solid border-blue-400") ||
@@ -59,6 +54,38 @@ const ItemDetail = ({
         {item.item_total_option.luk !== "0" && (
           <p>LUK: +{item.item_total_option.luk}</p>
         )}
+        {item.item_total_option.max_hp !== "0" && (
+          <p>최대HP: +{item.item_total_option.max_hp}</p>
+        )}
+        {item.item_total_option.max_mp !== "0" && (
+          <p>최대MP: +{item.item_total_option.max_mp}</p>
+        )}
+        {item.item_total_option.attack_power !== "0" && (
+          <p>공격력: +{item.item_total_option.attack_power}</p>
+        )}
+        {item.item_total_option.magic_power !== "0" && (
+          <p>마력: +{item.item_total_option.magic_power}</p>
+        )}
+        {item.item_total_option.armor !== "0" && (
+          <p>방어력: +{item.item_total_option.armor}</p>
+        )}
+        {item.item_total_option.boss_damage !== "0" && (
+          <p>
+            보스 몬스터 공격시 데미지: +{item.item_total_option.boss_damage}%
+          </p>
+        )}
+        {item.item_total_option.ignore_monster_armor !== "0" && (
+          <p>
+            몬스터 방어율 무시: +{item.item_total_option.ignore_monster_armor}
+          </p>
+        )}
+        {item.item_total_option.damage !== "0" && (
+          <p>데미지: +{item.item_total_option.damage}%</p>
+        )}
+        {item.item_total_option.all_stat !== "0" && (
+          <p>올스탯: +{item.item_total_option.all_stat}%</p>
+        )}
+        <p>업그레이드 가능 횟수: {item.scroll_upgradeable_count}</p>
       </div>
     </div>
   );
