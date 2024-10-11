@@ -1,7 +1,7 @@
 import React from "react";
 
 import type { ItemEquipmentPreset } from "@/types/maple/item";
-import StarForceCheck from "../StarForceCheck";
+import StarForceCheck from "../../StarForceCheck";
 import Image from "next/image";
 import ItemStat from "./ItemStat";
 import ItemPotential from "./ItemPotential";

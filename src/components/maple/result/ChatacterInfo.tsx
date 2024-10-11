@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import BasicInfo from "@/components/maple/result/BasicInfo";
 import StatInfo from "@/components/maple/result/StatInfo";
-import ItemList from "@/components/maple/result/ItemList";
+import ItemList from "@/components/maple/result/item/ItemList";
 import Spinner from "@/components/common/Spinner";
 
 import useResult from "@/hooks/maple/result/useResult";
