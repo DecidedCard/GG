@@ -43,17 +43,6 @@ interface DragonEquipment {
   date_expire: string;
 }
 
-interface ItemExceptionalOption {
-  str: string;
-  dex: string;
-  int: string;
-  luk: string;
-  max_hp: string;
-  max_mp: string;
-  attack_power: string;
-  magic_power: string;
-}
-
 interface Title {
   title_name: string;
   title_icon: string;
@@ -142,7 +131,7 @@ export interface ItemEquipment {
   date_expire: string;
 }
 
-interface ItemEtcOption {
+export interface ItemEtcOption {
   str: string;
   dex: string;
   int: string;
@@ -156,7 +145,7 @@ interface ItemEtcOption {
   jump: string;
 }
 
-interface ItemAddOption {
+export interface ItemAddOption {
   str: string;
   dex: string;
   int: string;
@@ -174,7 +163,7 @@ interface ItemAddOption {
   equipment_level_decrease: number;
 }
 
-interface ItemExceptionalOption {
+export interface ItemExceptionalOption {
   str: string;
   dex: string;
   int: string;
@@ -186,7 +175,7 @@ interface ItemExceptionalOption {
   exceptional_upgrade: number;
 }
 
-interface ItemBaseOption {
+export interface ItemBaseOption {
   str: string;
   dex: string;
   int: string;
@@ -206,7 +195,7 @@ interface ItemBaseOption {
   base_equipment_level: number;
 }
 
-interface ItemTotalOption {
+export interface ItemTotalOption {
   str: string;
   dex: string;
   int: string;
