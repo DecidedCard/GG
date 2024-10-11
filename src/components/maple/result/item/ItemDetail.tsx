@@ -1,7 +1,7 @@
 import React from "react";
 
 import type { ItemEquipmentPreset } from "@/types/maple/item";
-import StarForceCheck from "../StarForceCheck";
+import StarForceCheck from "../../StarForceCheck";
 import Image from "next/image";
 import ItemStat from "./ItemStat";
 import ItemPotential from "./ItemPotential";
@@ -103,6 +103,12 @@ const ItemDetail = ({ item }: { item: ItemEquipmentPreset }) => {
         )}
       </div>
       <ItemPotential item={item} />
+      {item.soul_name && (
+        <div className="p-4 w-full border-t border-solid border-gray-400">
+          <p>{item.soul_name}</p>
+          <p>{item.soul_option}</p>
+        </div>
+      )}
     </div>
   );
 };
