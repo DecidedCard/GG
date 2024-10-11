@@ -9,25 +9,32 @@ const ItemDetail = ({
 }: {
   item: ItemEquipment | ItemEquipmentPreset;
 }) => {
-  console.log(item.item_total_option);
-  const potentialColor =
-    (item.potential_option_grade === "레어" && "blue-400") ||
-    (item.potential_option_grade === "에픽" && "violet-500") ||
-    (item.potential_option_grade === "유니크" && "yellow-300") ||
-    (item.potential_option_grade === "레전드리" && "green-300");
+  // console.log(item.item_total_option);
+  const potentialBorderColor =
+    (item.potential_option_grade === "레어" &&
+      "border-4 border-solid border-blue-400") ||
+    (item.potential_option_grade === "에픽" &&
+      "border-4 border-solid border-violet-500") ||
+    (item.potential_option_grade === "유니크" &&
+      "border-4 border-solid border-yellow-300") ||
+    (item.potential_option_grade === "레전드리" &&
+      "border-4 border-solid border-green-300");
 
   return (
-    <div className="flex flex-col items-center gap-3 py-4 w-[300px] bg-black text-white rounded-lg">
+    <div className="flex flex-col items-center gap-1 py-4 w-[300px] bg-black text-white rounded-lg">
       <div className="w-[250px]">
         {item.starforce !== "0" && (
           <StarForceCheck star={parseInt(item.starforce)} />
         )}
       </div>
+      <p className="mt-2 text-body/18px">
+        {item.item_name}
+        {item.scroll_upgrade !== "0" && `(+${item.scroll_upgrade})`}
+      </p>
+      <p>{item.potential_option_grade} 아이템</p>
       <div className="flex items-center gap-5 p-4 w-full border-t border-solid border-gray-500">
         <div
-          className={`flex justify-center items-center p-1 w-fit bg-gray-300 ${
-            potentialColor && `border-4 border-solid border-${potentialColor}`
-          } `}
+          className={`flex justify-center item  p-1 bg-gray-400 ${potentialBorderColor}`}
         >
           <Image
             src={item.item_icon}
@@ -37,10 +44,6 @@ const ItemDetail = ({
             className="w-8 h-fit"
           />
         </div>
-        <p className="text-body/18px">
-          {item.item_name}
-          {item.scroll_upgrade !== "0" && `(+${item.scroll_upgrade})`}
-        </p>
       </div>
       <div className="p-4 w-full border-t border-solid border-gray-500">
         <p>장비분류: {item.item_equipment_part}</p>
