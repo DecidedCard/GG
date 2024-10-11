@@ -51,29 +51,54 @@ const ItemStat = ({
     (value === "ignore_monster_armor" && "몬스터 방어율 무시") ||
     value.toUpperCase();
 
+  const unitCheck =
+    value === "all_stat" ||
+    value === "boss_damage" ||
+    value === "damage" ||
+    value === "ignore_monster_armor"
+      ? "%"
+      : "";
+
+  const optionCheck =
+    (item.item_add_option[value as ItemStatValueAdd] &&
+      item.item_add_option[value as ItemStatValueAdd] !== "0") ||
+    (item.item_etc_option[value as ItemStatValueEtc] &&
+      item.item_etc_option[value as ItemStatValueEtc] !== "0") ||
+    (item.item_starforce_option[value as ItemStatValueEtc] &&
+      item.item_starforce_option[value as ItemStatValueEtc] !== "0");
+
   return (
     <div className="flex gap-1">
       <p>
-        {title} : +{item.item_total_option[value as ItemStatValueTotal]}
+        {title} : +
+        {item.item_total_option[value as ItemStatValueTotal] + unitCheck}
       </p>
-      {(item.item_add_option[value as ItemStatValueAdd] !== "0" ||
-        item.item_etc_option[value as ItemStatValueEtc] !== "0" ||
-        item.item_starforce_option[value as ItemStatValueEtc] !== "0") && (
+      {optionCheck && (
         <p>
-          (<span>{item.item_base_option[value as ItemStatValueBase]}</span>
+          (
+          <span>
+            {item.item_base_option[value as ItemStatValueBase] + unitCheck}
+          </span>
           <span className="text-green-400">
-            {item.item_add_option[value as ItemStatValueAdd] !== "0" &&
-              `+ ${item.item_add_option[value as ItemStatValueAdd]}`}
+            {item.item_add_option[value as ItemStatValueAdd] &&
+              item.item_add_option[value as ItemStatValueAdd] !== "0" &&
+              `+ ${
+                item.item_add_option[value as ItemStatValueAdd]
+              }${unitCheck}`}
           </span>
           <span className="text-purple-400">
             {item.item_etc_option[value as ItemStatValueEtc] &&
               item.item_etc_option[value as ItemStatValueEtc] !== "0" &&
-              `+ ${item.item_etc_option[value as ItemStatValueEtc]}`}
+              `+ ${
+                item.item_etc_option[value as ItemStatValueEtc]
+              }${unitCheck}`}
           </span>
           <span className="text-yellow-400">
             {item.item_starforce_option[value as ItemStatValueEtc] &&
               item.item_starforce_option[value as ItemStatValueEtc] !== "0" &&
-              `+ ${item.item_starforce_option[value as ItemStatValueEtc]}`}
+              `+ ${
+                item.item_starforce_option[value as ItemStatValueEtc]
+              }${unitCheck}`}
           </span>
           )
         </p>
