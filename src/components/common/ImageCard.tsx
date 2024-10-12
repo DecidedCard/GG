@@ -4,7 +4,7 @@ import Image, { StaticImageData } from "next/image";
 
 const ImageCard = ({ image, alt }: { image: StaticImageData; alt: string }) => {
   return (
-    <div className="w-96 h-40 bg-gray-300">
+    <div className="w-72">
       <Image src={image} alt={alt} />
     </div>
   );
