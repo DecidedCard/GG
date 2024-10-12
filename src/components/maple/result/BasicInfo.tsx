@@ -14,8 +14,8 @@ const BasicInfo = ({
   popularity: number;
 }) => {
   return (
-    <div className="relative flex items-center py-10 px-20 w-full h-[400px] border border-solid border-black rounded-lg overflow-hidden">
-      <div className="absolute -top-28 right-0 opacity-40">
+    <div className="relative flex items-center py-10 px-20 w-full h-[400px] bg-gradient-to-r from-bg-200 to-bg-300 rounded-lg overflow-hidden">
+      <div className="absolute -top-28 right-0 opacity-10">
         <JopImage jop={info.character_class} />
       </div>
       <div className="flex gap-3 z-10">
