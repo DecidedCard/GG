@@ -7,7 +7,7 @@ import type { SeedRanking } from "@/types/maple/mapleApi";
 
 const SeedRankingBar = ({ item }: { item: SeedRanking }) => {
   return (
-    <div className="flex justify-between py-1 px-3 w-full text-body/14px bg-white rounded">
+    <div className="flex justify-between py-2 px-3 w-full text-body/14px bg-primary-200 rounded">
       <div className="flex justify-between w-40">
         <p>{item.ranking}</p>
         <Link href={`/maple/result?character_name=${item.character_name}`}>
