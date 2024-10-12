@@ -7,7 +7,7 @@ import type { DojangRanking } from "@/types/maple/mapleApi";
 
 const DojangRankingBar = ({ item }: { item: DojangRanking }) => {
   return (
-    <div className="flex justify-between py-1 px-3 w-full text-body/18px bg-white rounded">
+    <div className="flex justify-between py-1 px-3 w-full text-body/14px bg-white rounded">
       <div className="flex justify-between w-40">
         <p>{item.ranking}</p>
         <Link href={`/maple/result?character_name=${item.character_name}`}>
