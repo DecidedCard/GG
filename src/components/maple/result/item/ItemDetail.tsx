@@ -42,6 +42,9 @@ const ItemDetail = ({ item }: { item: ItemEquipmentPreset }) => {
             className="w-8 h-fit"
           />
         </div>
+        <p className="text-body/14px text-yellow-300">
+          REQ LEV : {item.item_base_option.base_equipment_level}
+        </p>
       </div>
       <div className="flex flex-col gap-1 p-4 w-full text-body/14px border-t border-solid border-gray-500">
         <p>장비분류: {item.item_equipment_part}</p>
