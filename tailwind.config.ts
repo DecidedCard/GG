@@ -15,6 +15,7 @@ const config: Config = {
         DungGeunMo: ["DungGeunMo", "sans-serif"],
       },
       fontSize: {
+        "title/24px": ["24px", { lineHeight: "110%", fontWeight: "700" }],
         "title/28px": ["28px", { lineHeight: "110%", fontWeight: "700" }],
         "title/32px": ["32px", { lineHeight: "110%", fontWeight: "700" }],
         "title/40px": ["40px", { lineHeight: "110%", fontWeight: "700" }],
