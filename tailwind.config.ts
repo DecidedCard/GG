@@ -25,6 +25,26 @@ const config: Config = {
         "body/22px": ["22px", { lineHeight: "100%", fontWeight: "400" }],
         "body/26px": ["26px", { lineHeight: "100%", fontWeight: "400" }],
       },
+      colors: {
+        primary: {
+          100: "#0D6E6E",
+          200: "#4a9d9c",
+          300: "#afffff",
+        },
+        accent: {
+          100: "#FF3D3D",
+          200: "#ffe0c8",
+        },
+        text: {
+          100: "#FFFFFF",
+          200: "#e0e0e0",
+        },
+        bg: {
+          100: "#0D1F2D",
+          200: "#1d2e3d",
+          300: "#354656",
+        },
+      },
       screens: {
         md: { min: "801px", max: "1200px" },
         sm: { max: "800px" },
