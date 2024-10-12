@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className="font-Pretendard antialiased">
+      <body className="font-Pretendard antialiased bg-bg-100">
         <Provider>
           <Header />
           {children}
