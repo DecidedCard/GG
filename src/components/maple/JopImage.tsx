@@ -1,7 +1,7 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 
-import Adele from "@/../public/assets/maple/jopImage/Adele.jpg";
+import Adele from "@/../public/assets/maple/jopImage/Adele.png";
 import Angelic_Buster from "@/../public/assets/maple/jopImage/Angelic_Buster.jpg";
 import Aran from "@/../public/assets/maple/jopImage/Aran.jpg";
 import Arch_Mage_FP from "@/../public/assets/maple/jopImage/Arch_Mage_FP.jpg";
