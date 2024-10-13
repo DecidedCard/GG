@@ -19,7 +19,7 @@ const ItemDetail = ({ item }: { item: ItemEquipmentPreset }) => {
       "border-4 border-solid border-green-300");
 
   return (
-    <div className="flex flex-col items-center gap-1 py-4 w-[300px] bg-black text-white rounded-lg">
+    <div className="flex flex-col items-center gap-1 py-4 w-[300px] bg-bg-300 text-white rounded-lg">
       <div className="w-[250px]">
         {item.starforce !== "0" && (
           <StarForceCheck star={parseInt(item.starforce)} />
