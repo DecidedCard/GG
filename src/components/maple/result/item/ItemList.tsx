@@ -12,7 +12,7 @@ const ItemList = ({ item }: { item: Item }) => {
 
   return (
     <section className="flex flex-col gap-3 w-full">
-      <div className="flex justify-end items-center gap-5 px-4 w-full h-10 text-body/14px border border-solid border-black rounded-lg">
+      <div className="flex justify-end items-center gap-5 px-4 w-full h-14 text-body/14px bg-bg-200 rounded-lg">
         <p
           onClick={() =>
             onClickSetItemHandler({
@@ -20,8 +20,8 @@ const ItemList = ({ item }: { item: Item }) => {
               presetNumber: 1,
             })
           }
-          className={`p-1 border border-solid border-black rounded cursor-pointer ${
-            checkPreset === 1 && "bg-black text-white"
+          className={`p-2 rounded cursor-pointer ${
+            checkPreset === 1 && "bg-primary-100"
           }`}
         >
           프리셋1
@@ -33,8 +33,8 @@ const ItemList = ({ item }: { item: Item }) => {
               presetNumber: 2,
             })
           }
-          className={`p-1 border border-solid border-black rounded cursor-pointer ${
-            checkPreset === 2 && "bg-black text-white"
+          className={`p-2 rounded cursor-pointer ${
+            checkPreset === 2 && "bg-primary-100"
           }`}
         >
           프리셋2
@@ -46,15 +46,15 @@ const ItemList = ({ item }: { item: Item }) => {
               presetNumber: 3,
             })
           }
-          className={`p-1 border border-solid border-black rounded cursor-pointer ${
-            checkPreset === 3 && "bg-black text-white"
+          className={`p-2 rounded cursor-pointer ${
+            checkPreset === 3 && "bg-primary-100"
           }`}
         >
           프리셋3
         </p>
       </div>
       <div
-        className={`grid grid-cols-3 gap-4 p-4 w-full border border-solid border-black rounded-md overflow-hidden ease-in-out duration-150 md:grid-cols-2 sm:grid-cols-1 ${
+        className={`grid grid-cols-3 gap-4 p-4 w-full bg-bg-200 rounded-md overflow-hidden ease-in-out duration-150 md:grid-cols-2 sm:grid-cols-1 ${
           isView ? "max-h-[4500px]" : "max-h-[500px]"
         }`}
       >
@@ -64,7 +64,7 @@ const ItemList = ({ item }: { item: Item }) => {
       </div>
       <button
         onClick={onClickToggle}
-        className="w-full h-10 border border-solid border-black rounded-lg"
+        className="w-full h-10 bg-primary-100 rounded-lg"
       >
         {isView ? "접기" : "더보기"}
       </button>
