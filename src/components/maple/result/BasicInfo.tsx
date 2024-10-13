@@ -15,7 +15,7 @@ const BasicInfo = ({
 }) => {
   return (
     <div className="relative flex items-center py-10 px-20 w-full h-[400px] bg-bg-200 rounded-lg overflow-hidden">
-      <div className="absolute -top-28 right-0 opacity-10">
+      <div className="absolute -top-28 right-0 opacity-50">
         <JopImage jop={info.character_class} />
       </div>
       <div className="flex gap-3 z-10">
