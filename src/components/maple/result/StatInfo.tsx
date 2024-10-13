@@ -16,7 +16,7 @@ const StatInfo = ({ info }: { info: CharacterStatInfo }) => {
   return (
     <section className="flex flex-col gap-3">
       <div
-        className={`flex flex-col border p-1 w-60 border-solid border-black rounded-lg overflow-hidden ease-in-out duration-150 ${
+        className={`flex flex-col p-1 w-60 bg-bg-200 rounded-lg overflow-hidden ease-in-out duration-300 ${
           isView ? "max-h-[1100px]" : "max-h-[500px]"
         }`}
       >
@@ -58,7 +58,7 @@ const StatInfo = ({ info }: { info: CharacterStatInfo }) => {
       </div>
       <button
         onClick={onClickToggle}
-        className="w-60 h-10 border border-solid border-black rounded-lg"
+        className="w-60 h-10 bg-primary-100 rounded-lg"
       >
         {isView ? "접기" : "더보기"}
       </button>

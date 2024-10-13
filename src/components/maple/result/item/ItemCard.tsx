@@ -14,7 +14,7 @@ const ItemCard = ({ item }: { item: ItemEquipmentPreset }) => {
     <Tooltip content={<ItemDetail item={item} />}>
       <ul
         key={item.item_name}
-        className="flex flex-col justify-center w-full h-40 border border-solid border-black rounded-lg"
+        className="flex flex-col justify-center w-full h-40 bg-bg-100 rounded-lg"
       >
         <div className="flex gap-3 p-3">
           <Image
@@ -31,7 +31,7 @@ const ItemCard = ({ item }: { item: ItemEquipmentPreset }) => {
           </div>
         </div>
         {item.potential_option_grade && (
-          <div className="flex justify-between px-3 py-1 text-body/14px border-t border-solid border-gray-300">
+          <div className="flex justify-between px-3 py-2 text-body/14px border-t border-solid border-gray-300">
             <span className="w-10 text-center">잠재</span>
             <div className="flex gap-1">
               {item.potential_option_1 && (
@@ -48,7 +48,7 @@ const ItemCard = ({ item }: { item: ItemEquipmentPreset }) => {
         )}
 
         {item.additional_potential_option_grade && (
-          <div className="flex justify-between px-3 py-1 text-body/14px border-t border-solid border-gray-300">
+          <div className="flex justify-between px-3 py-2 text-body/14px border-t border-solid border-gray-300">
             <span className="w-10 text-center">에디</span>
             <div className="flex gap-1">
               {item.additional_potential_option_1 && (

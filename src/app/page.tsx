@@ -2,15 +2,16 @@ import Link from "next/link";
 
 import ImageCard from "@/components/common/ImageCard";
 
-import maple from "@/../public/assets/maple/메이플스토리.jpg";
+import maple from "@/../public/assets/maple/maple.png";
 
 export default function Home() {
   return (
-    <main className="p-4">
-      <p className="text-body/26px">게임 정보 페이지</p>
-      <Link href={"/maple"}>
-        <ImageCard image={maple} alt="메이플" />
-      </Link>
+    <main className="p-4 mx-auto w-[1280px] text-text-100">
+      <div className="p-4 bg-bg-300 h-96 rounded-lg">
+        <Link href={"/maple"}>
+          <ImageCard image={maple} alt="메이플" />
+        </Link>
+      </div>
     </main>
   );
 }
