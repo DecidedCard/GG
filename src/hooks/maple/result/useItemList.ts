@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useState } from "react";
 
 import type { Item, ItemEquipmentPreset } from "@/types/maple/item";
 
@@ -36,23 +36,12 @@ const useItemList = (item: Item) => {
     [preset]
   );
 
-  // 초기 preset 값을 useMemo로 메모이제이션
-  const initialPreset = useMemo(() => {
-    return (
-      (item.preset_no === 1 && item.item_equipment_preset_1) ||
-      (item.preset_no === 2 && item.item_equipment_preset_2) ||
-      (item.preset_no === 3 && item.item_equipment_preset_3) ||
-      item.item_equipment_preset_1
-    );
-  }, [item]);
-
   return {
     isView,
     preset,
     checkPreset,
     onClickToggle,
     onClickSetItemHandler,
-    initialPreset,
   };
 };
 
