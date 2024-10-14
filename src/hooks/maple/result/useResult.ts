@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 import { useCharacterQuery } from "../useQuery";
@@ -12,17 +12,32 @@ const useResult = () => {
   const params = useSearchParams();
   const characterName = params.get("character_name") as string;
 
+  const memoizedCharacterId = useMemo(() => {
+    const cache = new Map();
+
+    return async (name: string) => {
+      if (cache.has(name)) {
+        return cache.get(name);
+      }
+      try {
+        const res = await getCharacterId(name);
+        cache.set(name, res.ocid);
+        return res.ocid;
+      } catch (error) {
+        console.error(error);
+        alert("캐릭터 정보를 가져오는데 실패하였습니다.");
+      }
+    };
+  }, []);
+
   useEffect(() => {
     const localStorageCharacterId = localStorage.getItem("character_id");
     const localStorageCharacterName = localStorage.getItem("character_name");
 
-    const CharacterId = async (name: string) => {
-      try {
-        const res = await getCharacterId(name);
-        setCharacterId(res.ocid);
-      } catch (error) {
-        console.error(error);
-        alert("캐릭터 정보를 가져오는데 실패하였습니다.");
+    const fetchCharacterId = async (name: string) => {
+      const id = await memoizedCharacterId(name);
+      if (id) {
+        setCharacterId(id);
       }
     };
 
@@ -30,13 +45,13 @@ const useResult = () => {
       if (localStorageCharacterId) {
         setCharacterId(localStorageCharacterId);
       } else {
-        CharacterId(localStorageCharacterName);
+        fetchCharacterId(localStorageCharacterName);
       }
     } else {
       console.log("검색결과가 다릅니다.");
-      CharacterId(characterName);
+      fetchCharacterId(characterName);
     }
-  }, [characterName]);
+  }, [characterName, memoizedCharacterId]);
 
   const query = {
     data,
