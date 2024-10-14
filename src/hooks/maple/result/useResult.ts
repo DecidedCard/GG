@@ -48,7 +48,6 @@ const useResult = () => {
         fetchCharacterId(localStorageCharacterName);
       }
     } else {
-      console.log("검색결과가 다릅니다.");
       fetchCharacterId(characterName);
     }
   }, [characterName, memoizedCharacterId]);
