@@ -2,13 +2,13 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import useHeader from "@/hooks/useHeader";
 
 import ArrowRoundDown from "@/assets/ArrowRoundDown";
 import ArrowRoundUp from "@/assets/ArrowRoundUp";
-import Logo from "@/../public/assets/maple/GG_logo.png";
-import Link from "next/link";
+import Logo from "@/../public/assets/GG_logo.png";
 
 const Header = () => {
   const {
