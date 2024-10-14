@@ -13,25 +13,36 @@ const useItemList = (item: Item) => {
 
   const [checkPreset, setCheckPreset] = useState<number>(item.preset_no);
 
+  // isView 상태 변경 함수 메모이제이션
   const onClickToggle = useCallback(() => {
-    setIsView(!isView);
-  }, [isView]);
+    setIsView((prevIsView) => !prevIsView);
+  }, []);
 
-  const onClickSetItemHandler = ({
-    presetItem,
-    presetNumber,
-  }: {
-    presetItem: ItemEquipmentPreset[];
-    presetNumber: number;
-  }) => {
-    if (presetItem === preset) {
-      return;
-    }
-    setPreset(presetItem);
-    setCheckPreset(presetNumber);
+  // presetItem 및 presetNumber가 변경될 때만 함수가 새로 생성되도록 메모이제이션
+  const onClickSetItemHandler = useCallback(
+    ({
+      presetItem,
+      presetNumber,
+    }: {
+      presetItem: ItemEquipmentPreset[];
+      presetNumber: number;
+    }) => {
+      if (presetItem === preset) {
+        return;
+      }
+      setPreset(presetItem);
+      setCheckPreset(presetNumber);
+    },
+    [preset]
+  );
+
+  return {
+    isView,
+    preset,
+    checkPreset,
+    onClickToggle,
+    onClickSetItemHandler,
   };
-
-  return { isView, preset, checkPreset, onClickToggle, onClickSetItemHandler };
 };
 
 export default useItemList;

@@ -7,7 +7,6 @@ import ItemStat from "./ItemStat";
 import ItemPotential from "./ItemPotential";
 
 const ItemDetail = ({ item }: { item: ItemEquipmentPreset }) => {
-  console.log(item);
   const potentialBorderColor =
     (item.potential_option_grade === "레어" &&
       "border-4 border-solid border-blue-400") ||
