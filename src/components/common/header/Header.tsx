@@ -1,24 +1,12 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import useHeader from "@/hooks/useHeader";
+import GameSelector from "./GameSelector";
 
-import ArrowRoundDown from "@/assets/ArrowRoundDown";
-import ArrowRoundUp from "@/assets/ArrowRoundUp";
 import Logo from "@/../public/assets/GG_logo.png";
 
 const Header = () => {
-  const {
-    gameArr,
-    isSelectView,
-    onClickGameSet,
-    onClickIsSelectViewToggleHandler,
-    selectGame,
-  } = useHeader();
-
   return (
     <header className="py-3 px-10 w-full h-28 bg-bg-200">
       <div className="flex items-center gap-10 mx-auto w-[1280px] h-full text-text-100">
@@ -26,31 +14,7 @@ const Header = () => {
           <Image src={Logo} alt="로고" className="w-auto h-full" />
           <h1 className="text-title/32px font-DungGeunMo">Good_Game</h1>
         </Link>
-        <div
-          onClick={onClickIsSelectViewToggleHandler}
-          className="relative flex justify-between items-center p-3 w-48 border border-solid border-text-100 rounded-xl text-body/18px cursor-pointer"
-        >
-          {selectGame ? selectGame : "전체 게임"}
-          {isSelectView ? (
-            <ArrowRoundUp className="w-4 h-4" />
-          ) : (
-            <ArrowRoundDown className="w-4 h-4" />
-          )}
-
-          {isSelectView && (
-            <div className="absolute left-0 -bottom-12 z-30 border border-solid border-text-200 rounded-lg bg-bg-100">
-              {gameArr.map((item) => (
-                <div
-                  key={item.game}
-                  onClick={() => onClickGameSet(item.game)}
-                  className="flex items-center p-3 w-48 text-body/18px cursor-pointer"
-                >
-                  {item.game}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
+        <GameSelector />
       </div>
     </header>
   );

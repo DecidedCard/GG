@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
-const useHeader = () => {
+const useGameSelector = () => {
   const [selectGame, setSelectGame] = useState("");
   const [isSelectView, setIsSelectView] = useState(false);
   const navigation = useRouter();
@@ -21,25 +21,26 @@ const useHeader = () => {
 
   // isSelectView 상태 토글 함수 메모이제이션
   const onClickIsSelectViewToggleHandler = useCallback(() => {
-    setIsSelectView((prev) => !prev);
+    setIsSelectView((prev) => {
+      const newValue = !prev;
+      // console.log("isSelectView:", newValue);
+      return newValue;
+    });
   }, []);
 
   // 게임 설정 클릭 핸들러 메모이제이션
   const onClickGameSet = useCallback(
     (game: string) => {
       if (selectGame === game) {
-        onClickIsSelectViewToggleHandler();
         return;
       }
 
       if (game === "메이플스토리") {
+        setSelectGame(game);
         navigation.push("/maple");
       }
-
-      setSelectGame(game);
-      onClickIsSelectViewToggleHandler();
     },
-    [selectGame, navigation, onClickIsSelectViewToggleHandler]
+    [selectGame, navigation]
   );
 
   return {
@@ -51,4 +52,4 @@ const useHeader = () => {
   };
 };
 
-export default useHeader;
+export default useGameSelector;
