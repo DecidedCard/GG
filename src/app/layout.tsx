@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import Header from "@/components/common/Header";
+import Header from "@/components/common/header/Header";
 import Provider from "./Provider";
 
 import "./globals.css";
