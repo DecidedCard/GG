@@ -13,9 +13,9 @@ const SearchInputBox = () => {
 
   return (
     <div className="flex flex-col justify-center items-center gap-3 w-full h-96">
-      <p className="text-title/32px font-DungGeunMo text-text-100">
+      <h2 className="text-title/32px font-DungGeunMo text-text-100">
         Good_Game Maple
-      </p>
+      </h2>
       <div className="w-[560px]">
         <form onSubmit={form.handleSubmit(onSubmitSearchHandler)}>
           <Input<SearchBox>
