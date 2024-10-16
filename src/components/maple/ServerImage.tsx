@@ -27,7 +27,7 @@ const ServerImage = ({ server }: { server: string }) => {
     (server === "유니온" && Union) ||
     (server === "제니스" && Zenith)) as StaticImageData;
 
-  return image && <Image src={image} alt={server} />;
+  return image && <Image src={image} alt={server} width={40} height={40} />;
 };
 
 export default ServerImage;

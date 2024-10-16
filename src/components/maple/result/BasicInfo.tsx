@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 
 import ServerImage from "../ServerImage";
+import JopImage from "../JopImage";
 
 import type { Basic } from "@/types/maple/mapleApi";
-import JopImage from "../JopImage";
 
 const BasicInfo = ({
   info,
@@ -25,6 +25,7 @@ const BasicInfo = ({
             alt="character_image"
             width={150}
             height={100}
+            style={{ width: "auto" }}
           />
           <p className="text-body/18px">
             {info.access_flag
