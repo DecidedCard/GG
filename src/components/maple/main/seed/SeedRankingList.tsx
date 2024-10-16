@@ -13,7 +13,7 @@ const SeedRankingList = ({ ranking }: { ranking: SeedRanking[] }) => {
       <div className="flex justify-between items-center">
         <h3 className="text-title/24px">TODAY 더 시드 랭킹</h3>
         <Link
-          href={"/maple/ranking/union"}
+          href={"/maple/ranking/seed"}
           className="flex items-center gap-1 text-text-200 cursor-pointer"
         >
           더보기 <ArrowRoundForward />
