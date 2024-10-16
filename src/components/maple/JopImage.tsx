@@ -96,7 +96,17 @@ const JopImage = ({ jop }: { jop: string }) => {
     (jop === "제논" && Xenon) ||
     (jop === "제로" && Zero)) as StaticImageData;
 
-  return image && <Image src={image} alt={jop} />;
+  return (
+    image && (
+      <Image
+        src={image}
+        alt={jop}
+        width={500}
+        priority={true}
+        style={{ height: "auto" }}
+      />
+    )
+  );
 };
 
 export default JopImage;
