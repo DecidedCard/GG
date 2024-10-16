@@ -3,9 +3,9 @@ import Link from "next/link";
 
 import RankingBar from "./RankingBar";
 import RankingTitle from "./RankingTitle";
+import ArrowRoundForward from "@/assets/ArrowRoundForward";
 
 import type { MapleRankingList } from "@/types/maple/props";
-import ArrowRoundBack from "@/assets/ArrowRoundForward";
 
 const RankingList = ({ ranking, text, link }: MapleRankingList) => {
   return (
@@ -16,7 +16,7 @@ const RankingList = ({ ranking, text, link }: MapleRankingList) => {
           href={link}
           className="flex items-center gap-1 text-text-200 cursor-pointer"
         >
-          더보기 <ArrowRoundBack />
+          더보기 <ArrowRoundForward />
         </Link>
       </div>
       <RankingTitle />
