@@ -1,8 +1,9 @@
 import React from "react";
 
 import { overallRanking } from "@/api/maple/fetch";
+import PageButton from "@/components/maple/ranking/PageButton";
 
-const TotalRanking = async () => {
+const TotalRanking = async ({ params }: { params: { page: number } }) => {
   const { ranking } = await overallRanking("ssr");
   const contents = [...ranking.slice(0, 20)];
 
@@ -34,6 +35,7 @@ const TotalRanking = async () => {
           </ol>
         ))}
       </div>
+      <PageButton length={ranking.length} page={params.page} />
     </main>
   );
 };
