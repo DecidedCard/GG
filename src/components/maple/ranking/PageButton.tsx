@@ -9,21 +9,19 @@ const PageButton = ({ length, page }: { length: number; page: number }) => {
   const totalPages = length / 20;
   const currentPage = page;
 
-  console.log(currentPage);
-
   // 페이지 이동 함수
   const handlePageChange = (page: number) => {
     router.push(`/maple/ranking/total/${page}`);
   };
 
   return (
-    <div className="flex justify-center mt-4">
+    <div className="flex justify-center gap-2 mt-4">
       {Array.from({ length: totalPages }, (_, index) => (
         <button
           key={index}
           onClick={() => handlePageChange(index + 1)}
-          className={`px-4 py-2 mx-1 text-text-100 ${
-            currentPage === index + 1 ? "bg-primary-100" : "bg-bg-200"
+          className={`w-14 h-8 text-text-100 rounded ${
+            currentPage == index + 1 ? "bg-primary-100" : "bg-bg-200"
           }`}
           disabled={currentPage === index + 1}
         >

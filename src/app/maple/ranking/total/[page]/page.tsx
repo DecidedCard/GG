@@ -5,7 +5,9 @@ import PageButton from "@/components/maple/ranking/PageButton";
 
 const TotalRanking = async ({ params }: { params: { page: number } }) => {
   const { ranking } = await overallRanking("ssr");
-  const contents = [...ranking.slice(0, 20)];
+
+  const contentsIndex = params.page * 20;
+  const contents = [...ranking.slice(contentsIndex - 20, contentsIndex)];
 
   return (
     <main className="p-5 mx-auto w-[1280px] text-text-100">
