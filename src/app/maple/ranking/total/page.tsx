@@ -3,9 +3,9 @@ import React from "react";
 import { overallRanking } from "@/api/maple/fetch";
 
 const TotalRanking = async () => {
-  const { ranking } = await overallRanking();
+  const { ranking } = await overallRanking("ssr");
   const contents = [...ranking.slice(0, 20)];
-  console.log(contents);
+
   return (
     <main className="p-5 mx-auto w-[1280px] text-text-100">
       <h2>TODAY 일반월드 랭킹</h2>
@@ -23,9 +23,13 @@ const TotalRanking = async () => {
                 {item.sub_class_name ? item.sub_class_name : item.class_name}
               </p>
             </div>
-            <div className="flex gap-4">
-              <p>{item.character_popularity}</p>
-              {item.character_guildname && <p>{item.character_guildname}</p>}
+            <div className="flex gap-4 text-center">
+              <p className="w-20">{item.character_popularity}</p>
+              <p className="w-20">
+                {item.character_guildname
+                  ? item.character_guildname
+                  : "길드없음"}
+              </p>
             </div>
           </ol>
         ))}

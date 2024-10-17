@@ -13,16 +13,25 @@ const baseURL = "https://open.api.nexon.com";
 const revalidate = 60 * 60 * 8;
 
 //ISR을 사용하기 위해 fetch를 활용해서 작성
-export const overallRanking = async (): Promise<ResponseOverallRanking> => {
+export const overallRanking = async (
+  type: "ssr" | "isr"
+): Promise<ResponseOverallRanking> => {
   const today = timeCheck(formatDate(new Date()), "08-30");
-  try {
-    const res = await fetch(
-      `${baseURL}/maplestory/v1/ranking/overall?date=${today}`,
-      {
+
+  const dataFetch =
+    (type === "isr" &&
+      fetch(`${baseURL}/maplestory/v1/ranking/overall?date=${today}`, {
         headers: { "x-nxopen-api-key": apiKey } as HeadersInit,
         next: { revalidate },
-      }
-    );
+      })) ||
+    ((type === "ssr" &&
+      fetch(`${baseURL}/maplestory/v1/ranking/overall?date=${today}`, {
+        headers: { "x-nxopen-api-key": apiKey } as HeadersInit,
+        cache: "no-cache",
+      })) as Promise<Response>);
+
+  try {
+    const res = await dataFetch;
     return await res.json();
   } catch (error) {
     return Promise.reject(error);
