@@ -10,8 +10,8 @@ const TotalRanking = async ({ params }: { params: { page: number } }) => {
   const contents = [...ranking.slice(contentsIndex - 20, contentsIndex)];
 
   return (
-    <main className="p-5 mx-auto w-[1280px] text-text-100">
-      <h2>TODAY 일반월드 랭킹</h2>
+    <main className="flex flex-col gap-5 p-5 mx-auto w-[1280px] text-text-100">
+      <h2 className="text-title/28px">TODAY 일반월드 랭킹</h2>
       <div className="flex flex-col gap-4 p-5 bg-bg-200">
         {contents.map((item) => (
           <ol
