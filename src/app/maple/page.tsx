@@ -15,7 +15,7 @@ import {
 } from "@/api/maple/fetch";
 
 const Maple = async () => {
-  const { ranking } = await overallRanking("isr");
+  const { ranking } = await overallRanking();
   const { ranking: Reboot } = await RebootOverallRanking();
   const { ranking: union } = await unionRanking();
   const { ranking: dojang } = await dojangRanking();

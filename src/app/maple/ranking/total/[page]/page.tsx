@@ -4,7 +4,7 @@ import { overallRanking } from "@/api/maple/fetch";
 import PageButton from "@/components/maple/ranking/PageButton";
 
 const TotalRanking = async ({ params }: { params: { page: number } }) => {
-  const { ranking } = await overallRanking("ssr");
+  const { ranking } = await overallRanking();
 
   const contentsIndex = params.page * 20;
   const contents = [...ranking.slice(contentsIndex - 20, contentsIndex)];
