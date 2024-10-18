@@ -34,7 +34,7 @@ const ItemCard = ({ item }: { item: ItemEquipmentPreset }) => {
           </div>
         </div>
         {item.potential_option_grade && (
-          <div className="flex justify-between px-3 py-2 text-body/14px border-t border-solid border-gray-300">
+          <div className="flex justify-between px-3 py-2 text-body/14px">
             <span className="w-10 text-center">잠재</span>
             <div className="flex gap-1">
               {item.potential_option_1 && (
@@ -51,7 +51,7 @@ const ItemCard = ({ item }: { item: ItemEquipmentPreset }) => {
         )}
 
         {item.additional_potential_option_grade && (
-          <div className="flex justify-between px-3 py-2 text-body/14px border-t border-solid border-gray-300">
+          <div className="flex justify-between px-3 py-2 text-body/14px">
             <span className="w-10 text-center">에디</span>
             <div className="flex gap-1">
               {item.additional_potential_option_1 && (
