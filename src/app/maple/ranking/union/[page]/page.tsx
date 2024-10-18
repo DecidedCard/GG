@@ -2,6 +2,8 @@ import React from "react";
 
 import { unionRanking } from "@/api/maple/fetch";
 import PageButton from "@/components/maple/ranking/PageButton";
+import Link from "next/link";
+import ArrowRoundBack from "@/assets/ArrowRoundBack";
 
 const UnionRankingList = async ({ params }: { params: { page: number } }) => {
   const { ranking } = await unionRanking();
@@ -11,7 +13,12 @@ const UnionRankingList = async ({ params }: { params: { page: number } }) => {
 
   return (
     <main className="flex flex-col gap-5 p-5 mx-auto w-[1280px] text-text-100">
-      <h2 className="text-title/28px">TODAY 유니온 랭킹</h2>
+      <h2 className="flex justify-between text-title/28px">
+        <Link href={"/maple"}>
+          <ArrowRoundBack />
+        </Link>
+        TODAY 유니온 랭킹
+      </h2>
       <div className="flex flex-col gap-4 p-5 bg-bg-200">
         {contents.map((item) => (
           <ol

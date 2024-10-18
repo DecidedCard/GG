@@ -1,4 +1,7 @@
 import React from "react";
+import Link from "next/link";
+
+import ArrowRoundBack from "@/assets/ArrowRoundBack";
 
 import type { OverallRanking } from "@/types/maple/mapleApi";
 
@@ -11,7 +14,12 @@ const LevelRanking = ({
 }) => {
   return (
     <>
-      <h2 className="text-title/28px">{text}</h2>
+      <h2 className="flex justify-between text-title/28px">
+        <Link href={"/maple"}>
+          <ArrowRoundBack />
+        </Link>
+        {text}
+      </h2>
       <div className="flex flex-col gap-4 p-5 bg-bg-200">
         {contents.map((item) => (
           <ol
