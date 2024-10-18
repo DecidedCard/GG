@@ -15,12 +15,12 @@ const PageButton = ({ length, page }: { length: number; page: number }) => {
   };
 
   return (
-    <div className="flex justify-center gap-2 mt-4">
+    <div className="flex justify-center gap-4 mt-4">
       {Array.from({ length: totalPages }, (_, index) => (
         <button
           key={index}
           onClick={() => handlePageChange(index + 1)}
-          className={`w-14 h-8 text-text-100 rounded ${
+          className={`w-14 h-10 text-text-100 rounded ${
             currentPage == index + 1 ? "bg-primary-100" : "bg-bg-200"
           }`}
           disabled={currentPage === index + 1}
