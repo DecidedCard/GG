@@ -13,7 +13,7 @@ const DojangRankingList = ({ ranking }: { ranking: DojangRanking[] }) => {
       <div className="flex justify-between items-center">
         <h3 className="text-title/24px">TODAY 무릉도장 랭킹</h3>
         <Link
-          href={"/maple/ranking/dojang"}
+          href={"/maple/ranking/dojang/1"}
           className="flex items-center gap-1 text-text-200 cursor-pointer"
         >
           더보기 <ArrowRoundForward />
