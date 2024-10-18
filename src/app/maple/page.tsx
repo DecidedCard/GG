@@ -28,12 +28,12 @@ const Maple = async () => {
         <RankingList
           ranking={ranking}
           text="TODAY 일반월드 종합 랭킹"
-          link="/maple/ranking/total"
+          link="/maple/ranking/total/1"
         />
         <RankingList
           ranking={Reboot}
           text="TODAY 리부트월드 종합 랭킹"
-          link="/maple/ranking/reboot"
+          link="/maple/ranking/reboot/1"
         />
         <UnionRankingList ranking={union} />
         <DojangRankingList ranking={dojang} />
