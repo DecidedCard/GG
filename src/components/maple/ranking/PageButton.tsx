@@ -3,7 +3,15 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 
-const PageButton = ({ length, page }: { length: number; page: number }) => {
+const PageButton = ({
+  length,
+  page,
+  check,
+}: {
+  length: number;
+  page: number;
+  check: string;
+}) => {
   const router = useRouter();
 
   const totalPages = length / 20;
@@ -11,7 +19,7 @@ const PageButton = ({ length, page }: { length: number; page: number }) => {
 
   // 페이지 이동 함수
   const handlePageChange = (page: number) => {
-    router.push(`/maple/ranking/total/${page}`);
+    router.push(`/maple/ranking/${check}/${page}`);
   };
 
   return (

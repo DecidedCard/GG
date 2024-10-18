@@ -32,7 +32,7 @@ const UnionRankingList = async ({ params }: { params: { page: number } }) => {
           </ol>
         ))}
       </div>
-      <PageButton length={ranking.length} page={params.page} />
+      <PageButton length={ranking.length} page={params.page} check="union" />
     </main>
   );
 };

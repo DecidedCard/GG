@@ -2,19 +2,19 @@ import React from "react";
 
 import PageButton from "@/components/maple/ranking/PageButton";
 
-import { seedRanking } from "@/api/maple/fetch";
+import { dojangRanking } from "@/api/maple/fetch";
 
 import formatTime from "@/util/formatTime";
 
 const SeedRankingList = async ({ params }: { params: { page: number } }) => {
-  const { ranking } = await seedRanking();
+  const { ranking } = await dojangRanking();
 
   const contentsIndex = params.page * 20;
   const contents = [...ranking.slice(contentsIndex - 20, contentsIndex)];
 
   return (
     <main className="flex flex-col gap-5 p-5 mx-auto w-[1280px] text-text-100">
-      <h2 className="text-title/28px">TODAY 더시드 랭킹</h2>
+      <h2 className="text-title/28px">TODAY 무릉도장 랭킹</h2>
       <div className="flex flex-col gap-4 p-5 bg-bg-200">
         {contents.map((item) => (
           <ol
@@ -29,14 +29,14 @@ const SeedRankingList = async ({ params }: { params: { page: number } }) => {
               </p>
             </div>
             <div className="flex gap-4 text-center">
-              <p className="w-20">{formatTime(item.theseed_time_record)}</p>
-              <p className="w-20">{item.theseed_floor}</p>
+              <p className="w-20">{formatTime(item.dojang_time_record)}</p>
+              <p className="w-20">{item.dojang_floor}</p>
               <p className="w-20">{item.world_name}</p>
             </div>
           </ol>
         ))}
       </div>
-      <PageButton length={ranking.length} page={params.page} check="seed" />
+      <PageButton length={ranking.length} page={params.page} check="dojang" />
     </main>
   );
 };
