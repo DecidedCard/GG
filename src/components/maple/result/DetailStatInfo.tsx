@@ -5,7 +5,7 @@ import formatCharacterStat from "@/util/maple/formatCharacterStat";
 
 const DetailStatInfo = ({ stat }: { stat: FinalStat[] }) => {
   return (
-    <div className="flex flex-col gap-3 p-3 border-b border-solid border-black">
+    <div className="flex flex-col gap-3 p-3 w-56 border-b border-solid border-black">
       {stat.map((item) => {
         const stat = formatCharacterStat(item);
         return (

@@ -1,14 +1,17 @@
 import React from "react";
 
-import { overallRanking } from "@/api/maple/fetch";
+import type { OverallRanking } from "@/types/maple/mapleApi";
 
-const TotalRanking = async () => {
-  const { ranking } = await overallRanking("ssr");
-  const contents = [...ranking.slice(0, 20)];
-
+const LevelRanking = ({
+  contents,
+  text,
+}: {
+  contents: OverallRanking[];
+  text: string;
+}) => {
   return (
-    <main className="p-5 mx-auto w-[1280px] text-text-100">
-      <h2>TODAY 일반월드 랭킹</h2>
+    <>
+      <h2 className="text-title/28px">{text}</h2>
       <div className="flex flex-col gap-4 p-5 bg-bg-200">
         {contents.map((item) => (
           <ol
@@ -34,8 +37,8 @@ const TotalRanking = async () => {
           </ol>
         ))}
       </div>
-    </main>
+    </>
   );
 };
 
-export default TotalRanking;
+export default LevelRanking;

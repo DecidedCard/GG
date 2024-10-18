@@ -15,7 +15,7 @@ import {
 } from "@/api/maple/fetch";
 
 const Maple = async () => {
-  const { ranking } = await overallRanking("isr");
+  const { ranking } = await overallRanking();
   const { ranking: Reboot } = await RebootOverallRanking();
   const { ranking: union } = await unionRanking();
   const { ranking: dojang } = await dojangRanking();
@@ -24,16 +24,16 @@ const Maple = async () => {
   return (
     <>
       <SearchInputBox />
-      <section className="mx-auto w-[1280px] grid grid-cols-2 gap-5 p-4 md:grid-cols-1">
+      <section className="mx-auto w-[1280px] grid grid-cols-2 gap-5 pb-20 md:grid-cols-1">
         <RankingList
           ranking={ranking}
           text="TODAY 일반월드 종합 랭킹"
-          link="/maple/ranking/total"
+          link="/maple/ranking/total/1"
         />
         <RankingList
           ranking={Reboot}
           text="TODAY 리부트월드 종합 랭킹"
-          link="/maple/ranking/reboot"
+          link="/maple/ranking/reboot/1"
         />
         <UnionRankingList ranking={union} />
         <DojangRankingList ranking={dojang} />

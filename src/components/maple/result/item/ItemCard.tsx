@@ -28,6 +28,9 @@ const ItemCard = ({ item }: { item: ItemEquipmentPreset }) => {
             <p>{item.item_equipment_part}</p>
             <p>{item.item_name}</p>
             {item.starforce !== "0" && <p>⭐{item.starforce}</p>}
+            {item.special_ring_level !== 0 && (
+              <p>Lv. {item.special_ring_level}</p>
+            )}
           </div>
         </div>
         {item.potential_option_grade && (

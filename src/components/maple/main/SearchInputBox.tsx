@@ -12,7 +12,7 @@ const SearchInputBox = () => {
   const { form, onSubmitSearchHandler } = useSearchInputBox();
 
   return (
-    <div className="flex flex-col justify-center items-center gap-3 w-full h-96">
+    <div className="flex flex-col justify-center items-center gap-3 w-full h-72">
       <h2 className="text-title/32px font-DungGeunMo text-text-100">
         Good_Game Maple
       </h2>

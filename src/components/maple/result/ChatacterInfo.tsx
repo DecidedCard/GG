@@ -29,7 +29,7 @@ const CharacterInfo = () => {
 
   return (
     query.data && (
-      <div className="relative flex flex-col gap-4 mt-5 mx-auto w-[1280px] text-text-100 md:w-full sm:w-full">
+      <div className="relative flex flex-col gap-4 mt-5 mx-auto w-[1280px] h-[3000px] text-text-100 md:w-full sm:w-full">
         <Link href={"/maple"} className="absolute top-4 left-4 z-20">
           <ArrowRoundBack className="w-9 h-9 text-primary-200 cursor-pointer" />
         </Link>

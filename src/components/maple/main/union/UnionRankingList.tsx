@@ -13,7 +13,7 @@ const UnionRankingList = ({ ranking }: { ranking: UnionRanking[] }) => {
       <div className="flex justify-between items-center">
         <h3 className="text-title/24px">TODAY 유니온 랭킹</h3>
         <Link
-          href={"/maple/ranking/union"}
+          href={"/maple/ranking/union/1"}
           className="flex items-center gap-1 text-text-200 cursor-pointer"
         >
           더보기 <ArrowRoundForward />
