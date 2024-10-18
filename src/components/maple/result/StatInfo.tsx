@@ -31,7 +31,7 @@ const StatInfo = ({ info }: { info: CharacterStatInfo }) => {
           </p>
           <p className="text-body/14px text-gray-400">스탯 공격력</p>
         </div>
-        <div className="grid grid-cols-3 gap-3 p-3 border-b border-solid border-black">
+        <div className="grid grid-cols-3 gap-5 p-3 border-b border-solid border-black">
           {info.final_stat.slice(16, 22).map((item) => (
             <ul
               key={item.stat_name}
