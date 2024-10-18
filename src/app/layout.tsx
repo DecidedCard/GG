@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import Header from "@/components/common/header/Header";
+import Footer from "@/components/common/Footer";
 import Provider from "./Provider";
 
 import "./globals.css";
@@ -28,11 +29,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
-      <body className="font-Pretendard antialiased bg-bg-100">
+    <html lang="ko" className="h-full">
+      <body className="font-Pretendard antialiased bg-bg-100 h-full">
         <Provider>
           <Header />
           {children}
+          <Footer />
         </Provider>
       </body>
     </html>
