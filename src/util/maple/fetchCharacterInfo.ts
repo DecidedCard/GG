@@ -1,5 +1,6 @@
 import {
   basicCharacterInfo,
+  cashItemCharacterInfo,
   itemCharacterInfo,
   popularityCharacterInfo,
   statCharacterInfo,
@@ -7,14 +8,16 @@ import {
 
 const fetchFullCharacterInfo = async (id: string) => {
   try {
-    const [basicInfo, statInfo, popularityInfo, itemInfo] = await Promise.all([
-      basicCharacterInfo(id),
-      statCharacterInfo(id),
-      popularityCharacterInfo(id),
-      itemCharacterInfo(id),
-    ]);
+    const [basicInfo, statInfo, popularityInfo, itemInfo, cashItemInfo] =
+      await Promise.all([
+        basicCharacterInfo(id),
+        statCharacterInfo(id),
+        popularityCharacterInfo(id),
+        itemCharacterInfo(id),
+        cashItemCharacterInfo(id),
+      ]);
 
-    return { basicInfo, statInfo, popularityInfo, itemInfo };
+    return { basicInfo, statInfo, popularityInfo, itemInfo, cashItemInfo };
   } catch (error) {
     console.error("Error fetching character info:", error);
     return Promise.reject(error);
