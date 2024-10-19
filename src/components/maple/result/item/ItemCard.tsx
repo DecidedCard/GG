@@ -10,6 +10,19 @@ import formatItemStat from "@/util/maple/formatItemStat";
 import type { ItemEquipmentPreset } from "@/types/maple/item";
 
 const ItemCard = ({ item }: { item: ItemEquipmentPreset }) => {
+  const potentialColor =
+    (item.potential_option_grade === "레어" && "text-blue-400") ||
+    (item.potential_option_grade === "에픽" && "text-violet-500") ||
+    (item.potential_option_grade === "유니크" && "text-yellow-300") ||
+    (item.potential_option_grade === "레전드리" && "text-green-300");
+
+  const additionalColor =
+    (item.additional_potential_option_grade === "레어" && "text-blue-400") ||
+    (item.additional_potential_option_grade === "에픽" && "text-violet-500") ||
+    (item.additional_potential_option_grade === "유니크" &&
+      "text-yellow-300") ||
+    (item.additional_potential_option_grade === "레전드리" && "text-green-300");
+
   return (
     <Tooltip content={<ItemDetail item={item} />}>
       <ul
@@ -34,7 +47,9 @@ const ItemCard = ({ item }: { item: ItemEquipmentPreset }) => {
           </div>
         </div>
         {item.potential_option_grade && (
-          <div className="flex justify-between px-3 py-2 text-body/14px border-t border-solid border-gray-300">
+          <div
+            className={`flex justify-between px-3 py-2 text-body/14px ${potentialColor}`}
+          >
             <span className="w-10 text-center">잠재</span>
             <div className="flex gap-1">
               {item.potential_option_1 && (
@@ -51,7 +66,9 @@ const ItemCard = ({ item }: { item: ItemEquipmentPreset }) => {
         )}
 
         {item.additional_potential_option_grade && (
-          <div className="flex justify-between px-3 py-2 text-body/14px border-t border-solid border-gray-300">
+          <div
+            className={`flex justify-between px-3 py-2 text-body/14px ${additionalColor}`}
+          >
             <span className="w-10 text-center">에디</span>
             <div className="flex gap-1">
               {item.additional_potential_option_1 && (

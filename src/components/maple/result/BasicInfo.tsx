@@ -3,18 +3,22 @@ import Image from "next/image";
 
 import ServerImage from "../ServerImage";
 import JopImage from "../JopImage";
+import CashItemCard from "./CashItemCard";
 
 import type { Basic } from "@/types/maple/mapleApi";
+import type { CashItem } from "@/types/maple/cashItem";
 
 const BasicInfo = ({
   info,
   popularity,
+  cashItem,
 }: {
   info: Basic;
   popularity: number;
+  cashItem: CashItem;
 }) => {
   return (
-    <div className="relative flex items-center py-10 px-20 w-full h-[400px] bg-bg-200 rounded-lg overflow-hidden">
+    <div className="relative flex items-center gap-5 py-10 px-20 w-full h-[400px] bg-bg-200 rounded-lg overflow-hidden">
       <div className="absolute top-0 right-0 opacity-50">
         <JopImage jop={info.character_class} />
       </div>
@@ -55,6 +59,7 @@ const BasicInfo = ({
           </div>
         </div>
       </div>
+      <CashItemCard cashItem={cashItem} />
     </div>
   );
 };

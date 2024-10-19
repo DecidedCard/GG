@@ -36,6 +36,7 @@ const CharacterInfo = () => {
         <BasicInfo
           info={query.data.basicInfo}
           popularity={query.data.popularityInfo.popularity}
+          cashItem={query.data.cashItemInfo}
         />
         <div className="flex gap-3 mx-auto w-[1280px] md:w-full sm:w-full">
           <StatInfo info={query.data.statInfo} />
