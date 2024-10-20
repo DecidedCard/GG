@@ -11,9 +11,10 @@ import Spinner from "@/components/common/Spinner";
 import useResult from "@/hooks/maple/result/useResult";
 
 import ArrowRoundBack from "@/assets/ArrowRoundBack";
+import InfoNav from "./InfoNav";
 
 const CharacterInfo = () => {
-  const { query } = useResult();
+  const { info, query, onClickCharacterInfoSet } = useResult();
 
   if (query.isFetching) {
     return (
@@ -38,9 +39,17 @@ const CharacterInfo = () => {
           popularity={query.data.popularityInfo.popularity}
           cashItem={query.data.cashItemInfo}
         />
+        <InfoNav
+          info={info}
+          onClickCharacterInfoSet={onClickCharacterInfoSet}
+        />
         <div className="flex gap-3 mx-auto w-[1280px] md:w-full sm:w-full">
-          <StatInfo info={query.data.statInfo} />
-          <ItemList item={query.data.itemInfo} />
+          {info === "stat" && (
+            <>
+              <StatInfo info={query.data.statInfo} />
+              <ItemList item={query.data.itemInfo} />
+            </>
+          )}
         </div>
       </div>
     )
