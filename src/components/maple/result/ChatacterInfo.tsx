@@ -44,17 +44,18 @@ const CharacterInfo = () => {
           info={info}
           onClickCharacterInfoSet={onClickCharacterInfoSet}
         />
-        <div className="flex gap-3 mx-auto w-[1280px] md:w-full sm:w-full">
+        <div className="mx-auto w-[1280px] md:w-full sm:w-full">
           {info === "stat" && (
-            <>
+            <div className="flex gap-3">
               <StatInfo info={query.data.statInfo} />
               <ItemList item={query.data.itemInfo} />
-            </>
+            </div>
           )}
           {info === "skill" && (
-            <>
+            <div className="flex flex-col gap-5">
+              <SkillList skillInfo={query.data.sixthSkillInfo} />
               <SkillList skillInfo={query.data.fifthSkillInfo} />
-            </>
+            </div>
           )}
         </div>
       </div>
