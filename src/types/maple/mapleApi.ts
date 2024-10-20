@@ -114,7 +114,7 @@ export interface Skill {
   character_skill: CharacterSkill[];
 }
 
-interface CharacterSkill {
+export interface CharacterSkill {
   skill_name: string;
   skill_description: string;
   skill_level: number;
