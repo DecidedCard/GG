@@ -10,7 +10,7 @@ const InfoNav = ({
   onClickCharacterInfoSet: (arg: Info) => void;
 }) => {
   return (
-    <div className="flex items-center px-4 gap-5 w-full h-16 bg-bg-200">
+    <nav className="flex items-center px-4 gap-5 w-full h-16 bg-bg-200">
       <button
         onClick={() => onClickCharacterInfoSet("stat")}
         className={`py-2 w-28 h-fit border border-solid border-text-100 rounded-lg ${
@@ -27,7 +27,7 @@ const InfoNav = ({
       >
         스킬
       </button>
-    </div>
+    </nav>
   );
 };
 
