@@ -7,11 +7,12 @@ import BasicInfo from "@/components/maple/result/BasicInfo";
 import StatInfo from "@/components/maple/result/StatInfo";
 import ItemList from "@/components/maple/result/item/ItemList";
 import Spinner from "@/components/common/Spinner";
+import SkillList from "./skill/SkillList";
+import InfoNav from "./InfoNav";
 
 import useResult from "@/hooks/maple/result/useResult";
 
 import ArrowRoundBack from "@/assets/ArrowRoundBack";
-import InfoNav from "./InfoNav";
 
 const CharacterInfo = () => {
   const { info, query, onClickCharacterInfoSet } = useResult();
@@ -48,6 +49,11 @@ const CharacterInfo = () => {
             <>
               <StatInfo info={query.data.statInfo} />
               <ItemList item={query.data.itemInfo} />
+            </>
+          )}
+          {info === "skill" && (
+            <>
+              <SkillList skillInfo={query.data.fifthSkillInfo} />
             </>
           )}
         </div>
