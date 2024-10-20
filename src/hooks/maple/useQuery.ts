@@ -12,5 +12,9 @@ export const useCharacterQuery = (id: string) => {
     refetchOnWindowFocus: false,
   });
 
+  if (isError) {
+    alert("데이터를 가져오는데 실패하였습니다.");
+  }
+
   return { isFetching, isError, data };
 };

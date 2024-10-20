@@ -7,13 +7,15 @@ import BasicInfo from "@/components/maple/result/BasicInfo";
 import StatInfo from "@/components/maple/result/StatInfo";
 import ItemList from "@/components/maple/result/item/ItemList";
 import Spinner from "@/components/common/Spinner";
+import SkillList from "./skill/SkillList";
+import InfoNav from "./InfoNav";
 
 import useResult from "@/hooks/maple/result/useResult";
 
 import ArrowRoundBack from "@/assets/ArrowRoundBack";
 
 const CharacterInfo = () => {
-  const { query } = useResult();
+  const { info, query, onClickCharacterInfoSet } = useResult();
 
   if (query.isFetching) {
     return (
@@ -38,9 +40,22 @@ const CharacterInfo = () => {
           popularity={query.data.popularityInfo.popularity}
           cashItem={query.data.cashItemInfo}
         />
+        <InfoNav
+          info={info}
+          onClickCharacterInfoSet={onClickCharacterInfoSet}
+        />
         <div className="flex gap-3 mx-auto w-[1280px] md:w-full sm:w-full">
-          <StatInfo info={query.data.statInfo} />
-          <ItemList item={query.data.itemInfo} />
+          {info === "stat" && (
+            <>
+              <StatInfo info={query.data.statInfo} />
+              <ItemList item={query.data.itemInfo} />
+            </>
+          )}
+          {info === "skill" && (
+            <>
+              <SkillList skillInfo={query.data.fifthSkillInfo} />
+            </>
+          )}
         </div>
       </div>
     )

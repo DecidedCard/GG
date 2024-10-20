@@ -1,12 +1,16 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 import { useCharacterQuery } from "../useQuery";
 
 import { getCharacterId } from "@/api/maple/axios";
 
+export type Info = "stat" | "skill";
+
 const useResult = () => {
   const [characterId, setCharacterId] = useState("");
+  const [info, setInfo] = useState<Info>("stat");
+
   const { data, isError, isFetching } = useCharacterQuery(characterId);
 
   const params = useSearchParams();
@@ -52,13 +56,17 @@ const useResult = () => {
     }
   }, [characterName, memoizedCharacterId]);
 
+  const onClickCharacterInfoSet = useCallback((arg: Info) => {
+    setInfo(arg);
+  }, []);
+
   const query = {
     data,
     isError,
     isFetching,
   };
 
-  return { query };
+  return { info, query, onClickCharacterInfoSet };
 };
 
 export default useResult;

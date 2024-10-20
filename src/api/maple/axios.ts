@@ -5,6 +5,7 @@ import type {
   CharacterId,
   CharacterStatInfo,
   Popularity,
+  Skill,
 } from "@/types/maple/mapleApi";
 import type { Item } from "@/types/maple/item";
 import type { CashItem } from "@/types/maple/cashItem";
@@ -77,6 +78,28 @@ export const cashItemCharacterInfo = async (id: string): Promise<CashItem> => {
   try {
     const res = await maple.get(
       `/maplestory/v1/character/cashitem-equipment?ocid=${id}`
+    );
+    return res.data;
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};
+
+export const fifthSkillCharacterInfo = async (id: string): Promise<Skill> => {
+  try {
+    const res = await maple.get(
+      `/maplestory/v1/character/skill?ocid=${id}&character_skill_grade=5`
+    );
+    return res.data;
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};
+
+export const sixthSkillCharacterInfo = async (id: string): Promise<Skill> => {
+  try {
+    const res = await maple.get(
+      `/maplestory/v1/character/skill?ocid=${id}&character_skill_grade=6`
     );
     return res.data;
   } catch (error) {
