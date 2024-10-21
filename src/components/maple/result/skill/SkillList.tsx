@@ -6,7 +6,6 @@ import { Tooltip } from "@nextui-org/tooltip";
 import SkillDetail from "./SkillDetail";
 
 const SkillList = ({ skillInfo }: { skillInfo: Skill }) => {
-  console.log(skillInfo);
   return (
     <section className="flex flex-col gap-5 p-6 bg-bg-200 rounded-lg">
       <h3 className="text-title/24px">
