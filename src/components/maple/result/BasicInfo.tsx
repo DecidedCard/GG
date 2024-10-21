@@ -7,6 +7,7 @@ import CashItemCard from "./CashItemCard";
 
 import type { Basic } from "@/types/maple/mapleApi";
 import type { CashItem } from "@/types/maple/cashItem";
+import FavoriteCheck from "./FavoriteCheck";
 
 const BasicInfo = ({
   info,
@@ -19,6 +20,7 @@ const BasicInfo = ({
 }) => {
   return (
     <div className="relative flex items-center gap-5 py-10 px-20 w-full h-[400px] bg-bg-200 rounded-lg overflow-hidden">
+      <FavoriteCheck character={info.character_name} />
       <div className="absolute top-0 right-0 opacity-50">
         <JopImage jop={info.character_class} />
       </div>
