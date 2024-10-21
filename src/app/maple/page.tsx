@@ -5,6 +5,7 @@ import UnionRankingList from "@/components/maple/main/union/UnionRankingList";
 import DojangRankingList from "@/components/maple/main/dojang/DojangRankingList";
 import SeedRankingList from "@/components/maple/main/seed/SeedRankingList";
 import SearchInputBox from "@/components/maple/main/SearchInputBox";
+import FavoriteList from "@/components/maple/main/FavoriteList";
 
 import {
   dojangRanking,
@@ -24,6 +25,7 @@ const Maple = async () => {
   return (
     <>
       <SearchInputBox />
+      <FavoriteList />
       <section className="mx-auto w-[1280px] grid grid-cols-2 gap-5 pb-20 md:grid-cols-1">
         <RankingList
           ranking={ranking}
