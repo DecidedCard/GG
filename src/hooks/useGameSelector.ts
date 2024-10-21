@@ -23,7 +23,6 @@ const useGameSelector = () => {
   const onClickIsSelectViewToggleHandler = useCallback(() => {
     setIsSelectView((prev) => {
       const newValue = !prev;
-      // console.log("isSelectView:", newValue);
       return newValue;
     });
   }, []);

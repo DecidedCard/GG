@@ -22,7 +22,9 @@ const StatInfo = ({ info }: { info: CharacterStatInfo }) => {
       >
         <div className="flex flex-col justify-center items-center py-4 px-10 w-full">
           <p className="text-body/18px">전투력</p>
-          <p>{info.final_stat[42].stat_value}</p>
+          <p>
+            {Number(info.final_stat[42].stat_value).toLocaleString("ko-KR")}
+          </p>
         </div>
         <div className="flex flex-col gap-1 p-2 border-t border-b border-solid border-black">
           <p>
