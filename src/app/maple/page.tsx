@@ -26,7 +26,7 @@ const Maple = async () => {
     <>
       <SearchInputBox />
       <FavoriteList />
-      <section className="mx-auto w-[1280px] grid grid-cols-2 gap-5 pb-20 md:grid-cols-1">
+      <section className="grid grid-cols-2 gap-5 pb-20 mx-auto w-[1280px] lg:grid-cols-1 lg:w-full md:grid-cols-1 md:w-full sm:grid-cols-1 sm:w-full">
         <RankingList
           ranking={ranking}
           text="TODAY 일반월드 종합 랭킹"

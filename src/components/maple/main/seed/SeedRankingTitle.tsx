@@ -2,16 +2,16 @@ import React from "react";
 
 const SeedRankingTitle = () => {
   return (
-    <div className="flex justify-between py-1 px-3 w-full text-body/14px rounded">
-      <div className="flex justify-between w-40">
-        <p>#</p>
-        <p className="w-32 text-center">캐릭터</p>
+    <div className="flex justify-between py-1 px-3 w-full text-body/14px rounded sm:text-body/10px">
+      <div className="flex justify-between w-40 sm:w-20">
+        <p className="sm:w-8">#</p>
+        <p className="w-32 text-center sm:w-11 sm:text-left">캐릭터</p>
       </div>
-      <div className="flex justify-between w-96">
-        <p>레벨</p>
-        <p className="w-32 text-center">직업</p>
-        <p className="w-10 text-center">층수</p>
-        <p className="w-24 text-center">기록</p>
+      <div className="flex justify-between w-96 sm:w-52">
+        <p className="sm:w-8">레벨</p>
+        <p className="w-32 text-center sm:w-24">직업</p>
+        <p className="w-10 text-center sm:w-8">층수</p>
+        <p className="w-24 text-center sm:w-16">기록</p>
       </div>
     </div>
   );

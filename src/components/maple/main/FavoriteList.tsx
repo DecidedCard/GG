@@ -16,9 +16,9 @@ const FavoriteList = () => {
 
   return (
     list.length !== 0 && (
-      <section className="flex flex-col gap-5 mx-auto mb-10 p-4 w-[700px] text-text-100">
+      <section className="flex flex-col gap-5 mx-auto mb-10 p-4 w-[700px] text-text-100 md:w-[550px] sm:w-[350px]">
         <p className="text-body/22px">즐겨찾기</p>
-        <div className="grid grid-cols-4 gap-5">
+        <div className="flex flex-wrap gap-5">
           {list.map((item) => (
             <Link key={item} href={`/maple/result?character_name=${item}`}>
               <ol className="py-2 w-36 border border-solid border-text-100 text-center rounded-lg">
