@@ -39,12 +39,12 @@ const FavoriteCheck = ({ character }: { character: string }) => {
   return characterCheck ? (
     <MdOutlineStar
       onClick={onClickDeleteFavorite}
-      className="absolute top-4 right-4 z-10 w-10 h-10 text-primary-100 cursor-pointer"
+      className="absolute top-4 right-4 z-10 w-10 h-10 text-primary-100 cursor-pointer sm:w-8 sm:h-8"
     />
   ) : (
     <MdOutlineStarBorder
       onClick={onClickAddFavorite}
-      className="absolute top-4 right-4 z-10 w-10 h-10 text-primary-100 cursor-pointer"
+      className="absolute top-4 right-4 z-10 w-10 h-10 text-primary-100 cursor-pointer sm:w-8 sm:h-8"
     />
   );
 };

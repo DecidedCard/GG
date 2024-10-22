@@ -19,7 +19,7 @@ const BasicInfo = ({
   cashItem: CashItem;
 }) => {
   return (
-    <div className="relative flex items-center gap-5 py-10 px-20 w-full h-[400px] bg-bg-200 rounded-lg overflow-hidden">
+    <div className="relative flex items-center gap-5 py-10 px-20 w-full h-[400px] bg-bg-200 rounded-lg overflow-hidden md:px-10 sm:px-5">
       <FavoriteCheck character={info.character_name} />
       <div className="absolute top-0 right-0 opacity-50">
         <JopImage jop={info.character_class} />
@@ -31,29 +31,31 @@ const BasicInfo = ({
             alt="character_image"
             width={150}
             height={100}
-            style={{ width: "auto" }}
+            className="w-auto "
           />
-          <p className="text-body/18px">
+          <p className="text-body/18px md:text-body/10px sm:text-body/10px">
             {info.access_flag
               ? "최근 7일동안 접속했습니다!"
               : "최근 7일동안 접속하지 않았습니다."}
           </p>
-          <p className="text-body/14px text-gray-400">
+          <p className="text-body/14px text-gray-400 md:text-body/10px sm:text-body/8px">
             since: {info.character_date_create.slice(0, 10)}
           </p>
         </div>
 
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-3">
-            <p className="text-title/28px">{info.character_name}</p>
-            <p className="flex items-center gap-2 py-2 px-3 h-fit text-body/14px bg-bg-100 rounded-3xl">
-              <span className="w-4">
+            <p className="text-title/28px md:text-title/16px sm:text-title/12px">
+              {info.character_name}
+            </p>
+            <p className="flex items-center gap-2 py-2 px-3 h-fit text-body/14px whitespace-nowrap bg-bg-100 rounded-3xl md:text-body/10px sm:text-body/8px">
+              <span className="w-4 md:w-3 sm:w-2">
                 <ServerImage server={info.world_name} />
               </span>
               {info.world_name}
             </p>
           </div>
-          <div className="flex gap-3 text-body/14px text-gray-400">
+          <div className="flex gap-3 text-body/14px text-gray-400 md:text-body/10px sm:text-body/8px">
             <p>Lv.{info.character_level}</p>
             <p>{info.character_class}</p>
             <p>인기도 {popularity}</p>

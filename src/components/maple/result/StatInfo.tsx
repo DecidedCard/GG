@@ -14,7 +14,7 @@ const StatInfo = ({ info }: { info: CharacterStatInfo }) => {
   };
 
   return (
-    <section className="flex flex-col gap-3 w-60">
+    <section className="flex flex-col gap-3 w-60 sm:w-full">
       <div
         className={`flex flex-col p-1 w-full bg-bg-200 rounded-lg overflow-hidden ease-in-out duration-300 ${
           isView ? "max-h-[1100px]" : "max-h-[500px]"
@@ -26,7 +26,7 @@ const StatInfo = ({ info }: { info: CharacterStatInfo }) => {
             {Number(info.final_stat[42].stat_value).toLocaleString("ko-KR")}
           </p>
         </div>
-        <div className="flex flex-col gap-1 p-2 border-t border-b border-solid border-black">
+        <div className="flex flex-col gap-1 p-2 border-t border-b border-solid border-black sm:w-full sm:text-center">
           <p>
             {Number(info.final_stat[0].stat_value).toLocaleString("ko-KR")} ~{" "}
             {Number(info.final_stat[1].stat_value).toLocaleString("ko-KR")}
