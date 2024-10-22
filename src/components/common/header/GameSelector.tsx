@@ -19,7 +19,7 @@ const GameSelector = () => {
   return (
     <div
       onClick={onClickIsSelectViewToggleHandler}
-      className="relative flex justify-between items-center p-3 w-48 border border-solid border-text-100 rounded-xl text-body/18px cursor-pointer"
+      className="relative flex justify-between items-center p-3 w-48 border border-solid border-text-100 rounded-xl text-body/18px cursor-pointer sm:hidden"
     >
       {selectGame ? selectGame : "전체 게임"}
       {isSelectView ? (

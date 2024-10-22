@@ -47,9 +47,9 @@ const config: Config = {
         },
       },
       screens: {
-        lg: { min: "801px", max: "1280px" },
-        md: { min: "376px", max: "800px" },
-        sm: { max: "375px" },
+        lg: { min: "900.01px", max: "1280px" },
+        md: { min: "480.01px", max: "900px" },
+        sm: { max: "480px" },
       },
     },
   },
