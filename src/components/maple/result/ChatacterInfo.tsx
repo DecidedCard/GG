@@ -31,9 +31,9 @@ const CharacterInfo = () => {
 
   return (
     query.data && (
-      <div className="relative flex flex-col gap-4 mt-5 mx-auto w-[1280px] h-[3000px] text-text-100 md:w-full sm:w-full">
+      <div className="relative flex flex-col gap-4 mt-5 mx-auto w-[1280px] h-[3000px] text-text-100 lg:w-full md:w-[625px] sm:w-[450px] sm:h-[6000px]">
         <Link href={"/maple"} className="absolute top-4 left-4 z-20">
-          <ArrowRoundBack className="w-9 h-9 text-primary-200 cursor-pointer" />
+          <ArrowRoundBack className="w-9 h-9 text-primary-200 cursor-pointer sm:w-6 sm:h-6" />
         </Link>
         <BasicInfo
           info={query.data.basicInfo}
@@ -46,7 +46,7 @@ const CharacterInfo = () => {
         />
         <div className="mx-auto w-[1280px] md:w-full sm:w-full">
           {info === "stat" && (
-            <div className="flex gap-3">
+            <div className="flex gap-3 sm:flex-col">
               <StatInfo info={query.data.statInfo} />
               <ItemList item={query.data.itemInfo} />
             </div>

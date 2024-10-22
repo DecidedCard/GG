@@ -16,7 +16,7 @@ const SearchInputBox = () => {
       <h2 className="text-title/32px font-DungGeunMo text-text-100">
         Good_Game Maple
       </h2>
-      <div className="w-[560px]">
+      <div className="w-[560px] md:w-[80%] sm:w-[70%]">
         <form onSubmit={form.handleSubmit(onSubmitSearchHandler)}>
           <Input<SearchBox>
             size="big"
