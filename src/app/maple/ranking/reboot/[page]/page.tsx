@@ -12,7 +12,7 @@ const RebootRanking = async ({ params }: { params: { page: number } }) => {
   const contents = [...ranking.slice(contentsIndex - 20, contentsIndex)];
 
   return (
-    <main className="flex flex-col gap-5 p-5 mx-auto w-[1280px] text-text-100">
+    <main className="flex flex-col gap-5 p-5 mx-auto w-[1280px] text-text-100 lg:w-full md:w-full sm:w-full">
       <LevelRanking contents={contents} text="TODAY 리부트월드 랭킹" />
       <PageButton length={ranking.length} page={params.page} check="reboot" />
     </main>
