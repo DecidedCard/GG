@@ -19,7 +19,7 @@ const BasicInfo = ({
   cashItem: CashItem;
 }) => {
   return (
-    <div className="relative flex items-center gap-5 py-10 px-20 w-full h-[400px] bg-bg-200 rounded-lg overflow-hidden md:px-10 sm:px-5">
+    <div className="relative flex items-center gap-5 py-10 px-20 w-full h-[400px] bg-bg-200 rounded-lg overflow-hidden md:px-10 sm:px-5 sm:flex-col sm:justify-evenly">
       <FavoriteCheck character={info.character_name} />
       <div className="absolute top-0 right-0 opacity-50">
         <JopImage jop={info.character_class} />
@@ -31,9 +31,9 @@ const BasicInfo = ({
             alt="character_image"
             width={150}
             height={100}
-            className="w-auto "
+            className="w-auto"
           />
-          <p className="text-body/18px md:text-body/10px sm:text-body/10px">
+          <p className="text-body/18px md:text-body/10px sm:text-body/8px">
             {info.access_flag
               ? "최근 7일동안 접속했습니다!"
               : "최근 7일동안 접속하지 않았습니다."}
