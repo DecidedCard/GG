@@ -15,14 +15,14 @@ const SeedRankingList = async ({ params }: { params: { page: number } }) => {
   const contents = [...ranking.slice(contentsIndex - 20, contentsIndex)];
 
   return (
-    <main className="flex flex-col gap-5 p-5 mx-auto w-[1280px] text-text-100">
-      <h2 className="flex justify-between text-title/28px">
+    <main className="flex flex-col gap-5 p-5 mx-auto w-[1280px] text-text-100 lg:w-full md:w-full sm:w-full">
+      <h2 className="flex justify-between text-title/28px md:text-title/20px sm:text-title/16px">
         <Link href={"/maple"}>
           <ArrowRoundBack />
         </Link>
         TODAY 무릉도장 랭킹
       </h2>
-      <div className="flex flex-col gap-4 p-5 bg-bg-200">
+      <div className="flex flex-col gap-4 p-5 bg-bg-200 sm:min-w-80">
         {contents.map((item) => (
           <Link
             href={`/maple/result?character_name=${item.character_name}`}
@@ -30,19 +30,21 @@ const SeedRankingList = async ({ params }: { params: { page: number } }) => {
           >
             <ol
               key={item.ranking}
-              className="flex justify-between items-center px-4"
+              className="flex justify-between items-center px-4 md:text-body/14px sm:px-1 sm:text-body/8px"
             >
               <div className="flex gap-4 text-center">
-                <p className="w-12">{item.ranking}</p>
-                <p className="w-28">{item.character_name}</p>
-                <p className="w-28">
+                <p className="w-12 md:w-8 sm:w-4">{item.ranking}</p>
+                <p className="w-28 md:w-20 sm:w-14">{item.character_name}</p>
+                <p className="w-28 md:w-20 sm:w-14">
                   {item.sub_class_name ? item.sub_class_name : item.class_name}
                 </p>
               </div>
               <div className="flex gap-4 text-center">
-                <p className="w-20">{formatTime(item.dojang_time_record)}</p>
-                <p className="w-20">{item.dojang_floor}</p>
-                <p className="w-20">{item.world_name}</p>
+                <p className="w-20 md:w-16 sm:w-10">
+                  {formatTime(item.dojang_time_record)}
+                </p>
+                <p className="w-20 md:w-10 sm:w-6">{item.dojang_floor}</p>
+                <p className="w-20 md:w-16 sm:w-8">{item.world_name}</p>
               </div>
             </ol>
           </Link>
