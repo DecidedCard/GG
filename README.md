@@ -4,7 +4,7 @@
 
 ## 📌 프로젝트 명
 
-![image](https://jrqkhwwuxmnvghqziyjx.supabase.co/storage/v1/object/sign/ogImage/GG_logo.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJvZ0ltYWdlL0dHX2xvZ28ucG5nIiwiaWF0IjoxNzI4OTIwODU1LCJleHAiOjE3NjA0NTY4NTV9.yNbDD3gPSQLMFECKfwGpXVxahYk0QdX5UqsuKzoX2WY&t=2024-10-14T15%3A47%3A36.236Z)
+![GG_logo](https://github.com/user-attachments/assets/6eb114ad-dce8-4515-a2dd-30fb9a9fd2c6)
 
 GG good-game
 
