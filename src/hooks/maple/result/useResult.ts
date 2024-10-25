@@ -3,6 +3,8 @@ import { useSearchParams } from "next/navigation";
 
 import { useCharacterQuery } from "../useQuery";
 
+import useErrorModalStore from "@/store/errorModalStore";
+
 import { getCharacterId } from "@/api/maple/axios";
 
 export type Info = "stat" | "skill";
@@ -10,6 +12,8 @@ export type Info = "stat" | "skill";
 const useResult = () => {
   const [characterId, setCharacterId] = useState("");
   const [info, setInfo] = useState<Info>("stat");
+
+  const { setIsError, setReset } = useErrorModalStore();
 
   const { data, isError, isFetching } = useCharacterQuery(characterId);
 
@@ -23,16 +27,21 @@ const useResult = () => {
       if (cache.has(name)) {
         return cache.get(name);
       }
+
       try {
         const res = await getCharacterId(name);
         cache.set(name, res.ocid);
         return res.ocid;
       } catch (error) {
         console.error(error);
-        alert("캐릭터 정보를 가져오는데 실패하였습니다.");
+        setIsError({
+          isError: true,
+          comment: "검색하는 중에 오류가 생겼습니다.",
+          onClickFn: setReset,
+        });
       }
     };
-  }, []);
+  }, [setIsError, setReset]);
 
   useEffect(() => {
     const localStorageCharacterId = localStorage.getItem("character_id");

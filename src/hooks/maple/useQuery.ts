@@ -1,20 +1,38 @@
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
 import { useQuery } from "@tanstack/react-query";
+
+import useErrorModalStore from "@/store/errorModalStore";
 
 import fetchCharacterInfo from "@/util/maple/fetchCharacterInfo";
 import QUERY_KEY from "@/util/maple/QUERY_KEY";
 
-export const useCharacterQuery = (id: string) => {
+export const useCharacterQuery = (id: string | null) => {
+  const { setIsError, setReset } = useErrorModalStore();
+  const navigation = useRouter();
+
   const { data, isError, isFetching } = useQuery({
     queryKey: [QUERY_KEY.characterInfo],
-    queryFn: () => fetchCharacterInfo(id),
+    queryFn: () => fetchCharacterInfo(id!),
     enabled: !!id,
     retry: 0,
     refetchOnWindowFocus: false,
   });
 
-  if (isError) {
-    alert("데이터를 가져오는데 실패하였습니다.");
-  }
+  useEffect(() => {
+    if (isError) {
+      const onClickHandler = () => {
+        setReset();
+        navigation.push("/maple");
+      };
+      setIsError({
+        isError: true,
+        comment: "검색하는 중에 오류가 생겼습니다.",
+        onClickFn: onClickHandler,
+      });
+    }
+  }, [isError, setIsError, setReset, navigation]);
 
   return { isFetching, isError, data };
 };
