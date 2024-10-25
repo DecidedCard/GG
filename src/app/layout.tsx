@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import Header from "@/components/common/header/Header";
 import Footer from "@/components/common/Footer";
+import ErrorModal from "@/components/common/ErrorModal";
 import Provider from "./Provider";
 
 import "./globals.css";
@@ -32,9 +33,11 @@ const RootLayout = ({
     <html lang="ko" className="h-full">
       <body className="font-Pretendard antialiased bg-bg-100 h-full">
         <Provider>
-          <Header />
-          {children}
-          <Footer />
+          <ErrorModal>
+            <Header />
+            {children}
+            <Footer />
+          </ErrorModal>
         </Provider>
       </body>
     </html>
