@@ -129,7 +129,7 @@ export interface CharacterSymbol {
   symbol: Symbol[];
 }
 
-interface Symbol {
+export interface Symbol {
   symbol_name: string;
   symbol_icon: string;
   symbol_description: string;

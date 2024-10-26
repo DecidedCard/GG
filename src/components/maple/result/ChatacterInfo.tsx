@@ -13,11 +13,10 @@ import InfoNav from "./InfoNav";
 import useResult from "@/hooks/maple/result/useResult";
 
 import ArrowRoundBack from "@/assets/ArrowRoundBack";
+import SymbolList from "./symbol/SymbolList";
 
 const CharacterInfo = () => {
   const { info, query, onClickCharacterInfoSet } = useResult();
-
-  console.log(query.data?.symbolInfo);
 
   if (query.isFetching) {
     return (
@@ -57,6 +56,7 @@ const CharacterInfo = () => {
             <div className="flex flex-col gap-5">
               <SkillList skillInfo={query.data.sixthSkillInfo} />
               <SkillList skillInfo={query.data.fifthSkillInfo} />
+              <SymbolList item={query.data.symbolInfo} />
             </div>
           )}
         </div>
