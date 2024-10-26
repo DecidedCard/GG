@@ -17,6 +17,8 @@ import ArrowRoundBack from "@/assets/ArrowRoundBack";
 const CharacterInfo = () => {
   const { info, query, onClickCharacterInfoSet } = useResult();
 
+  console.log(query.data?.symbolInfo);
+
   if (query.isFetching) {
     return (
       <div className="flex justify-center items-center w-full h-[90vh]">

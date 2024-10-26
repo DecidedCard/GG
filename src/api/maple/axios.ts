@@ -4,6 +4,7 @@ import type {
   Basic,
   CharacterId,
   CharacterStatInfo,
+  CharacterSymbol,
   Popularity,
   Skill,
 } from "@/types/maple/mapleApi";
@@ -107,7 +108,9 @@ export const sixthSkillCharacterInfo = async (id: string): Promise<Skill> => {
   }
 };
 
-export const symbolCharacterInfo = async (id: string) => {
+export const symbolCharacterInfo = async (
+  id: string
+): Promise<CharacterSymbol> => {
   try {
     const res = await maple.get(
       `/maplestory/v1/character/symbol-equipment?ocid=${id}`
