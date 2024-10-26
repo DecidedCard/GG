@@ -106,3 +106,14 @@ export const sixthSkillCharacterInfo = async (id: string): Promise<Skill> => {
     return Promise.reject(error);
   }
 };
+
+export const symbolCharacterInfo = async (id: string) => {
+  try {
+    const res = await maple.get(
+      `/maplestory/v1/character/symbol-equipment?ocid=${id}`
+    );
+    return res.data;
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};
