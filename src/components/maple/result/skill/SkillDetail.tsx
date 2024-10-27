@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import { CharacterSkill } from "@/types/maple/mapleApi";
+import type { CharacterSkill } from "@/types/maple/skill";
 
 const SkillDetail = ({ item }: { item: CharacterSkill }) => {
   return (

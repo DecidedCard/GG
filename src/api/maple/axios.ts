@@ -6,10 +6,10 @@ import type {
   CharacterStatInfo,
   CharacterSymbol,
   Popularity,
-  Skill,
 } from "@/types/maple/mapleApi";
 import type { Item } from "@/types/maple/item";
 import type { CashItem } from "@/types/maple/cashItem";
+import type { Skill } from "@/types/maple/skill";
 
 const apiKey = process.env.NEXT_PUBLIC_NEXON_API_1;
 

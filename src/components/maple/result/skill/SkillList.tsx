@@ -2,7 +2,7 @@ import React from "react";
 
 import SkillCard from "./SkillCard";
 
-import type { Skill } from "@/types/maple/mapleApi";
+import type { Skill } from "@/types/maple/skill";
 
 const SkillList = ({ skillInfo }: { skillInfo: Skill }) => {
   return (

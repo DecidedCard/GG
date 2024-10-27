@@ -107,22 +107,6 @@ export interface CharacterInfo {
   statInfo: CharacterStatInfo;
 }
 
-export interface Skill {
-  date: string;
-  character_class: string;
-  character_skill_grade: string;
-  character_skill: CharacterSkill[];
-}
-
-export interface CharacterSkill {
-  skill_name: string;
-  skill_description: string;
-  skill_level: number;
-  skill_effect: string;
-  skill_effect_next: string;
-  skill_icon: string;
-}
-
 export interface CharacterSymbol {
   date: string;
   character_class: string;
