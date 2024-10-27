@@ -9,7 +9,7 @@ import type {
 } from "@/types/maple/mapleApi";
 import type { Item } from "@/types/maple/item";
 import type { CashItem } from "@/types/maple/cashItem";
-import type { Skill } from "@/types/maple/skill";
+import type { LinkSkill, Skill } from "@/types/maple/skill";
 
 const apiKey = process.env.NEXT_PUBLIC_NEXON_API_1;
 
@@ -123,7 +123,7 @@ export const symbolCharacterInfo = async (
 
 export const linkSkillCharacterInfo = async (
   id: string
-): Promise<CharacterSymbol> => {
+): Promise<LinkSkill> => {
   try {
     const res = await maple.get(
       `/maplestory/v1/character/link-skill?ocid=${id}`
