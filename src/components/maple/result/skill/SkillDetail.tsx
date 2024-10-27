@@ -5,7 +5,7 @@ import { CharacterSkill } from "@/types/maple/mapleApi";
 
 const SkillDetail = ({ item }: { item: CharacterSkill }) => {
   return (
-    <div className="flex flex-col gap-2 p-6 w-96 bg-bg-300 text-white rounded-lg">
+    <div className="flex flex-col gap-2 p-6 w-96 bg-bg-300 text-white rounded-lg sm:w-4/5">
       <p className="text-body/18px text-center">{item.skill_name}</p>
       <div className="flex gap-4 whitespace-break-spaces">
         <Image

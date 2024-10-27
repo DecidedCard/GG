@@ -25,7 +25,7 @@ const InfoNav = ({
           info === "skill" && "bg-primary-100"
         }`}
       >
-        스킬
+        스킬 및 심볼
       </button>
     </nav>
   );
