@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const SymbolDetail = ({ item }: { item: Symbol }) => {
   return (
-    <div className="flex flex-col gap-2 p-6 w-96 bg-bg-300 text-white rounded-lg">
+    <div className="flex flex-col gap-2 p-6 w-96 bg-bg-300 text-white rounded-lg sm:w-4/5">
       <p className="mx-auto text-title/20px">{item.symbol_name}</p>
       <hr className="w-full border-dashed border-text-200" />
       <div className="flex items-center gap-5 px-4">
