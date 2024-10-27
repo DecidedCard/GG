@@ -1,9 +1,6 @@
 import React from "react";
-import Image from "next/image";
 
-import { Popover, PopoverContent, PopoverTrigger } from "@nextui-org/popover";
-
-import SkillDetail from "./SkillDetail";
+import SkillCard from "./SkillCard";
 
 import type { Skill } from "@/types/maple/mapleApi";
 
@@ -14,26 +11,8 @@ const SkillList = ({ skillInfo }: { skillInfo: Skill }) => {
         {skillInfo.character_skill_grade}차 스킬
       </h3>
       <div className="grid grid-cols-6 gap-4 mx-auto md:grid-cols-3 sm:grid-cols-2">
-        {skillInfo.character_skill.map((item, idx) => (
-          <Popover key={idx} placement="top">
-            <PopoverTrigger>
-              <div className="p-4 w-40 border border-solid text-center border-text-100 rounded-lg">
-                <Image
-                  src={item.skill_icon}
-                  alt="skill-icon"
-                  width={30}
-                  height={30}
-                  className="mx-auto"
-                />
-                <p className="mt-4 whitespace-nowrap text-ellipsis overflow-hidden">
-                  {item.skill_name}
-                </p>
-              </div>
-            </PopoverTrigger>
-            <PopoverContent>
-              <SkillDetail item={item} />
-            </PopoverContent>
-          </Popover>
+        {skillInfo.character_skill.map((item) => (
+          <SkillCard item={item} key={item.skill_name} />
         ))}
       </div>
     </section>
