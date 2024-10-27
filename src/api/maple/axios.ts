@@ -120,3 +120,16 @@ export const symbolCharacterInfo = async (
     return Promise.reject(error);
   }
 };
+
+export const linkSkillCharacterInfo = async (
+  id: string
+): Promise<CharacterSymbol> => {
+  try {
+    const res = await maple.get(
+      `/maplestory/v1/character/link-skill?ocid=${id}`
+    );
+    return res.data;
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};
