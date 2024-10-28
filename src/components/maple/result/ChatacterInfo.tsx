@@ -54,7 +54,7 @@ const CharacterInfo = () => {
             </div>
           )}
           {info === "skill" && (
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-5 w-[1280px] md:w-full sm:w-full">
               <SkillList skillInfo={query.data.sixthSkillInfo} />
               <SkillList skillInfo={query.data.fifthSkillInfo} />
               <SymbolList item={query.data.symbolInfo} />
