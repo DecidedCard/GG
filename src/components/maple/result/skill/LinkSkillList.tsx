@@ -17,6 +17,7 @@ const LinkSkillList = ({ item }: { item: LinkSkill }) => {
       2: item.character_link_skill_preset_2,
       3: item.character_link_skill_preset_3,
     };
+
     setPresetNumber(preset);
     setLinkSkillPreset(presets[preset]);
   };

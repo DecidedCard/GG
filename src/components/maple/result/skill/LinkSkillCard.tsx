@@ -8,7 +8,10 @@ import type { CharacterLinkSkillPreset } from "@/types/maple/skill";
 
 const LinkSkillCard = ({ item }: { item: CharacterLinkSkillPreset }) => {
   return (
-    <CustomPopover key={item.skill_name} popoverContents={<LinkSkillDetail />}>
+    <CustomPopover
+      key={item.skill_name}
+      popoverContents={<LinkSkillDetail item={item} />}
+    >
       <div className="flex flex-col items-center gap-3 p-4 w-28 border border-solid border-text-100 rounded-md">
         <Image
           src={item.skill_icon}
