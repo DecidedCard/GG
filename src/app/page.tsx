@@ -6,7 +6,7 @@ import maple from "@/../public/assets/maple/maple.png";
 
 const Home = () => {
   return (
-    <main className="p-4 mx-auto w-[1280px] min-h-[70%] text-text-100 lg:w-full md:w-full sm:w-full">
+    <main className="p-4 mx-auto w-[1280px] min-h-full text-text-100 lg:w-full md:w-full sm:w-full">
       <div className="flex justify-start items-start p-4 bg-bg-300 rounded-lg sm:justify-center">
         <Link href={"/maple"} className="flex flex-col gap-2 w-fit">
           <ImageCard image={maple} alt="메이플스토리" />
