@@ -6,10 +6,10 @@ import type {
   CharacterStatInfo,
   CharacterSymbol,
   Popularity,
-  Skill,
 } from "@/types/maple/mapleApi";
 import type { Item } from "@/types/maple/item";
 import type { CashItem } from "@/types/maple/cashItem";
+import type { LinkSkill, Skill } from "@/types/maple/skill";
 
 const apiKey = process.env.NEXT_PUBLIC_NEXON_API_1;
 
@@ -114,6 +114,19 @@ export const symbolCharacterInfo = async (
   try {
     const res = await maple.get(
       `/maplestory/v1/character/symbol-equipment?ocid=${id}`
+    );
+    return res.data;
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};
+
+export const linkSkillCharacterInfo = async (
+  id: string
+): Promise<LinkSkill> => {
+  try {
+    const res = await maple.get(
+      `/maplestory/v1/character/link-skill?ocid=${id}`
     );
     return res.data;
   } catch (error) {

@@ -4,7 +4,7 @@ import Image from "next/image";
 import CustomPopover from "@/components/common/CustomPopover";
 import SkillDetail from "./SkillDetail";
 
-import type { CharacterSkill } from "@/types/maple/mapleApi";
+import type { CharacterSkill } from "@/types/maple/skill";
 
 const SkillCard = ({ item }: { item: CharacterSkill }) => {
   return (

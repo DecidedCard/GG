@@ -7,6 +7,7 @@ import {
   sixthSkillCharacterInfo,
   statCharacterInfo,
   symbolCharacterInfo,
+  linkSkillCharacterInfo,
 } from "@/api/maple/axios";
 
 const fetchFullCharacterInfo = async (id: string) => {
@@ -20,6 +21,7 @@ const fetchFullCharacterInfo = async (id: string) => {
       fifthSkillInfo,
       sixthSkillInfo,
       symbolInfo,
+      linkSkill,
     ] = await Promise.all([
       basicCharacterInfo(id),
       statCharacterInfo(id),
@@ -29,6 +31,7 @@ const fetchFullCharacterInfo = async (id: string) => {
       fifthSkillCharacterInfo(id),
       sixthSkillCharacterInfo(id),
       symbolCharacterInfo(id),
+      linkSkillCharacterInfo(id),
     ]);
 
     return {
@@ -40,6 +43,7 @@ const fetchFullCharacterInfo = async (id: string) => {
       fifthSkillInfo,
       sixthSkillInfo,
       symbolInfo,
+      linkSkill,
     };
   } catch (error) {
     return Promise.reject(error);
