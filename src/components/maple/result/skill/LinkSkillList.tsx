@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
+import LinkSkillCard from "./LinkSkillCard";
+
 import type { LinkSkill } from "@/types/maple/skill";
-import Image from "next/image";
-import CustomPopover from "@/components/common/CustomPopover";
 
 const LinkSkillList = ({ item }: { item: LinkSkill }) => {
   const [linkSkillPreset, setLinkSkillPreset] = useState(
@@ -54,22 +54,7 @@ const LinkSkillList = ({ item }: { item: LinkSkill }) => {
       </h3>
       <div className="flex flex-wrap justify-center items-center gap-4">
         {linkSkillPreset.map((item) => (
-          <CustomPopover
-            key={item.skill_name}
-            popoverContents={<div>test</div>}
-          >
-            <div className="flex flex-col items-center gap-3 p-4 w-28 border border-solid border-text-100 rounded-md">
-              <Image
-                src={item.skill_icon}
-                alt={item.skill_name}
-                width={50}
-                height={50}
-              />
-              <p className="w-full whitespace-nowrap overflow-hidden text-ellipsis">
-                {item.skill_name}
-              </p>
-            </div>
-          </CustomPopover>
+          <LinkSkillCard key={item.skill_name} item={item} />
         ))}
       </div>
     </div>

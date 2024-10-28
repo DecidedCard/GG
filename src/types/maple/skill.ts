@@ -27,7 +27,7 @@ export interface LinkSkill {
   character_owned_link_skill_preset_3: CharacterLinkSkillPreset;
 }
 
-interface CharacterLinkSkillPreset {
+export interface CharacterLinkSkillPreset {
   skill_name: string;
   skill_description: string;
   skill_level: number;
