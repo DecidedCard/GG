@@ -10,7 +10,10 @@ import type {
 import type { Item } from "@/types/maple/item";
 import type { CashItem } from "@/types/maple/cashItem";
 import type { LinkSkill, Skill } from "@/types/maple/skill";
-import type { unionArtifactCharacterInfo } from "@/types/maple/union";
+import type {
+  unionArtifactCharacterInfo,
+  unionRaiderCharacterInfo,
+} from "@/types/maple/union";
 
 const apiKey = process.env.NEXT_PUBLIC_NEXON_API_1;
 
@@ -142,6 +145,17 @@ export const unionArtifactCharacterCharacterInfo = async (
     const res = await maple.get(
       `/maplestory/v1/user/union-artifact?ocid=${id}`
     );
+    return res.data;
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};
+
+export const unionRaiderCharacterCharacterInfo = async (
+  id: string
+): Promise<unionRaiderCharacterInfo> => {
+  try {
+    const res = await maple.get(`/maplestory/v1/user/union-raider?ocid=${id}`);
     return res.data;
   } catch (error) {
     return Promise.reject(error);
