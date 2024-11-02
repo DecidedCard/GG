@@ -1,4 +1,4 @@
-export interface unionArtifactCharacterInfo {
+export interface UnionArtifactCharacterInfo {
   date: string;
   union_artifact_effect: UnionArtifactEffect[];
   union_artifact_crystal: UnionArtifactCrystal[];
@@ -20,7 +20,7 @@ interface UnionArtifactEffect {
   level: number;
 }
 
-export interface unionRaiderCharacterInfo {
+export interface UnionRaiderCharacterInfo {
   date: string;
   union_raider_stat: string[];
   union_occupied_stat: string[];
