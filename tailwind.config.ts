@@ -10,6 +10,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      gridTemplateRows: {
+        "20": "repeat(20, minmax(0, 1fr))",
+      },
+      gridTemplateColumns: {
+        "22": "repeat(22, minmax(0, 1fr))",
+      },
       fontFamily: {
         Pretendard: ["Pretendard", "sans-serif"],
         DungGeunMo: ["DungGeunMo", "sans-serif"],

@@ -52,7 +52,7 @@ interface UnionRaiderPreset {
   union_block: UnionBlock[];
 }
 
-interface UnionBlock {
+export interface UnionBlock {
   block_type: string;
   block_class: string;
   block_level: string;
