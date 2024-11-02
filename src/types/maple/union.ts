@@ -6,7 +6,7 @@ export interface UnionArtifactCharacterInfo {
 }
 
 export interface UnionArtifactCrystal {
-  name: string;
+  name: Crystal;
   validity_flag: string;
   date_expire: string;
   level: number;
@@ -19,6 +19,17 @@ interface UnionArtifactEffect {
   name: string;
   level: number;
 }
+
+export type Crystal =
+  | "크리스탈 : 주황버섯"
+  | "크리스탈 : 슬라임"
+  | "크리스탈 : 뿔버섯"
+  | "크리스탈 : 스텀프"
+  | "크리스탈 : 스톤골렘"
+  | "크리스탈 : 발록"
+  | "크리스탈 : 자쿰"
+  | "크리스탈 : 핑크빈"
+  | "크리스탈 : 파풀라투스";
 
 export interface UnionRaiderCharacterInfo {
   date: string;
