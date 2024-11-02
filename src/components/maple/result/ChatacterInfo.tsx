@@ -32,8 +32,6 @@ const CharacterInfo = () => {
     return <div>에러!</div>;
   }
 
-  console.log(query.data?.unionArtifact);
-
   return (
     query.data && (
       <div className="relative flex flex-col gap-4 mt-5 mx-auto w-[1280px] h-[3000px] text-text-100 lg:w-full md:w-full sm:w-full sm:h-[6000px]">

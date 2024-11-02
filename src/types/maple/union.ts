@@ -5,7 +5,7 @@ export interface UnionArtifactCharacterInfo {
   union_artifact_remain_ap: number;
 }
 
-interface UnionArtifactCrystal {
+export interface UnionArtifactCrystal {
   name: string;
   validity_flag: string;
   date_expire: string;
