@@ -1,4 +1,4 @@
-const starForceArr = (star: number) => {
+const numberChangeArr = (star: number) => {
   const starArr: number[] = [];
   starArr.length = star;
   starArr.fill(0);
@@ -6,4 +6,4 @@ const starForceArr = (star: number) => {
   return starArr;
 };
 
-export default starForceArr;
+export default numberChangeArr;

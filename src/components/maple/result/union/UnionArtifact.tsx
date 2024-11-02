@@ -9,14 +9,12 @@ const UnionArtifact = ({
 }: {
   artifact: UnionArtifactCharacterInfo;
 }) => {
-  console.log(artifact);
-
   return (
     <section className="flex flex-col gap-3 p-4 bg-bg-200 rounded-lg">
       <h3 className="text-title/24px">유니온 아티팩트</h3>
       <hr className="w-full border-text-200" />
       <p className="text-title/20px">크리스탈</p>
-      <div className="flex justify-center items-center gap-4">
+      <div className="flex flex-wrap justify-center items-center gap-4">
         {artifact.union_artifact_crystal.map((item) => (
           <UnionArtifactCard key={item.name} item={item} />
         ))}

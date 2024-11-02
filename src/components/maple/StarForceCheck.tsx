@@ -2,10 +2,10 @@ import React from "react";
 import { MdOutlineStar } from "react-icons/md";
 import { MdOutlineStarBorder } from "react-icons/md";
 
-import starForceArr from "@/util/maple/starForceArr";
+import numberChangeArr from "@/util/maple/numberChangeArr";
 
 const StarForceCheck = ({ star }: { star: number }) => {
-  const starArr = starForceArr(25).map((item, idx) => {
+  const starArr = numberChangeArr(25).map((item, idx) => {
     if (idx + 1 <= star) {
       return 1;
     }
