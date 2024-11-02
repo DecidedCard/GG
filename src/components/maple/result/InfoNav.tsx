@@ -27,6 +27,14 @@ const InfoNav = ({
       >
         스킬 및 심볼
       </button>
+      <button
+        onClick={() => onClickCharacterInfoSet("union")}
+        className={`py-2 w-28 h-fit border border-solid border-text-100 rounded-lg ${
+          info === "union" && "bg-primary-100"
+        }`}
+      >
+        유니온
+      </button>
     </nav>
   );
 };

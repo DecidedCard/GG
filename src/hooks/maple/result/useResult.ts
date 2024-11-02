@@ -7,7 +7,7 @@ import useErrorModalStore from "@/store/errorModalStore";
 
 import { getCharacterId } from "@/api/maple/axios";
 
-export type Info = "stat" | "skill";
+export type Info = "stat" | "skill" | "union";
 
 const useResult = () => {
   const [characterId, setCharacterId] = useState("");

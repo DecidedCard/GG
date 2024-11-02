@@ -15,6 +15,7 @@ import useResult from "@/hooks/maple/result/useResult";
 import ArrowRoundBack from "@/assets/ArrowRoundBack";
 import SymbolList from "./symbol/SymbolList";
 import LinkSkillList from "./skill/LinkSkillList";
+import UnionArtifact from "./union/UnionArtifact";
 
 const CharacterInfo = () => {
   const { info, query, onClickCharacterInfoSet } = useResult();
@@ -59,6 +60,11 @@ const CharacterInfo = () => {
               <SkillList skillInfo={query.data.fifthSkillInfo} />
               <SymbolList item={query.data.symbolInfo} />
               <LinkSkillList item={query.data.linkSkill} />
+            </div>
+          )}
+          {info === "union" && (
+            <div className="flex flex-col gap-5 w-[1280px] md:w-full sm:w-full">
+              <UnionArtifact artifact={query.data.unionArtifact} />
             </div>
           )}
         </div>
