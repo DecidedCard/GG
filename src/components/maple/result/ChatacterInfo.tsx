@@ -16,6 +16,7 @@ import ArrowRoundBack from "@/assets/ArrowRoundBack";
 import SymbolList from "./symbol/SymbolList";
 import LinkSkillList from "./skill/LinkSkillList";
 import UnionArtifact from "./union/UnionArtifact";
+import UnionRaider from "./union/UnionRaider";
 
 const CharacterInfo = () => {
   const { info, query, onClickCharacterInfoSet } = useResult();
@@ -31,10 +32,11 @@ const CharacterInfo = () => {
   if (query.isError) {
     return <div>에러!</div>;
   }
+  console.log(query.data);
 
   return (
     query.data && (
-      <div className="relative flex flex-col gap-4 mt-5 mx-auto w-[1280px] h-[3000px] text-text-100 lg:w-full md:w-full sm:w-full sm:h-[6000px]">
+      <div className="relative flex flex-col gap-4 mt-5 mx-auto w-[1280px] h-[3000px] text-text-100 lg:w-full md:w-full sm:w-full sm:h-[10000px]">
         <Link href={"/maple"} className="absolute top-4 left-4 z-20">
           <ArrowRoundBack className="w-9 h-9 text-primary-200 cursor-pointer sm:w-6 sm:h-6" />
         </Link>
@@ -64,7 +66,14 @@ const CharacterInfo = () => {
           )}
           {info === "union" && (
             <div className="flex flex-col gap-5 w-[1280px] md:w-full sm:w-full">
-              <UnionArtifact artifact={query.data.unionArtifact} />
+              <UnionArtifact
+                artifact={query.data.unionArtifact}
+                level={query.data.union.union_artifact_level}
+              />
+              <UnionRaider
+                raider={query.data.unionRaider}
+                unionInfo={query.data.union}
+              />
             </div>
           )}
         </div>

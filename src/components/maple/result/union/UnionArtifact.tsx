@@ -6,12 +6,17 @@ import type { UnionArtifactCharacterInfo } from "@/types/maple/union";
 
 const UnionArtifact = ({
   artifact,
+  level,
 }: {
   artifact: UnionArtifactCharacterInfo;
+  level: number;
 }) => {
   return (
     <section className="flex flex-col gap-3 p-4 bg-bg-200 rounded-lg">
-      <h3 className="text-title/24px">유니온 아티팩트</h3>
+      <h3 className="flex justify-between text-title/24px md:text-title/20px sm:text-title/16px">
+        <p>유니온 아티팩트</p>
+        <p>ARTIFACT Lv.{level}</p>
+      </h3>
       <hr className="w-full border-text-200" />
       <p className="text-title/20px">크리스탈</p>
       <div className="flex flex-wrap justify-center items-center gap-4">
@@ -21,12 +26,16 @@ const UnionArtifact = ({
       </div>
       <hr className="w-full border-text-200" />
       <div className="flex flex-col gap-4">
-        <p className="text-title/20px">능력치</p>
+        <p className="text-title/20px md:text-title/16px sm:text-title/12px">
+          능력치
+        </p>
         <div className="grid grid-cols-2 gap-1">
           {artifact.union_artifact_effect.map((item) => (
             <div key={item.name} className="flex justify-between px-4 w-full">
-              <p>{item.name}</p>
-              <p>
+              <p className="md:text-body/10px sm:text-body/8px md:w-[150px] sm:w-[80px]">
+                {item.name}
+              </p>
+              <p className="md:text-body/10px sm:text-body/8px">
                 <label>레벨: </label>
                 {item.level}
               </p>

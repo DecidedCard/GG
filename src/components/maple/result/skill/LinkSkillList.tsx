@@ -26,7 +26,7 @@ const LinkSkillList = ({ item }: { item: LinkSkill }) => {
     <div className="flex flex-col gap-4 p-6 w-full rounded-lg bg-bg-200">
       <h3 className="flex justify-between text-title/24px md:text-title/20px sm:text-title/16px">
         링크 스킬
-        <nav className="flex items-center gap-4 text-body/18px">
+        <nav className="flex items-center gap-4 text-body/18px md:text-body/14px sm:text-body/10px">
           <ol
             onClick={() => onClickSetPresetHandler(1)}
             className={`p-2 cursor-pointer rounded ${

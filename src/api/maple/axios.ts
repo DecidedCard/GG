@@ -12,6 +12,7 @@ import type { CashItem } from "@/types/maple/cashItem";
 import type { LinkSkill, Skill } from "@/types/maple/skill";
 import type {
   UnionArtifactCharacterInfo,
+  UnionCharacterInfo,
   UnionRaiderCharacterInfo,
 } from "@/types/maple/union";
 
@@ -132,6 +133,17 @@ export const linkSkillCharacterInfo = async (
     const res = await maple.get(
       `/maplestory/v1/character/link-skill?ocid=${id}`
     );
+    return res.data;
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};
+
+export const unionCharacterCharacterInfo = async (
+  id: string
+): Promise<UnionCharacterInfo> => {
+  try {
+    const res = await maple.get(`/maplestory/v1/user/union?ocid=${id}`);
     return res.data;
   } catch (error) {
     return Promise.reject(error);
