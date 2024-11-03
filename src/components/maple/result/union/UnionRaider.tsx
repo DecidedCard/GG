@@ -22,7 +22,9 @@ const UnionRaider = ({
 
   return (
     <section className="flex flex-col gap-4 p-4 bg-bg-200 rounded-lg">
-      <h3 className="text-title/24px">유니온 공격대</h3>
+      <h3 className="text-title/24px md:text-title/20px sm:text-title/16px">
+        유니온 공격대
+      </h3>
       <hr className="border-text-200" />
       <div className="flex gap-4 mx-auto md:flex-col sm:flex-col">
         <RaiderGrid item={raider.union_block} />
@@ -44,26 +46,40 @@ const UnionRaider = ({
         </div>
         <div className="w-[300px]">
           <div className="flex gap-3">
-            <p className="text-title/20px">{unionInfo.union_grade}</p>
-            <p className="text-text-200">Lv.{unionInfo.union_level}</p>
+            <p className="text-title/20px md:text-title/16px sm:text-title/12px">
+              {unionInfo.union_grade}
+            </p>
+            <p className="text-text-200 md:text-body/14px sm:text-body/10px">
+              Lv.{unionInfo.union_level}
+            </p>
           </div>
           <hr className="w-full border-text-200" />
           <div className="flex justify-between p-1">
             <div className="flex flex-col gap-1 w-[140px]">
-              <p className="text-title/16px">공격대원 효과</p>
+              <p className="text-title/16px sm:text-title/12px">
+                공격대원 효과
+              </p>
               {raider.union_raider_preset_2.union_raider_stat.map(
                 (item, idx) => (
-                  <p key={idx} className="ml-1 text-body/14px">
+                  <p
+                    key={idx}
+                    className="ml-1 text-body/14px md:text-body/10px sm:text-body/8px"
+                  >
                     {item}
                   </p>
                 )
               )}
             </div>
             <div className="flex flex-col gap-1 w-[140px]">
-              <p className="text-title/16px">공격대 점령 효과</p>
+              <p className="text-title/16px sm:text-title/12px">
+                공격대 점령 효과
+              </p>
               {raider.union_raider_preset_2.union_occupied_stat.map(
                 (item, idx) => (
-                  <p key={idx} className="ml-1 text-body/14px">
+                  <p
+                    key={idx}
+                    className="ml-1 text-body/14px md:text-body/10px sm:text-body/8px"
+                  >
                     {item}
                   </p>
                 )
