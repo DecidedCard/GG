@@ -10,6 +10,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        union: "url('/assets/maple/union_raider_map.svg')",
+      },
       gridTemplateRows: {
         "20": "repeat(20, minmax(0, 1fr))",
       },
