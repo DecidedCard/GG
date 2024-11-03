@@ -1,3 +1,12 @@
+export interface UnionCharacterInfo {
+  date: string;
+  union_level: number;
+  union_grade: string;
+  union_artifact_level: number;
+  union_artifact_exp: number;
+  union_artifact_point: number;
+}
+
 export interface UnionArtifactCharacterInfo {
   date: string;
   union_artifact_effect: UnionArtifactEffect[];

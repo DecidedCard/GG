@@ -87,7 +87,7 @@ const JopImage = ({ jop }: { jop: string }) => {
     (jop === "팔라딘" && Paladin) ||
     (jop === "패스파인더" && Pathfinder) ||
     (jop === "팬텀" && Phantom) ||
-    (jop === "새도어" && Shadower) ||
+    (jop === "섀도어" && Shadower) ||
     (jop === "소울마스터" && Soul_Master) ||
     (jop === "스트라이커" && Striker) ||
     (jop === "바이퍼" && Viper) ||
