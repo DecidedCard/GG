@@ -32,6 +32,7 @@ const CharacterInfo = () => {
   if (query.isError) {
     return <div>에러!</div>;
   }
+  console.log(query.data);
 
   return (
     query.data && (
@@ -65,8 +66,14 @@ const CharacterInfo = () => {
           )}
           {info === "union" && (
             <div className="flex flex-col gap-5 w-[1280px] md:w-full sm:w-full">
-              <UnionArtifact artifact={query.data.unionArtifact} />
-              <UnionRaider raider={query.data.unionRaider} />
+              <UnionArtifact
+                artifact={query.data.unionArtifact}
+                level={query.data.union.union_artifact_level}
+              />
+              <UnionRaider
+                raider={query.data.unionRaider}
+                unionInfo={query.data.union}
+              />
             </div>
           )}
         </div>
