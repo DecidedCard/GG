@@ -46,7 +46,7 @@ export interface UnionRaiderCharacterInfo {
   union_occupied_stat: string[];
   union_inner_stat: UnionInnerStat[];
   union_block: UnionBlock[];
-  use_preset_no: number;
+  use_preset_no: 1 | 2 | 3 | 4 | 5;
   union_raider_preset_1: UnionRaiderPreset;
   union_raider_preset_2: UnionRaiderPreset;
   union_raider_preset_3: UnionRaiderPreset;

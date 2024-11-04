@@ -32,7 +32,6 @@ const CharacterInfo = () => {
   if (query.isError) {
     return <div>에러!</div>;
   }
-  console.log(query.data);
 
   return (
     query.data && (
