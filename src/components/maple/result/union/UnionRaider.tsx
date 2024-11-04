@@ -7,6 +7,8 @@ import type {
   UnionCharacterInfo,
   UnionRaiderCharacterInfo,
 } from "@/types/maple/union";
+import UnionRaiderNavBar from "./UnionRaiderNavBar";
+import useUnionRaider from "@/hooks/maple/result/useUnionRaider";
 
 const UnionRaider = ({
   raider,
@@ -15,21 +17,23 @@ const UnionRaider = ({
   raider: UnionRaiderCharacterInfo;
   unionInfo: UnionCharacterInfo;
 }) => {
-  console.log(raider);
-  raider.union_block.sort(
-    (a, b) => Number(b.block_level) - Number(a.block_level)
-  );
+  const { preset, presetNumber, onClickNavHandler } = useUnionRaider(raider);
 
   return (
     <section className="flex flex-col gap-4 p-4 bg-bg-200 rounded-lg">
-      <h3 className="text-title/24px md:text-title/20px sm:text-title/16px">
+      <h3 className="flex justify-between items-center text-title/24px md:text-title/20px sm:text-title/16px">
         유니온 공격대
+        <UnionRaiderNavBar
+          raider={raider}
+          presetNumber={presetNumber}
+          onClickNavHandler={onClickNavHandler}
+        />
       </h3>
       <hr className="border-text-200" />
       <div className="flex gap-4 mx-auto md:flex-col sm:flex-col">
-        <RaiderGrid item={raider.union_block} />
+        <RaiderGrid item={preset.union_block} />
         <div className="flex flex-wrap justify-between items-center gap-4 w-[300px]">
-          {raider.union_block.map((item) => (
+          {preset.union_block.map((item) => (
             <div
               key={item.block_class}
               className="flex gap-1 w-[140px] text-body/14px"
@@ -59,31 +63,27 @@ const UnionRaider = ({
               <p className="text-title/16px sm:text-title/12px">
                 공격대원 효과
               </p>
-              {raider.union_raider_preset_2.union_raider_stat.map(
-                (item, idx) => (
-                  <p
-                    key={idx}
-                    className="ml-1 text-body/14px md:text-body/10px sm:text-body/8px"
-                  >
-                    {item}
-                  </p>
-                )
-              )}
+              {preset.union_raider_stat.map((item, idx) => (
+                <p
+                  key={idx}
+                  className="ml-1 text-body/14px md:text-body/10px sm:text-body/8px"
+                >
+                  {item}
+                </p>
+              ))}
             </div>
             <div className="flex flex-col gap-1 w-[140px]">
               <p className="text-title/16px sm:text-title/12px">
                 공격대 점령 효과
               </p>
-              {raider.union_raider_preset_2.union_occupied_stat.map(
-                (item, idx) => (
-                  <p
-                    key={idx}
-                    className="ml-1 text-body/14px md:text-body/10px sm:text-body/8px"
-                  >
-                    {item}
-                  </p>
-                )
-              )}
+              {preset.union_occupied_stat.map((item, idx) => (
+                <p
+                  key={idx}
+                  className="ml-1 text-body/14px md:text-body/10px sm:text-body/8px"
+                >
+                  {item}
+                </p>
+              ))}
             </div>
           </div>
         </div>
