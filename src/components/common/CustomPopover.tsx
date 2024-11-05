@@ -16,9 +16,9 @@ const CustomPopover = ({
   popoverContents,
 }: CustomPopoverProps) => {
   return (
-    <Popover placement={placement} showArrow={showArrow}>
+    <Popover placement={placement || "top"} showArrow={showArrow}>
       <PopoverTrigger>{children}</PopoverTrigger>
-      <PopoverContent>{popoverContents}</PopoverContent>
+      <PopoverContent className="bg-bg-300">{popoverContents}</PopoverContent>
     </Popover>
   );
 };

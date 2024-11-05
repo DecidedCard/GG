@@ -11,10 +11,13 @@ import {
   unionCharacterCharacterInfo,
   unionArtifactCharacterCharacterInfo,
   unionRaiderCharacterCharacterInfo,
+  getCharacterId,
 } from "@/api/maple/axios";
 
-const fetchFullCharacterInfo = async (id: string) => {
+const fetchFullCharacterInfo = async (name: string) => {
   try {
+    const { ocid } = await getCharacterId(name);
+
     const [
       basicInfo,
       statInfo,
@@ -29,18 +32,18 @@ const fetchFullCharacterInfo = async (id: string) => {
       unionArtifact,
       unionRaider,
     ] = await Promise.all([
-      basicCharacterInfo(id),
-      statCharacterInfo(id),
-      popularityCharacterInfo(id),
-      itemCharacterInfo(id),
-      cashItemCharacterInfo(id),
-      fifthSkillCharacterInfo(id),
-      sixthSkillCharacterInfo(id),
-      symbolCharacterInfo(id),
-      linkSkillCharacterInfo(id),
-      unionCharacterCharacterInfo(id),
-      unionArtifactCharacterCharacterInfo(id),
-      unionRaiderCharacterCharacterInfo(id),
+      basicCharacterInfo(ocid),
+      statCharacterInfo(ocid),
+      popularityCharacterInfo(ocid),
+      itemCharacterInfo(ocid),
+      cashItemCharacterInfo(ocid),
+      fifthSkillCharacterInfo(ocid),
+      sixthSkillCharacterInfo(ocid),
+      symbolCharacterInfo(ocid),
+      linkSkillCharacterInfo(ocid),
+      unionCharacterCharacterInfo(ocid),
+      unionArtifactCharacterCharacterInfo(ocid),
+      unionRaiderCharacterCharacterInfo(ocid),
     ]);
 
     return {

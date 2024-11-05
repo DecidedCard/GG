@@ -30,7 +30,7 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <html lang="ko" className="h-full">
+    <html lang="ko" className="min-h-full">
       <body className="font-Pretendard antialiased bg-bg-100 h-full">
         <Provider>
           <ErrorModal>

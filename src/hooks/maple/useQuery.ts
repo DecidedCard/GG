@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-import { useQuery } from "@tanstack/react-query";
+import { useSuspenseQuery } from "@tanstack/react-query";
 
 import useErrorModalStore from "@/store/errorModalStore";
 
@@ -12,10 +12,9 @@ export const useCharacterQuery = (id: string | null) => {
   const { setIsError, setReset } = useErrorModalStore();
   const navigation = useRouter();
 
-  const { data, isError, isFetching } = useQuery({
+  const { data, isError, isFetching } = useSuspenseQuery({
     queryKey: [QUERY_KEY.characterInfo],
     queryFn: () => fetchCharacterInfo(id!),
-    enabled: !!id,
     retry: 0,
     refetchOnWindowFocus: false,
   });
@@ -26,6 +25,7 @@ export const useCharacterQuery = (id: string | null) => {
         setReset();
         navigation.push("/maple");
       };
+
       setIsError({
         isError: true,
         comment: "검색하는 중에 오류가 생겼습니다.",

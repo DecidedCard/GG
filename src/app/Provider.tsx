@@ -10,7 +10,7 @@ const Provider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <NextUIProvider className="h-full">{children}</NextUIProvider>
+      <NextUIProvider>{children}</NextUIProvider>
     </QueryClientProvider>
   );
 };
