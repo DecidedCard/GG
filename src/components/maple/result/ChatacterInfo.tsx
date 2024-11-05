@@ -6,32 +6,18 @@ import Link from "next/link";
 import BasicInfo from "@/components/maple/result/BasicInfo";
 import StatInfo from "@/components/maple/result/StatInfo";
 import ItemList from "@/components/maple/result/item/ItemList";
-import Spinner from "@/components/common/Spinner";
 import SkillList from "./skill/SkillList";
 import InfoNav from "./InfoNav";
-
-import useResult from "@/hooks/maple/result/useResult";
-
 import ArrowRoundBack from "@/assets/ArrowRoundBack";
 import SymbolList from "./symbol/SymbolList";
 import LinkSkillList from "./skill/LinkSkillList";
 import UnionArtifact from "./union/UnionArtifact";
 import UnionRaider from "./union/UnionRaider";
 
+import useResult from "@/hooks/maple/result/useResult";
+
 const CharacterInfo = () => {
   const { info, query, onClickCharacterInfoSet } = useResult();
-
-  if (query.isFetching) {
-    return (
-      <div className="flex justify-center items-center w-full h-[90vh]">
-        <Spinner />
-      </div>
-    );
-  }
-
-  if (query.isError) {
-    return <div>에러!</div>;
-  }
 
   return (
     query.data && (
