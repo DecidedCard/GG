@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Popover, PopoverContent, PopoverTrigger } from "@nextui-org/react";
+import { Popover, PopoverContent, PopoverTrigger } from "@nextui-org/popover";
 
 interface CustomPopoverProps {
   children: React.ReactNode;
@@ -9,11 +9,16 @@ interface CustomPopoverProps {
   showArrow?: boolean;
 }
 
-const CustomPopover = ({ children, popoverContents }: CustomPopoverProps) => {
+const CustomPopover = ({
+  placement,
+  showArrow,
+  children,
+  popoverContents,
+}: CustomPopoverProps) => {
   return (
-    <Popover>
+    <Popover placement={placement || "top"} showArrow={showArrow}>
       <PopoverTrigger>{children}</PopoverTrigger>
-      <PopoverContent>{popoverContents}</PopoverContent>
+      <PopoverContent className="bg-bg-300">{popoverContents}</PopoverContent>
     </Popover>
   );
 };

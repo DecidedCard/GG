@@ -16,14 +16,6 @@ import {
 
 const fetchFullCharacterInfo = async (name: string) => {
   try {
-    // await new Promise((resolveOuter) => {
-    //   resolveOuter(
-    //     new Promise((resolveInner) => {
-    //       setTimeout(resolveInner, 10000);
-    //     })
-    //   );
-    // });
-
     const { ocid } = await getCharacterId(name);
 
     const [

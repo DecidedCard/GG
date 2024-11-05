@@ -3,7 +3,7 @@
 import React from "react";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { NextUIProvider } from "@nextui-org/react";
+import { NextUIProvider } from "@nextui-org/system";
 
 const Provider = ({ children }: { children: React.ReactNode }) => {
   const queryClient = new QueryClient();
