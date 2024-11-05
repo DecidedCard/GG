@@ -31,7 +31,7 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="ko" className="min-h-full">
-      <body className="font-Pretendard antialiased bg-bg-100 h-full">
+      <body className="font-Pretendard antialiased bg-bg-100 min-h-screen">
         <Provider>
           <ErrorModal>
             <Header />
