@@ -14,6 +14,8 @@ const Header = () => {
           <Image
             src={Logo}
             alt="로고"
+            width={88}
+            height={88}
             className="w-auto h-full"
             priority={true}
           />
