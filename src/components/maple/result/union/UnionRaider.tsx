@@ -39,7 +39,7 @@ const UnionRaider = ({
               key={item.block_class}
               className="flex gap-1 w-[140px] text-body/14px"
             >
-              <div className="w-8">
+              <div className="relative w-8 h-auto">
                 <JopImage jop={item.block_class} />
               </div>
               <div>
