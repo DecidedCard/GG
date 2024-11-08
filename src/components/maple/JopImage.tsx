@@ -1,52 +1,52 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 
-import Adele from "@/../public/assets/maple/jopImage/Adele.webp";
-import Angelic_Buster from "@/../public/assets/maple/jopImage/Angelic_Buster.webp";
-import Aran from "@/../public/assets/maple/jopImage/Aran.webp";
-import Arch_Mage_FP from "@/../public/assets/maple/jopImage/Arch_Mage_FP.webp";
-import Arch_Mage_IL from "@/../public/assets/maple/jopImage/Arch_Mage_IL.webp";
-import Ark from "@/../public/assets/maple/jopImage/Ark.webp";
-import Battle_Mage from "@/../public/assets/maple/jopImage/Battle_Mage.webp";
-import Bishop from "@/../public/assets/maple/jopImage/Bishop.webp";
-import Blaster from "@/../public/assets/maple/jopImage/Blaster.webp";
-import Bowmaster from "@/../public/assets/maple/jopImage/Bowmaster.webp";
-import Cadena from "@/../public/assets/maple/jopImage/Cadena.webp";
-import Cannon_Shooter from "@/../public/assets/maple/jopImage/Cannon_Shooter.webp";
-import Captain from "@/../public/assets/maple/jopImage/Captain.webp";
-import Dark_Knight from "@/../public/assets/maple/jopImage/Dark_Knight.webp";
-import Demon_Avenger from "@/../public/assets/maple/jopImage/Demon_Avenger.webp";
-import Demon_Slayer from "@/../public/assets/maple/jopImage/Demon_Slayer.webp";
-import Dual_Blade from "@/../public/assets/maple/jopImage/Dual_Blade.webp";
-import Eunwol from "@/../public/assets/maple/jopImage/Eunwol.webp";
-import Evan from "@/../public/assets/maple/jopImage/Evan.webp";
-import Flame_Wizard from "@/../public/assets/maple/jopImage/Flame_Wizard.webp";
-import Hero from "@/../public/assets/maple/jopImage/Hero.webp";
-import Ho_Young from "@/../public/assets/maple/jopImage/Ho_Young.webp";
-import Illium from "@/../public/assets/maple/jopImage/Illium.webp";
-import Kain from "@/../public/assets/maple/jopImage/Kain.webp";
-import Kaiser from "@/../public/assets/maple/jopImage/Kaiser.webp";
-import Khali from "@/../public/assets/maple/jopImage/Khali.webp";
-import Kinesis from "@/../public/assets/maple/jopImage/Kinesis.webp";
-import Lara from "@/../public/assets/maple/jopImage/Lara.webp";
-import Luminous from "@/../public/assets/maple/jopImage/Luminous.webp";
-import Marksman from "@/../public/assets/maple/jopImage/Marksman.webp";
-import Mechanic from "@/../public/assets/maple/jopImage/Mechanic.webp";
-import Mercedes from "@/../public/assets/maple/jopImage/Mercedes.webp";
-import Mihile from "@/../public/assets/maple/jopImage/Mihile.webp";
-import Night_Lord from "@/../public/assets/maple/jopImage/Night_Lord.webp";
-import Night_Walker from "@/../public/assets/maple/jopImage/Night_Walker.webp";
-import Paladin from "@/../public/assets/maple/jopImage/Paladin.webp";
-import Pathfinder from "@/../public/assets/maple/jopImage/Pathfinder.webp";
-import Phantom from "@/../public/assets/maple/jopImage/Phantom.webp";
-import Shadower from "@/../public/assets/maple/jopImage/Shadower.webp";
-import Soul_Master from "@/../public/assets/maple/jopImage/Soul_Master.webp";
-import Striker from "@/../public/assets/maple/jopImage/Striker.webp";
-import Viper from "@/../public/assets/maple/jopImage/Viper.webp";
-import Wild_Hunter from "@/../public/assets/maple/jopImage/Wild_Hunter.webp";
-import Wind_Breaker from "@/../public/assets/maple/jopImage/Wind_Breaker.webp";
-import Xenon from "@/../public/assets/maple/jopImage/Xenon.webp";
-import Zero from "@/../public/assets/maple/jopImage/Zero.webp";
+import Adele from "@/../public/assets/maple/jopImage/Adele.png";
+import Angelic_Buster from "@/../public/assets/maple/jopImage/Angelic_Buster.png";
+import Aran from "@/../public/assets/maple/jopImage/Aran.png";
+import Arch_Mage_FP from "@/../public/assets/maple/jopImage/Arch_Mage_FP.png";
+import Arch_Mage_IL from "@/../public/assets/maple/jopImage/Arch_Mage_IL.png";
+import Ark from "@/../public/assets/maple/jopImage/Ark.png";
+import Battle_Mage from "@/../public/assets/maple/jopImage/Battle_Mage.png";
+import Bishop from "@/../public/assets/maple/jopImage/Bishop.png";
+import Blaster from "@/../public/assets/maple/jopImage/Blaster.png";
+import Bowmaster from "@/../public/assets/maple/jopImage/Bowmaster.png";
+import Cadena from "@/../public/assets/maple/jopImage/Cadena.png";
+import Cannon_Shooter from "@/../public/assets/maple/jopImage/Cannon_Shooter.png";
+import Captain from "@/../public/assets/maple/jopImage/Captain.png";
+import Dark_Knight from "@/../public/assets/maple/jopImage/Dark_Knight.png";
+import Demon_Avenger from "@/../public/assets/maple/jopImage/Demon_Avenger.png";
+import Demon_Slayer from "@/../public/assets/maple/jopImage/Demon_Slayer.png";
+import Dual_Blade from "@/../public/assets/maple/jopImage/Dual_Blade.png";
+import Eunwol from "@/../public/assets/maple/jopImage/Eunwol.png";
+import Evan from "@/../public/assets/maple/jopImage/Evan.png";
+import Flame_Wizard from "@/../public/assets/maple/jopImage/Flame_Wizard.png";
+import Hero from "@/../public/assets/maple/jopImage/Hero.png";
+import Ho_Young from "@/../public/assets/maple/jopImage/Ho_Young.png";
+import Illium from "@/../public/assets/maple/jopImage/Illium.png";
+import Kain from "@/../public/assets/maple/jopImage/Kain.png";
+import Kaiser from "@/../public/assets/maple/jopImage/Kaiser.png";
+import Khali from "@/../public/assets/maple/jopImage/Khali.png";
+import Kinesis from "@/../public/assets/maple/jopImage/Kinesis.png";
+import Lara from "@/../public/assets/maple/jopImage/Lara.png";
+import Luminous from "@/../public/assets/maple/jopImage/Luminous.png";
+import Marksman from "@/../public/assets/maple/jopImage/Marksman.png";
+import Mechanic from "@/../public/assets/maple/jopImage/Mechanic.png";
+import Mercedes from "@/../public/assets/maple/jopImage/Mercedes.png";
+import Mihile from "@/../public/assets/maple/jopImage/Mihile.png";
+import Night_Lord from "@/../public/assets/maple/jopImage/Night_Lord.png";
+import Night_Walker from "@/../public/assets/maple/jopImage/Night_Walker.png";
+import Paladin from "@/../public/assets/maple/jopImage/Paladin.png";
+import Pathfinder from "@/../public/assets/maple/jopImage/Pathfinder.png";
+import Phantom from "@/../public/assets/maple/jopImage/Phantom.png";
+import Shadower from "@/../public/assets/maple/jopImage/Shadower.png";
+import Soul_Master from "@/../public/assets/maple/jopImage/Soul_Master.png";
+import Striker from "@/../public/assets/maple/jopImage/Striker.png";
+import Viper from "@/../public/assets/maple/jopImage/Viper.png";
+import Wild_Hunter from "@/../public/assets/maple/jopImage/Wild_Hunter.png";
+import Wind_Breaker from "@/../public/assets/maple/jopImage/Wind_Breaker.png";
+import Xenon from "@/../public/assets/maple/jopImage/Xenon.png";
+import Zero from "@/../public/assets/maple/jopImage/Zero.png";
 
 const jopImage: { [key: string]: StaticImageData } = {
   아델: Adele,
@@ -104,10 +104,9 @@ const JopImage = ({ jop }: { jop: string }) => {
       <Image
         src={image}
         alt={jop}
-        width={500}
-        height={411}
-        style={{ height: "auto" }}
-        loading="lazy"
+        fill
+        placeholder="blur"
+        sizes="(max-width: 768px) 100vw, 500px"
       />
     )
   );

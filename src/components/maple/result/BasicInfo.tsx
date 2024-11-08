@@ -2,12 +2,12 @@ import React from "react";
 import Image from "next/image";
 
 import ServerImage from "../ServerImage";
-import JopImage from "../JopImage";
 import CashItemCard from "./CashItemCard";
+import FavoriteCheck from "./FavoriteCheck";
+import JopImage from "../JopImage";
 
 import type { Basic } from "@/types/maple/mapleApi";
 import type { CashItem } from "@/types/maple/cashItem";
-import FavoriteCheck from "./FavoriteCheck";
 
 const BasicInfo = ({
   info,
@@ -22,7 +22,9 @@ const BasicInfo = ({
     <div className="relative flex items-center gap-5 py-10 px-20 w-full h-[400px] bg-bg-200 rounded-lg overflow-hidden md:px-10 sm:px-5 sm:flex-col sm:justify-evenly">
       <FavoriteCheck character={info.character_name} />
       <div className="absolute top-0 right-0 opacity-50">
-        <JopImage jop={info.character_class} />
+        <div className="relative w-[500px] h-[411px]">
+          <JopImage jop={info.character_class} />
+        </div>
       </div>
       <div className="flex gap-3 z-10">
         <div className="flex flex-col gap-1">
