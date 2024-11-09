@@ -1,13 +1,15 @@
+"use client";
+
 import React, { Suspense } from "react";
 
 import { Spinner } from "@nextui-org/spinner";
 
 import CharacterInfo from "@/components/maple/result/ChatacterInfo";
 
-const ResultLayout = () => {
+const ResultLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <Suspense fallback={<Spinner className="w-full min-h-screen" />}>
-      <CharacterInfo />
+      <CharacterInfo>{children}</CharacterInfo>
     </Suspense>
   );
 };

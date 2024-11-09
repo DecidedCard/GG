@@ -48,7 +48,7 @@ export const useCharacterQuery = (
   const navigation = useRouter();
 
   const { data, isError, isFetching } = useSuspenseQuery({
-    queryKey: [QUERY_KEY.characterInfo, id],
+    queryKey: [QUERY_KEY.characterInfo, id, type],
     queryFn: () => fetchCharacterInfo(id!, type),
     retry: 0,
     refetchOnWindowFocus: false,

@@ -9,8 +9,8 @@ import ArrowRoundBack from "@/assets/ArrowRoundBack";
 
 import useResult from "@/hooks/maple/result/useResult";
 
-const CharacterInfo = () => {
-  const { info, query, onClickCharacterInfoSet } = useResult();
+const CharacterInfo = ({ children }: { children: React.ReactNode }) => {
+  const { query, onClickCharacterInfoSet } = useResult();
 
   return (
     query.data && (
@@ -23,10 +23,8 @@ const CharacterInfo = () => {
           popularity={query.data.popularityInfo.popularity}
           cashItem={query.data.cashItemInfo}
         />
-        <InfoNav
-          info={info}
-          onClickCharacterInfoSet={onClickCharacterInfoSet}
-        />
+        <InfoNav onClickCharacterInfoSet={onClickCharacterInfoSet} />
+        {children}
       </div>
     )
   );
