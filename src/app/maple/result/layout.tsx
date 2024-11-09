@@ -4,7 +4,7 @@ import { Spinner } from "@nextui-org/spinner";
 
 import CharacterInfo from "@/components/maple/result/ChatacterInfo";
 
-const page = () => {
+const ResultLayout = () => {
   return (
     <Suspense fallback={<Spinner className="w-full min-h-screen" />}>
       <CharacterInfo />
@@ -12,4 +12,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ResultLayout;

@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
-import { useCharacterQuery } from "../useQuery";
+import { useBasicCharacterQuery } from "../useQuery";
 
 export type Info = "stat" | "skill" | "union";
 
@@ -11,7 +11,7 @@ const useResult = () => {
   const params = useSearchParams();
   const characterName = params.get("character_name") as string;
 
-  const { data, isError, isFetching } = useCharacterQuery(characterName);
+  const { data, isError, isFetching } = useBasicCharacterQuery(characterName);
 
   const onClickCharacterInfoSet = useCallback((arg: Info) => {
     setInfo(arg);

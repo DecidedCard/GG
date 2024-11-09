@@ -14,55 +14,63 @@ import {
   getCharacterId,
 } from "@/api/maple/axios";
 
-const fetchFullCharacterInfo = async (name: string) => {
+export const fetchBasicCharacterInfo = async (name: string) => {
   try {
     const { ocid } = await getCharacterId(name);
 
-    const [
-      basicInfo,
-      statInfo,
-      popularityInfo,
-      itemInfo,
-      cashItemInfo,
-      fifthSkillInfo,
-      sixthSkillInfo,
-      symbolInfo,
-      linkSkill,
-      union,
-      unionArtifact,
-      unionRaider,
-    ] = await Promise.all([
+    const [basicInfo, cashItemInfo, popularityInfo] = await Promise.all([
       basicCharacterInfo(ocid),
-      statCharacterInfo(ocid),
-      popularityCharacterInfo(ocid),
-      itemCharacterInfo(ocid),
       cashItemCharacterInfo(ocid),
-      fifthSkillCharacterInfo(ocid),
-      sixthSkillCharacterInfo(ocid),
-      symbolCharacterInfo(ocid),
-      linkSkillCharacterInfo(ocid),
-      unionCharacterCharacterInfo(ocid),
-      unionArtifactCharacterCharacterInfo(ocid),
-      unionRaiderCharacterCharacterInfo(ocid),
+      popularityCharacterInfo(ocid),
     ]);
 
     return {
       basicInfo,
-      statInfo,
-      popularityInfo,
-      itemInfo,
       cashItemInfo,
-      fifthSkillInfo,
-      sixthSkillInfo,
-      symbolInfo,
-      linkSkill,
-      union,
-      unionArtifact,
-      unionRaider,
+      popularityInfo,
     };
   } catch (error) {
     return Promise.reject(error);
   }
 };
 
-export default fetchFullCharacterInfo;
+export const fetchCharacterInfo = async (
+  name: string,
+  type: "stat" | "skill" | "union"
+) => {
+  const { ocid } = await getCharacterId(name);
+
+  switch (type) {
+    case "stat": {
+      const [statInfo, itemInfo] = await Promise.all([
+        statCharacterInfo(ocid),
+        itemCharacterInfo(ocid),
+      ]);
+
+      return { statInfo, itemInfo };
+    }
+
+    case "skill": {
+      const [fifthSkillInfo, sixthSkillInfo, linkSkillInfo, symbolInfo] =
+        await Promise.all([
+          fifthSkillCharacterInfo(ocid),
+          sixthSkillCharacterInfo(ocid),
+          linkSkillCharacterInfo(ocid),
+          symbolCharacterInfo(ocid),
+        ]);
+
+      return { fifthSkillInfo, sixthSkillInfo, linkSkillInfo, symbolInfo };
+    }
+
+    case "union": {
+      const [unionCharacterInfo, unionArtifactInfo, unionRaiderInfo] =
+        await Promise.all([
+          unionCharacterCharacterInfo(ocid),
+          unionArtifactCharacterCharacterInfo(ocid),
+          unionRaiderCharacterCharacterInfo(ocid),
+        ]);
+
+      return { unionCharacterInfo, unionArtifactInfo, unionRaiderInfo };
+    }
+  }
+};
