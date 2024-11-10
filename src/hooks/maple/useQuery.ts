@@ -31,7 +31,7 @@ export const useBasicCharacterQuery = (id: string | null) => {
 
       setIsError({
         isError: true,
-        comment: "검색하는 중에 오류가 생겼습니다.",
+        comment: "캐릭터 검색 중 오류가 발생하였습니다.",
         onClickFn: onClickHandler,
       });
     }
@@ -63,11 +63,11 @@ export const useCharacterQuery = (
 
       setIsError({
         isError: true,
-        comment: "검색하는 중에 오류가 생겼습니다.",
+        comment: `${type}을 검색하는 중에 오류가 발생하였습니다.`,
         onClickFn: onClickHandler,
       });
     }
-  }, [isError, setIsError, setReset, navigation]);
+  }, [type, isError, setIsError, setReset, navigation]);
 
   return { isFetching, isError, data };
 };
