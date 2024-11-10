@@ -1,6 +1,7 @@
 import { useCallback } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
+import useCharacterNavigation from "../useNavigation";
 import { useBasicCharacterQuery } from "../useQuery";
 
 export type Info = "stat" | "skill" | "union";
@@ -9,15 +10,15 @@ const useResult = () => {
   const params = useSearchParams();
   const characterName = params.get("character_name") as string;
 
-  const navigation = useRouter();
+  const { navigationToCharacterInfo } = useCharacterNavigation();
 
   const { data, isError, isFetching } = useBasicCharacterQuery(characterName);
 
   const onClickCharacterInfoSet = useCallback(
     (arg: Info) => {
-      navigation.push(`/maple/result/${arg}?character_name=${characterName}`);
+      navigationToCharacterInfo(characterName, arg);
     },
-    [navigation, characterName]
+    [navigationToCharacterInfo, characterName]
   );
 
   const query = {
