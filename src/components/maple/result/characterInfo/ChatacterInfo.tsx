@@ -3,8 +3,9 @@
 import React from "react";
 import Link from "next/link";
 
-import BasicInfo from "@/components/maple/result/BasicInfo";
 import InfoNav from "./InfoNav";
+import BasicInfo from "./BasicInfo";
+
 import ArrowRoundBack from "@/assets/ArrowRoundBack";
 
 import useResult from "@/hooks/maple/result/useResult";

@@ -4,7 +4,7 @@ import React, { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 import ItemList from "@/components/maple/result/item/ItemList";
-import StatInfo from "@/components/maple/result/StatInfo";
+import StatInfo from "@/components/maple/result/characterInfo/StatInfo";
 
 import { useCharacterQuery } from "@/hooks/maple/useQuery";
 import { Spinner } from "@nextui-org/spinner";
