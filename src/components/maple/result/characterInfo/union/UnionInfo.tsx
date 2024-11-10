@@ -14,20 +14,18 @@ const UnionInfo = () => {
   const { data } = useCharacterQuery(name, "union");
 
   return (
-    <div className="flex flex-col gap-5 w-[1280px] md:w-full sm:w-full">
-      {data.unionArtifactInfo && (
+    data.unionArtifactInfo && (
+      <div className="flex flex-col gap-5 w-[1280px] md:w-full sm:w-full">
         <UnionArtifact
           artifact={data.unionArtifactInfo}
           level={data.unionCharacterInfo.union_artifact_level}
         />
-      )}
-      {data.unionRaiderInfo && (
         <UnionRaider
           raider={data.unionRaiderInfo}
           unionInfo={data.unionCharacterInfo}
         />
-      )}
-    </div>
+      </div>
+    )
   );
 };
 

@@ -14,8 +14,7 @@ const StatAndItemInfo = () => {
   const { data } = useCharacterQuery(name, "stat");
 
   return (
-    data.statInfo &&
-    data.itemInfo && (
+    data.statInfo && (
       <div className="flex gap-3 sm:flex-col">
         <StatInfo info={data.statInfo} />
         <ItemList item={data.itemInfo} />

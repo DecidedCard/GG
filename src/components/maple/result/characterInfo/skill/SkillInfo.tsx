@@ -17,12 +17,14 @@ const SkillInfo = () => {
   const { data } = useCharacterQuery(name, "skill");
 
   return (
-    <div className="flex flex-col gap-5 w-[1280px] md:w-full sm:w-full">
-      <SkillList skillInfo={data.sixthSkillInfo!} />
-      <SkillList skillInfo={data.fifthSkillInfo!} />
-      <SymbolList item={data.symbolInfo!} />
-      <LinkSkillList item={data.linkSkillInfo!} />
-    </div>
+    data.sixthSkillInfo && (
+      <div className="flex flex-col gap-5 w-[1280px] md:w-full sm:w-full">
+        <SkillList skillInfo={data.sixthSkillInfo} />
+        <SkillList skillInfo={data.fifthSkillInfo} />
+        <SymbolList item={data.symbolInfo} />
+        <LinkSkillList item={data.linkSkillInfo} />
+      </div>
+    )
   );
 };
 
