@@ -11,30 +11,48 @@ import {
   unionCharacterCharacterInfo,
   unionArtifactCharacterCharacterInfo,
   unionRaiderCharacterCharacterInfo,
+  getCharacterId,
 } from "@/api/maple/axios";
 
-export const fetchCharacterData = async (ocid: string, type?: string) => {
+export const fetchCharacterData = async (
+  name: string,
+  type?: "stat" | "skill" | "union"
+) => {
+  const { ocid } = await getCharacterId(name);
+
   switch (type) {
     case "stat":
-      return Promise.all([statCharacterInfo(ocid), itemCharacterInfo(ocid)]);
+      const [statInfo, itemInfo] = await Promise.all([
+        statCharacterInfo(ocid),
+        itemCharacterInfo(ocid),
+      ]);
+      return { statInfo, itemInfo };
+
     case "skill":
-      return Promise.all([
-        fifthSkillCharacterInfo(ocid),
-        sixthSkillCharacterInfo(ocid),
-        symbolCharacterInfo(ocid),
-        linkSkillCharacterInfo(ocid),
-      ]);
+      const [fifthSkillInfo, sixthSkillInfo, symbolInfo, linkSkillInfo] =
+        await Promise.all([
+          fifthSkillCharacterInfo(ocid),
+          sixthSkillCharacterInfo(ocid),
+          symbolCharacterInfo(ocid),
+          linkSkillCharacterInfo(ocid),
+        ]);
+      return { fifthSkillInfo, sixthSkillInfo, symbolInfo, linkSkillInfo };
+
     case "union":
-      return Promise.all([
-        unionCharacterCharacterInfo(ocid),
-        unionArtifactCharacterCharacterInfo(ocid),
-        unionRaiderCharacterCharacterInfo(ocid),
-      ]);
+      const [unionCharacterInfo, unionArtifactInfo, unionRaiderInfo] =
+        await Promise.all([
+          unionCharacterCharacterInfo(ocid),
+          unionArtifactCharacterCharacterInfo(ocid),
+          unionRaiderCharacterCharacterInfo(ocid),
+        ]);
+      return { unionCharacterInfo, unionArtifactInfo, unionRaiderInfo };
+
     default:
-      return Promise.all([
+      const [basicInfo, cashItemInfo, popularityInfo] = await Promise.all([
         basicCharacterInfo(ocid),
         cashItemCharacterInfo(ocid),
         popularityCharacterInfo(ocid),
       ]);
+      return { basicInfo, cashItemInfo, popularityInfo };
   }
 };

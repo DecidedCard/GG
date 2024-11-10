@@ -6,10 +6,7 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 import useErrorModalStore from "@/store/errorModalStore";
 
 import QUERY_KEY from "@/util/maple/QUERY_KEY";
-import {
-  fetchCharacterInfo,
-  fetchBasicCharacterInfo,
-} from "@/util/maple/fetchCharacterInfo";
+import { fetchCharacterData } from "@/util/maple/fetchCharacterData";
 
 export const useBasicCharacterQuery = (id: string | null) => {
   const { setIsError, setReset } = useErrorModalStore();
@@ -17,7 +14,7 @@ export const useBasicCharacterQuery = (id: string | null) => {
 
   const { data, isError, isFetching } = useSuspenseQuery({
     queryKey: [QUERY_KEY.characterInfo, id],
-    queryFn: () => fetchBasicCharacterInfo(id!),
+    queryFn: () => fetchCharacterData(id!),
     retry: 0,
     refetchOnWindowFocus: false,
   });
@@ -49,7 +46,7 @@ export const useCharacterQuery = (
 
   const { data, isError, isFetching } = useSuspenseQuery({
     queryKey: [QUERY_KEY.characterInfo, id, type],
-    queryFn: () => fetchCharacterInfo(id!, type),
+    queryFn: () => fetchCharacterData(id!, type),
     retry: 0,
     refetchOnWindowFocus: false,
   });

@@ -20,9 +20,9 @@ const CharacterInfo = ({ children }: { children: React.ReactNode }) => {
           <ArrowRoundBack className="w-9 h-9 text-primary-200 cursor-pointer sm:w-6 sm:h-6" />
         </Link>
         <BasicInfo
-          info={query.data.basicInfo}
-          popularity={query.data.popularityInfo.popularity}
-          cashItem={query.data.cashItemInfo}
+          info={query.data.basicInfo!}
+          popularity={query.data.popularityInfo!.popularity}
+          cashItem={query.data.cashItemInfo!}
         />
         <InfoNav onClickCharacterInfoSet={onClickCharacterInfoSet} />
         {children}

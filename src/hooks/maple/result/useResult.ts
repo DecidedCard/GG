@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import { useSearchParams } from "next/navigation";
 
 import useCharacterNavigation from "../useNavigation";
@@ -14,12 +13,9 @@ const useResult = () => {
 
   const { data, isError, isFetching } = useBasicCharacterQuery(characterName);
 
-  const onClickCharacterInfoSet = useCallback(
-    (arg: Info) => {
-      navigationToCharacterInfo(characterName, arg);
-    },
-    [navigationToCharacterInfo, characterName]
-  );
+  const onClickCharacterInfoSet = (arg: Info) => {
+    navigationToCharacterInfo(characterName, arg);
+  };
 
   const query = {
     data,
