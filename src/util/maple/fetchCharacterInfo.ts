@@ -1,76 +1,50 @@
-import {
-  basicCharacterInfo,
-  cashItemCharacterInfo,
-  fifthSkillCharacterInfo,
-  itemCharacterInfo,
-  popularityCharacterInfo,
-  sixthSkillCharacterInfo,
-  statCharacterInfo,
-  symbolCharacterInfo,
-  linkSkillCharacterInfo,
-  unionCharacterCharacterInfo,
-  unionArtifactCharacterCharacterInfo,
-  unionRaiderCharacterCharacterInfo,
-  getCharacterId,
-} from "@/api/maple/axios";
+// src/util/maple/fetchCharacterInfo.ts
+import { getCharacterId } from "@/api/maple/axios";
+import { fetchCharacterData } from "./fetchCharacterData";
 
+// 기본 캐릭터 정보를 가져오는 함수
 export const fetchBasicCharacterInfo = async (name: string) => {
   try {
     const { ocid } = await getCharacterId(name);
-
-    const [basicInfo, cashItemInfo, popularityInfo] = await Promise.all([
-      basicCharacterInfo(ocid),
-      cashItemCharacterInfo(ocid),
-      popularityCharacterInfo(ocid),
-    ]);
-
-    return {
-      basicInfo,
-      cashItemInfo,
-      popularityInfo,
-    };
+    const [basicInfo, cashItemInfo, popularityInfo] = await fetchCharacterData(
+      ocid
+    );
+    return { basicInfo, cashItemInfo, popularityInfo };
   } catch (error) {
     return Promise.reject(error);
   }
 };
 
+// 특정 타입별로 캐릭터 정보를 가져오는 함수
 export const fetchCharacterInfo = async (
   name: string,
   type: "stat" | "skill" | "union"
 ) => {
-  const { ocid } = await getCharacterId(name);
+  try {
+    const { ocid } = await getCharacterId(name);
+    const data = await fetchCharacterData(ocid, type);
 
-  switch (type) {
-    case "stat": {
-      const [statInfo, itemInfo] = await Promise.all([
-        statCharacterInfo(ocid),
-        itemCharacterInfo(ocid),
-      ]);
-
-      return { statInfo, itemInfo };
+    // 타입에 따라 반환되는 데이터 구조 정의
+    switch (type) {
+      case "stat":
+        return { statInfo: data[0], itemInfo: data[1] };
+      case "skill":
+        return {
+          fifthSkillInfo: data[0],
+          sixthSkillInfo: data[1],
+          symbolInfo: data[2],
+          linkSkillInfo: data[3],
+        };
+      case "union":
+        return {
+          unionCharacterInfo: data[0],
+          unionArtifactInfo: data[1],
+          unionRaiderInfo: data[2],
+        };
+      default:
+        return null;
     }
-
-    case "skill": {
-      const [fifthSkillInfo, sixthSkillInfo, linkSkillInfo, symbolInfo] =
-        await Promise.all([
-          fifthSkillCharacterInfo(ocid),
-          sixthSkillCharacterInfo(ocid),
-          linkSkillCharacterInfo(ocid),
-          symbolCharacterInfo(ocid),
-        ]);
-
-      return { fifthSkillInfo, sixthSkillInfo, linkSkillInfo, symbolInfo };
-    }
-
-    case "union": {
-      const [unionCharacterInfo, unionArtifactInfo, unionRaiderInfo] =
-        await Promise.all([
-          unionCharacterCharacterInfo(ocid),
-          unionArtifactCharacterCharacterInfo(ocid),
-          unionRaiderCharacterCharacterInfo(ocid),
-        ]);
-
-      return { unionCharacterInfo, unionArtifactInfo, unionRaiderInfo };
-    }
+  } catch (error) {
+    return Promise.reject(error);
   }
 };

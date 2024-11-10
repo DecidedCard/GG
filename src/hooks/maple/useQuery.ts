@@ -7,8 +7,8 @@ import useErrorModalStore from "@/store/errorModalStore";
 
 import QUERY_KEY from "@/util/maple/QUERY_KEY";
 import {
-  fetchBasicCharacterInfo,
   fetchCharacterInfo,
+  fetchBasicCharacterInfo,
 } from "@/util/maple/fetchCharacterInfo";
 
 export const useBasicCharacterQuery = (id: string | null) => {
