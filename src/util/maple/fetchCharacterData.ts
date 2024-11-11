@@ -4,14 +4,13 @@ import {
   popularityCharacterInfo,
   itemCharacterInfo,
   cashItemCharacterInfo,
-  fifthSkillCharacterInfo,
-  sixthSkillCharacterInfo,
   symbolCharacterInfo,
   linkSkillCharacterInfo,
   unionCharacterCharacterInfo,
   unionArtifactCharacterCharacterInfo,
   unionRaiderCharacterCharacterInfo,
   getCharacterId,
+  SkillCharacterInfo,
 } from "@/api/maple/axios";
 
 export const fetchCharacterData = async (
@@ -31,8 +30,8 @@ export const fetchCharacterData = async (
     case "skill":
       const [fifthSkillInfo, sixthSkillInfo, symbolInfo, linkSkillInfo] =
         await Promise.all([
-          fifthSkillCharacterInfo(ocid),
-          sixthSkillCharacterInfo(ocid),
+          SkillCharacterInfo(ocid, 5),
+          SkillCharacterInfo(ocid, 6),
           symbolCharacterInfo(ocid),
           linkSkillCharacterInfo(ocid),
         ]);
