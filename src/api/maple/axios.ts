@@ -15,6 +15,7 @@ import type {
   UnionCharacterInfo,
   UnionRaiderCharacterInfo,
 } from "@/types/maple/union";
+import handleError from "@/util/handleError";
 
 const apiKey = process.env.NEXT_PUBLIC_NEXON_API_1;
 
@@ -30,8 +31,7 @@ export const getCharacterId = async (name: string): Promise<CharacterId> => {
     const res = await maple.get(`/maplestory/v1/id?character_name=${name}`);
     return res.data;
   } catch (error) {
-    console.error("캐릭터 id를 가져오는 중에 오류가 발생했습니다.", error);
-    return Promise.reject(new Error("캐릭터의 id를 가져오는데 실패했습니다."));
+    return handleError("캐릭터 id를 가져오는 중에 오류가 발생했습니다.", error);
   }
 };
 
@@ -40,10 +40,7 @@ export const basicCharacterInfo = async (id: string): Promise<Basic> => {
     const res = await maple.get(`/maplestory/v1/character/basic?ocid=${id}`);
     return res.data;
   } catch (error) {
-    console.error("캐릭터의 기본정보를 가져오는데 실패했습니다.", error);
-    return Promise.reject(
-      new Error("캐릭터의 기본정보를 가져오는데 실패했습니다.")
-    );
+    return handleError("캐릭터의 기본정보를 가져오는데 실패했습니다.", error);
   }
 };
 
@@ -56,9 +53,9 @@ export const popularityCharacterInfo = async (
     );
     return res.data;
   } catch (error) {
-    console.error("캐릭터의 인기도 정보를 가져오는데 실패했습니다.", error);
-    return Promise.reject(
-      new Error("캐릭터의 인기도 정보를 가져오는데 실패했습니다.")
+    return handleError(
+      "캐릭터의 인기도 정보를 가져오는데 실패했습니다.",
+      error
     );
   }
 };
@@ -70,9 +67,9 @@ export const statCharacterInfo = async (
     const res = await maple.get(`/maplestory/v1/character/stat?ocid=${id}`);
     return res.data;
   } catch (error) {
-    console.error("캐릭터의 상세스탯 정보를 가져오는데 실패했습니다", error);
-    return Promise.reject(
-      new Error("캐릭터의 상세스탯 정보를 가져오는데 실패했습니다.")
+    return handleError(
+      "캐릭터의 상세스탯 정보를 가져오는데 실패했습니다",
+      error
     );
   }
 };
@@ -84,9 +81,9 @@ export const itemCharacterInfo = async (id: string): Promise<Item> => {
     );
     return res.data;
   } catch (error) {
-    console.error("캐릭터의 아이템 정보를 가져오는데 실패하였습니다.", error);
-    return Promise.reject(
-      new Error("캐릭터의 아이템 정보를 가져오는데 실패하였습니다.")
+    return handleError(
+      "캐릭터의 아이템 정보를 가져오는데 실패하였습니다.",
+      error
     );
   }
 };
@@ -98,12 +95,9 @@ export const cashItemCharacterInfo = async (id: string): Promise<CashItem> => {
     );
     return res.data;
   } catch (error) {
-    console.error(
+    return handleError(
       "캐릭터의 캐시아이템 정보를 가져오는데 실패하였습니다.",
       error
-    );
-    return Promise.reject(
-      "캐릭터의 캐시아이템 정보를 가져오는데 실패하였습니다."
     );
   }
 };
@@ -118,9 +112,9 @@ export const SkillCharacterInfo = async (
     );
     return res.data;
   } catch (error) {
-    console.error("캐릭터의 스킬 정보를 가져오는데 실패하였습니다.", error);
-    return Promise.reject(
-      new Error("캐릭터의 스킬 정보를 가져오는데 실패하였습니다.")
+    return handleError(
+      "캐릭터의 스킬 정보를 가져오는데 실패하였습니다.",
+      error
     );
   }
 };
@@ -134,9 +128,9 @@ export const symbolCharacterInfo = async (
     );
     return res.data;
   } catch (error) {
-    console.error("캐릭터의 심볼 정보를 가져오는데 실패하였습니다.", error);
-    return Promise.reject(
-      new Error("캐릭터의 심볼 정보를 가져오는데 실패하였습니다.")
+    return handleError(
+      "캐릭터의 심볼 정보를 가져오는데 실패하였습니다.",
+      error
     );
   }
 };
@@ -150,9 +144,9 @@ export const linkSkillCharacterInfo = async (
     );
     return res.data;
   } catch (error) {
-    console.error("캐릭터의 링크스킬 정보를 가져오는데 실패하였습니다.", error);
-    return Promise.reject(
-      new Error("캐릭터의 링크스킬 정보를 가져오는데 실패하였습니다.")
+    return handleError(
+      "캐릭터의 링크스킬 정보를 가져오는데 실패하였습니다.",
+      error
     );
   }
 };
@@ -164,9 +158,9 @@ export const unionCharacterCharacterInfo = async (
     const res = await maple.get(`/maplestory/v1/user/union?ocid=${id}`);
     return res.data;
   } catch (error) {
-    console.error("캐릭터의 유니온 정보를 가져오는데 실패하였습니다.", error);
-    return Promise.reject(
-      new Error("캐릭터의 유니온 정보를 가져오는데 실패하였습니다.")
+    return handleError(
+      "캐릭터의 유니온 정보를 가져오는데 실패하였습니다.",
+      error
     );
   }
 };
@@ -180,12 +174,9 @@ export const unionArtifactCharacterCharacterInfo = async (
     );
     return res.data;
   } catch (error) {
-    console.error(
+    return handleError(
       "캐릭터의 유니온 아티팩트 정보를 가져오는데 실패하였습니다.",
       error
-    );
-    return Promise.reject(
-      "캐릭터의 유니온 아티팩트 정보를 가져오는데 실패하였습니다."
     );
   }
 };
@@ -197,12 +188,9 @@ export const unionRaiderCharacterCharacterInfo = async (
     const res = await maple.get(`/maplestory/v1/user/union-raider?ocid=${id}`);
     return res.data;
   } catch (error) {
-    console.error(
+    return handleError(
       "캐릭터의 유니온 공격대 정보를 가져오는데 실패하였습니다.",
       error
-    );
-    return Promise.reject(
-      new Error("캐릭터의 유니온 공격대 정보를 가져오는데 실패하였습니다.")
     );
   }
 };
