@@ -18,30 +18,23 @@ const InfoNav = ({
 
   return (
     <nav className="flex items-center px-4 gap-5 w-full h-16 bg-bg-200">
-      <button
-        onClick={() => onClickCharacterInfoSet("stat")}
-        className={`py-2 w-28 h-fit border border-solid border-text-100 rounded-lg ${
-          isStatActive && "bg-primary-100"
-        }`}
-      >
-        스탯/아이템
-      </button>
-      <button
-        onClick={() => onClickCharacterInfoSet("skill")}
-        className={`py-2 w-28 h-fit border border-solid border-text-100 rounded-lg ${
-          isSkillActive && "bg-primary-100"
-        }`}
-      >
-        스킬 및 심볼
-      </button>
-      <button
-        onClick={() => onClickCharacterInfoSet("union")}
-        className={`py-2 w-28 h-fit border border-solid border-text-100 rounded-lg ${
-          isUnionActive && "bg-primary-100"
-        }`}
-      >
-        유니온
-      </button>
+      {["stat", "skill", "union"].map((type) => (
+        <button
+          key={type}
+          onClick={() => onClickCharacterInfoSet(type as Info)}
+          className={`py-2 w-28 h-fit border border-solid border-text-100 rounded-lg ${
+            (type === "stat" && isStatActive && "bg-primary-100") ||
+            (type === "skill" && isSkillActive && "bg-primary-100") ||
+            (type === "union" && isUnionActive && "bg-primary-100")
+          }`}
+        >
+          {type === "stat"
+            ? "스탯/아이템"
+            : type === "skill"
+            ? "스킬 및 심볼"
+            : "유니온"}
+        </button>
+      ))}
     </nav>
   );
 };
