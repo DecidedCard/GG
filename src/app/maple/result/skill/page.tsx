@@ -3,12 +3,11 @@
 import React, { Suspense } from "react";
 
 import SkillInfo from "@/components/maple/result/skill/SkillInfo";
-
-import { Spinner } from "@nextui-org/spinner";
+import LoadingOverlay from "@/components/common/LoadingOverlay";
 
 const SkillPage = () => {
   return (
-    <Suspense fallback={<Spinner />}>
+    <Suspense fallback={<LoadingOverlay />}>
       <SkillInfo />
     </Suspense>
   );

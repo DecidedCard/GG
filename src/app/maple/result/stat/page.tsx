@@ -3,12 +3,11 @@
 import React, { Suspense } from "react";
 
 import StatAndItemInfo from "@/components/maple/result/stat&item/StatAndItemInfo";
-
-import { Spinner } from "@nextui-org/spinner";
+import LoadingOverlay from "@/components/common/LoadingOverlay";
 
 const StatPage = () => {
   return (
-    <Suspense fallback={<Spinner />}>
+    <Suspense fallback={<LoadingOverlay />}>
       <StatAndItemInfo />
     </Suspense>
   );

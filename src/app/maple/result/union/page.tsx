@@ -3,12 +3,11 @@
 import React, { Suspense } from "react";
 
 import UnionInfo from "@/components/maple/result/union/UnionInfo";
-
-import { Spinner } from "@nextui-org/spinner";
+import LoadingOverlay from "@/components/common/LoadingOverlay";
 
 const UnionPage = () => {
   return (
-    <Suspense fallback={<Spinner />}>
+    <Suspense fallback={<LoadingOverlay />}>
       <UnionInfo />
     </Suspense>
   );
