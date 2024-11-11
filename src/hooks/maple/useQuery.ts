@@ -15,6 +15,7 @@ export const useBasicCharacterQuery = (id: string | null) => {
   const { data, isError, error } = useSuspenseQuery({
     queryKey: [QUERY_KEY.characterInfo, id],
     queryFn: () => fetchCharacterData(id!),
+    staleTime: 1000 * 60 * 3,
     retry: 0,
     refetchOnWindowFocus: false,
   });
@@ -47,6 +48,7 @@ export const useCharacterQuery = (
   const { data, isError, error } = useSuspenseQuery({
     queryKey: [QUERY_KEY.characterInfo, id, type],
     queryFn: () => fetchCharacterData(id!, type),
+    staleTime: 1000 * 60 * 3,
     retry: 0,
     refetchOnWindowFocus: false,
   });
