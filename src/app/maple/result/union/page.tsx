@@ -2,7 +2,7 @@
 
 import React, { Suspense } from "react";
 
-import UnionInfo from "@/components/maple/result/characterInfo/union/UnionInfo";
+import UnionInfo from "@/components/maple/result/union/UnionInfo";
 
 import { Spinner } from "@nextui-org/spinner";
 

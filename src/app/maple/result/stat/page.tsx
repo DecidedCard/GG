@@ -2,7 +2,7 @@
 
 import React, { Suspense } from "react";
 
-import StatAndItemInfo from "@/components/maple/result/characterInfo/StatAndItemInfo";
+import StatAndItemInfo from "@/components/maple/result/stat&item/StatAndItemInfo";
 
 import { Spinner } from "@nextui-org/spinner";
 

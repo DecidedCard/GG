@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 
-import FavoriteCheck from "../FavoriteCheck";
-import JopImage from "../../JopImage";
-import ServerImage from "../../ServerImage";
+import FavoriteCheck from "./FavoriteCheck";
+import JopImage from "../JopImage";
+import ServerImage from "../ServerImage";
 import CashItemCard from "./CashItemCard";
 
 import type { Basic } from "@/types/maple/mapleApi";

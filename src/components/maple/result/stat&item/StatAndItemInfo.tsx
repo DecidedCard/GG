@@ -2,7 +2,7 @@ import React from "react";
 import { useSearchParams } from "next/navigation";
 
 import StatInfo from "./StatInfo";
-import ItemList from "./item/ItemList";
+import ItemList from "../item/ItemList";
 
 import { useCharacterQuery } from "@/hooks/maple/useQuery";
 

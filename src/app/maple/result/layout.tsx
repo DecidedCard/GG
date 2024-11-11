@@ -4,7 +4,7 @@ import React, { Suspense } from "react";
 
 import { Spinner } from "@nextui-org/spinner";
 
-import CharacterInfo from "@/components/maple/result/characterInfo/CharacterInfo";
+import CharacterInfo from "@/components/maple/result/CharacterInfo";
 
 const ResultLayout = ({ children }: { children: React.ReactNode }) => {
   return (
