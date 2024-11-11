@@ -5,18 +5,16 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 
 import useErrorModalStore from "@/store/errorModalStore";
 
-import fetchCharacterInfo from "@/util/maple/fetchCharacterInfo";
 import QUERY_KEY from "@/util/maple/QUERY_KEY";
+import { fetchCharacterData } from "@/util/maple/fetchCharacterData";
 
-export const useCharacterQuery = (id: string | null) => {
+export const useBasicCharacterQuery = (id: string | null) => {
   const { setIsError, setReset } = useErrorModalStore();
   const navigation = useRouter();
 
-  const { data, isError, isFetching } = useSuspenseQuery({
+  const { data, isError, error } = useSuspenseQuery({
     queryKey: [QUERY_KEY.characterInfo, id],
-    queryFn: () => fetchCharacterInfo(id!),
-    retry: 0,
-    refetchOnWindowFocus: false,
+    queryFn: () => fetchCharacterData(id!),
   });
 
   useEffect(() => {
@@ -28,11 +26,41 @@ export const useCharacterQuery = (id: string | null) => {
 
       setIsError({
         isError: true,
-        comment: "검색하는 중에 오류가 생겼습니다.",
+        comment: `${error}`,
         onClickFn: onClickHandler,
       });
     }
-  }, [isError, setIsError, setReset, navigation]);
+  }, [isError, error, setIsError, setReset, navigation]);
 
-  return { isFetching, isError, data };
+  return { isError, data };
+};
+
+export const useCharacterQuery = (
+  id: string | null,
+  type: "stat" | "skill" | "union"
+) => {
+  const { setIsError, setReset } = useErrorModalStore();
+  const navigation = useRouter();
+
+  const { data, isError, error } = useSuspenseQuery({
+    queryKey: [QUERY_KEY.characterInfo, id, type],
+    queryFn: () => fetchCharacterData(id!, type),
+  });
+
+  useEffect(() => {
+    if (isError) {
+      const onClickHandler = () => {
+        setReset();
+        navigation.push("/maple");
+      };
+
+      setIsError({
+        isError: true,
+        comment: `${error}`,
+        onClickFn: onClickHandler,
+      });
+    }
+  }, [type, isError, error, setIsError, setReset, navigation]);
+
+  return { isError, data };
 };

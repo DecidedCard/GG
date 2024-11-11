@@ -2,9 +2,10 @@ import React from "react";
 
 import { FaDiamond } from "react-icons/fa6";
 
-import type { UnionArtifactCrystal } from "@/types/maple/union";
-import CrystalImage from "../../CrystalImage";
 import numberChangeArr from "@/util/maple/numberChangeArr";
+import CrystalImage from "@/components/maple/CrystalImage";
+
+import type { UnionArtifactCrystal } from "@/types/maple/union";
 
 const UnionArtifactCard = ({ item }: { item: UnionArtifactCrystal }) => {
   const levelArr = numberChangeArr(item.level);

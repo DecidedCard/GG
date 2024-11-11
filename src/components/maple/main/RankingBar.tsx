@@ -8,7 +8,7 @@ const RankingBar = ({ item }: { item: OverallRanking }) => {
     <div className="flex justify-between pt-2 px-3 w-full text-body/14px border-t border-solid border-text-100 rounded sm:text-body/10px">
       <div className="flex justify-between w-40 sm:w-20">
         <p>{item.ranking}</p>
-        <Link href={`/maple/result?character_name=${item.character_name}`}>
+        <Link href={`/maple/result/stat?character_name=${item.character_name}`}>
           <p className="w-32 text-center sm:w-16">{item.character_name}</p>
         </Link>
       </div>

@@ -1,8 +1,8 @@
 import React from "react";
 
 import RaiderGrid from "./RaiderGrid";
-import JopImage from "../../JopImage";
 import UnionRaiderNavBar from "./UnionRaiderNavBar";
+import JopImage from "@/components/maple/JopImage";
 
 import useUnionRaider from "@/hooks/maple/result/useUnionRaider";
 
