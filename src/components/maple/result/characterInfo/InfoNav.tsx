@@ -1,16 +1,18 @@
 "use client";
 
 import React, { useMemo } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 
-import type { Info } from "@/hooks/maple/result/useResult";
+import useCharacterNavigation from "@/hooks/maple/useNavigation";
 
-const InfoNav = ({
-  onClickCharacterInfoSet,
-}: {
-  onClickCharacterInfoSet: (arg: Info) => void;
-}) => {
+import type { Info } from "@/types/maple";
+
+const InfoNav = () => {
+  const { navigationToCharacterInfo } = useCharacterNavigation();
+  const queryString = useSearchParams();
   const location = usePathname();
+
+  const characterName = queryString.get("character_name");
 
   const isStatActive = useMemo(() => location.includes("stat"), [location]);
   const isSkillActive = useMemo(() => location.includes("skill"), [location]);
@@ -21,7 +23,9 @@ const InfoNav = ({
       {["stat", "skill", "union"].map((type) => (
         <button
           key={type}
-          onClick={() => onClickCharacterInfoSet(type as Info)}
+          onClick={() =>
+            navigationToCharacterInfo(characterName!, type as Info)
+          }
           className={`py-2 w-28 h-fit border border-solid border-text-100 rounded-lg ${
             (type === "stat" && isStatActive && "bg-primary-100") ||
             (type === "skill" && isSkillActive && "bg-primary-100") ||
