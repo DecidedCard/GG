@@ -34,15 +34,18 @@ const StatInfo = ({ info }: { info: CharacterStatInfo }) => {
           <p className="text-body/14px text-gray-400">스탯 공격력</p>
         </div>
         <div className="grid grid-cols-3 gap-5 p-3 border-b border-solid border-black">
-          {info.final_stat.slice(16, 22).map((item) => (
-            <ul
-              key={item.stat_name}
-              className="flex flex-col gap-1 text-gray-400"
-            >
-              <p className="text-body/14px">{item.stat_value}</p>
-              <p className="text-body/10px">{item.stat_name}</p>
-            </ul>
-          ))}
+          {info.final_stat.slice(16, 22).map(
+            (item) =>
+              item.stat_value && (
+                <ul
+                  key={item.stat_name}
+                  className="flex flex-col gap-1 text-gray-400"
+                >
+                  <p className="text-body/14px">{item.stat_value}</p>
+                  <p className="text-body/10px">{item.stat_name}</p>
+                </ul>
+              )
+          )}
         </div>
         <DetailStatInfo stat={info.final_stat.slice(2, 8)} />
         <DetailStatInfo stat={info.final_stat.slice(13, 16)} />

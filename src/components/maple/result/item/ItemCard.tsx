@@ -47,10 +47,10 @@ const ItemCard = ({ item }: { item: ItemEquipmentPreset }) => {
         </div>
         {item.potential_option_grade && (
           <div
-            className={`flex justify-between px-3 py-2 text-body/14px ${potentialColor}`}
+            className={`flex gap-3 px-2 py-2 text-body/14px ${potentialColor}`}
           >
-            <span className="w-10 text-center">잠재</span>
-            <div className="flex gap-1">
+            <span className="w-7 text-center">잠재</span>
+            <div className="flex gap-1 w-full">
               {item.potential_option_1 && (
                 <p>{formatItemStat(item.potential_option_1)}</p>
               )}
@@ -66,10 +66,10 @@ const ItemCard = ({ item }: { item: ItemEquipmentPreset }) => {
 
         {item.additional_potential_option_grade && (
           <div
-            className={`flex justify-between px-3 py-2 text-body/14px ${additionalColor}`}
+            className={`flex gap-3 px-2 py-2 text-body/14px ${additionalColor}`}
           >
-            <span className="w-10 text-center">에디</span>
-            <div className="flex gap-1">
+            <span className="w-7 text-center">에디</span>
+            <div className="flex gap-1 w-full">
               {item.additional_potential_option_1 && (
                 <p>{formatItemStat(item.additional_potential_option_1)}</p>
               )}
