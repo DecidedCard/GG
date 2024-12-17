@@ -13,8 +13,6 @@ const StatInfo = ({ info }: { info: CharacterStatInfo }) => {
     setIsView(!isView);
   };
 
-  console.log(info);
-
   return (
     <section className="flex flex-col gap-3 w-60 sm:w-full">
       <div
