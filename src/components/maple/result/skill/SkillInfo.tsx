@@ -14,7 +14,7 @@ const SkillInfo = () => {
 
   const name = params.get("character_name");
 
-  const { data } = useCharacterQuery(name, "skill");
+  const { data } = useCharacterQuery(name ? name : "");
 
   return (
     data.sixthSkillInfo && (

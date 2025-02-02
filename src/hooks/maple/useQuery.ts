@@ -35,16 +35,13 @@ export const useBasicCharacterQuery = (id: string | null) => {
   return { isError, data };
 };
 
-export const useCharacterQuery = (
-  id: string | null,
-  type: "stat" | "skill" | "union"
-) => {
+export const useCharacterQuery = (id: string) => {
   const { setIsError, setReset } = useErrorModalStore();
   const navigation = useRouter();
 
   const { data, isError, error } = useSuspenseQuery({
-    queryKey: [QUERY_KEY.characterInfo, id, type],
-    queryFn: () => fetchCharacterData(id!, type),
+    queryKey: [QUERY_KEY.characterInfo, id],
+    queryFn: () => fetchCharacterData(id!),
   });
 
   useEffect(() => {
@@ -60,7 +57,7 @@ export const useCharacterQuery = (
         onClickFn: onClickHandler,
       });
     }
-  }, [type, isError, error, setIsError, setReset, navigation]);
+  }, [isError, error, setIsError, setReset, navigation]);
 
   return { isError, data };
 };
