@@ -1,22 +1,27 @@
 "use client";
 
-import React from "react";
+import React, { useMemo } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
 import InfoNav from "./InfoNav";
 import BasicInfo from "./BasicInfo";
+import SkillInfo from "./skill/SkillInfo";
+import StatAndItemInfo from "./stat&item/StatAndItemInfo";
+import UnionInfo from "./union/UnionInfo";
 
 import ArrowRoundBack from "@/assets/ArrowRoundBack";
 
-import type { CharacterData } from "@/types/maple/mapleApi";
+import { useCharacterQuery } from "@/hooks/maple/useQuery";
 
-const CharacterInfo = ({
-  children,
-  data,
-}: {
-  children: React.ReactNode;
-  data: CharacterData;
-}) => {
+const CharacterInfo = () => {
+  const params = useSearchParams();
+
+  const type = useMemo(() => params.get("type"), [params]);
+  const name = useMemo(() => params.get("character_name"), [params]);
+
+  const { data } = useCharacterQuery(name ? name : "");
+
   return (
     data.basicInfo && (
       <div className="relative flex flex-col gap-4 mt-5 mx-auto w-[1280px] h-[3000px] text-text-100 lg:w-full md:w-full md:h-[4500px] sm:w-full sm:h-[10000px]">
@@ -29,7 +34,9 @@ const CharacterInfo = ({
           cashItem={data.cashItemInfo}
         />
         <InfoNav />
-        {children}
+        {type === "skill" && <SkillInfo data={data} />}
+        {type === "stat" && <StatAndItemInfo data={data} />}
+        {type === "union" && <UnionInfo data={data} />}
       </div>
     )
   );
