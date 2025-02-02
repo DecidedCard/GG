@@ -23,7 +23,7 @@ const LevelRanking = ({
       <div className="flex flex-col gap-4 p-5 bg-bg-200 md:text-body/14px sm:p-2 sm:min-w-80 sm:text-body/8px">
         {contents.map((item) => (
           <Link
-            href={`/maple/result/stat?character_name=${item.character_name}`}
+            href={`/maple/result?character_name=${item.character_name}&type=stat`}
             key={item.ranking}
           >
             <ol
