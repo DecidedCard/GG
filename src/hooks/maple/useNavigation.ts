@@ -8,7 +8,7 @@ const useCharacterNavigation = () => {
 
   const navigationToCharacterInfo = useCallback(
     (characterName: string, type: CharacterInfoType) => {
-      const path = `/maple/result/${type}?character_name=${characterName}`;
+      const path = `/maple/result?character_name=${characterName}&type=${type}`;
       router.push(path);
     },
     [router]
