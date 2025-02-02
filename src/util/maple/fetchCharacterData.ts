@@ -13,7 +13,11 @@ import {
   SkillCharacterInfo,
 } from "@/api/maple/axios";
 
-export const fetchCharacterData = async (name: string) => {
+import type { CharacterData } from "@/types/maple/mapleApi";
+
+export const fetchCharacterData = async (
+  name: string
+): Promise<CharacterData> => {
   try {
     const { ocid } = await getCharacterId(name);
 
