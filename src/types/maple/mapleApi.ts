@@ -1,3 +1,12 @@
+import { CashItem } from "./cashItem";
+import type { Item } from "./item";
+import { LinkSkill, Skill } from "./skill";
+import {
+  UnionArtifactCharacterInfo,
+  UnionCharacterInfo,
+  UnionRaiderCharacterInfo,
+} from "./union";
+
 // 종합 랭킹 type
 export type OverallRanking = {
   date: string;
@@ -67,6 +76,21 @@ export interface ResponseSeedRanking {
 export type CharacterId = {
   ocid: string;
 };
+
+export interface CharacterData {
+  statInfo: CharacterStatInfo;
+  itemInfo: Item;
+  fifthSkillInfo: Skill;
+  sixthSkillInfo: Skill;
+  symbolInfo: CharacterSymbol;
+  linkSkillInfo: LinkSkill;
+  unionCharacterInfo: UnionCharacterInfo;
+  unionArtifactInfo: UnionArtifactCharacterInfo;
+  unionRaiderInfo: UnionRaiderCharacterInfo;
+  basicInfo: Basic;
+  cashItemInfo: CashItem;
+  popularityInfo: Popularity;
+}
 
 export type Basic = {
   date: string;

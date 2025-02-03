@@ -1,18 +1,11 @@
 import React from "react";
-import { useSearchParams } from "next/navigation";
 
 import StatInfo from "./StatInfo";
 import ItemList from "../item/ItemList";
 
-import { useCharacterQuery } from "@/hooks/maple/useQuery";
+import type { CharacterData } from "@/types/maple/mapleApi";
 
-const StatAndItemInfo = () => {
-  const params = useSearchParams();
-
-  const name = params.get("character_name");
-
-  const { data } = useCharacterQuery(name, "stat");
-
+const StatAndItemInfo = ({ data }: { data: CharacterData }) => {
   return (
     data.statInfo && (
       <div className="flex gap-3 sm:flex-col">

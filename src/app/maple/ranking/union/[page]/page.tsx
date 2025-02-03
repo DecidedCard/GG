@@ -22,7 +22,7 @@ const UnionRankingList = async ({ params }: { params: { page: number } }) => {
       <div className="flex flex-col gap-4 p-5 bg-bg-200 sm:min-w-80">
         {contents.map((item) => (
           <Link
-            href={`/maple/result/stat?character_name=${item.character_name}`}
+            href={`/maple/result?character_name=${item.character_name}&type=stat`}
             key={item.ranking}
           >
             <ol className="flex justify-between items-center px-4 md:text-body/14px sm:px-1 sm:text-body/8px">

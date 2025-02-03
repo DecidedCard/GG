@@ -1,21 +1,14 @@
 "use client";
 
 import React from "react";
-import { useSearchParams } from "next/navigation";
-
-import { useCharacterQuery } from "@/hooks/maple/useQuery";
 
 import SkillList from "./SkillList";
 import SymbolList from "../symbol/SymbolList";
 import LinkSkillList from "./LinkSkillList";
 
-const SkillInfo = () => {
-  const params = useSearchParams();
+import type { CharacterData } from "@/types/maple/mapleApi";
 
-  const name = params.get("character_name");
-
-  const { data } = useCharacterQuery(name, "skill");
-
+const SkillInfo = ({ data }: { data: CharacterData }) => {
   return (
     data.sixthSkillInfo && (
       <div className="flex flex-col gap-5 w-[1280px] md:w-full sm:w-full">

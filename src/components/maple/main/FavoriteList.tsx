@@ -20,7 +20,10 @@ const FavoriteList = () => {
         <p className="text-body/22px">즐겨찾기</p>
         <div className="flex flex-wrap gap-5">
           {list.map((item) => (
-            <Link key={item} href={`/maple/result/stat?character_name=${item}`}>
+            <Link
+              key={item}
+              href={`/maple/result?character_name=${item}&type=stat`}
+            >
               <ol className="py-2 w-36 border border-solid border-text-100 text-center rounded-lg">
                 {item}
               </ol>

@@ -2,15 +2,15 @@
 
 import React, { Suspense } from "react";
 
-import StatAndItemInfo from "@/components/maple/result/stat&item/StatAndItemInfo";
 import LoadingOverlay from "@/components/common/LoadingOverlay";
+import CharacterInfo from "@/components/maple/result/CharacterInfo";
 
-const StatPage = () => {
+const Result = () => {
   return (
     <Suspense fallback={<LoadingOverlay />}>
-      <StatAndItemInfo />
+      <CharacterInfo />
     </Suspense>
   );
 };
 
-export default StatPage;
+export default Result;
