@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
@@ -17,8 +17,8 @@ import { useCharacterQuery } from "@/hooks/maple/useQuery";
 const CharacterInfo = () => {
   const params = useSearchParams();
 
-  const type = useMemo(() => params.get("type"), [params]);
-  const name = useMemo(() => params.get("character_name"), [params]);
+  const type = params.get("type");
+  const name = params.get("character_name");
 
   const { data } = useCharacterQuery(name ? name : "");
 
