@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 import InfoNav from "./InfoNav";
 import BasicInfo from "./BasicInfo";
@@ -14,13 +14,28 @@ import ArrowRoundBack from "@/assets/ArrowRoundBack";
 
 import { useCharacterQuery } from "@/hooks/maple/useQuery";
 
+import useErrorModalStore from "@/store/errorModalStore";
+
 const CharacterInfo = () => {
+  const { setIsError, setReset } = useErrorModalStore();
+  const navigation = useRouter();
   const params = useSearchParams();
 
   const type = params.get("type");
   const name = params.get("character_name") || "";
 
-  const { data } = useCharacterQuery(name);
+  const { data, isError } = useCharacterQuery(name);
+
+  if (isError) {
+    setIsError({
+      comment: "데이터를 가져오는 중에 오류가 발생하였습니다.",
+      isError: true,
+      onClickFn: () => {
+        navigation.back();
+        setReset();
+      },
+    });
+  }
 
   return (
     data.basicInfo && (
