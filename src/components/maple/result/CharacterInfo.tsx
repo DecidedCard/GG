@@ -31,7 +31,7 @@ const CharacterInfo = () => {
       comment: "데이터를 가져오는 중에 오류가 발생하였습니다.",
       isError: true,
       onClickFn: () => {
-        navigation.back();
+        navigation.replace("/maple");
         setReset();
       },
     });
