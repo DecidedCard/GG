@@ -18,9 +18,9 @@ const CharacterInfo = () => {
   const params = useSearchParams();
 
   const type = params.get("type");
-  const name = params.get("character_name");
+  const name = params.get("character_name") || "";
 
-  const { data } = useCharacterQuery(name ? name : "");
+  const { data } = useCharacterQuery(name);
 
   return (
     data.basicInfo && (
