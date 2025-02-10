@@ -7,7 +7,7 @@ const nextConfig = {
       {
         source: "/",
         destination: "/maple",
-        permanent: false,
+        permanent: true,
       },
     ];
   },
