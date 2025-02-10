@@ -18,3 +18,5 @@ const Home = () => {
 };
 
 export default Home;
+
+//지금은 사용하지 않는 페이지 입니다.

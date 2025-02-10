@@ -2,6 +2,15 @@
 
 const nextConfig = {
   compress: true,
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/maple",
+        permanent: false,
+      },
+    ];
+  },
 
   images: {
     formats: ["image/avif", "image/webp"],
