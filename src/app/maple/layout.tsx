@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 const MapleLayout = ({ children }: { children: React.ReactNode }) => {
-  return <div>{children}</div>;
+  return <main className="flex-grow">{children}</main>;
 };
 
 export default MapleLayout;

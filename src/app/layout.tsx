@@ -31,7 +31,7 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="ko">
-      <body className="font-Pretendard antialiased min-h-screen">
+      <body className="font-Pretendard antialiased min-h-screen flex flex-col">
         <Provider>
           <Header />
           {children}

@@ -11,7 +11,7 @@ const Maple = async () => {
   const { ranking: Reboot } = await RebootOverallRanking();
 
   return (
-    <main>
+    <>
       <SearchInputBox />
       <FavoriteList />
       <section className="grid grid-cols-2 gap-5 pb-20 mx-auto w-[1280px] lg:grid-cols-1 lg:w-full md:grid-cols-1 md:w-full sm:grid-cols-1 sm:w-full">
@@ -26,7 +26,7 @@ const Maple = async () => {
           link="/maple/ranking/reboot/1"
         />
       </section>
-    </main>
+    </>
   );
 };
 
