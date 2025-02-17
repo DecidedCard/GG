@@ -20,7 +20,7 @@ const RankingList = <T extends BaseRanking>({
   link,
 }: RankingListProps<T>) => {
   return (
-    <div className="flex flex-col gap-2 p-3 bg-bg-300 text-text-100">
+    <div className="flex flex-col gap-2 p-3 border-2 border-solid rounded-lg border-secondary-100">
       <div className="flex justify-between items-center">
         <h3 className="text-title/24px">{text}</h3>
         <Link
