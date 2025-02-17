@@ -7,6 +7,13 @@ import {
   UnionRaiderCharacterInfo,
 } from "./union";
 
+export interface BaseRanking {
+  ranking: number;
+  character_name: string;
+  class_name: string;
+  sub_class_name?: string;
+}
+
 // 종합 랭킹 type
 export interface OverallRanking {
   date: string;
