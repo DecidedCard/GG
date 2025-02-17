@@ -31,13 +31,12 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="ko">
-      <body className="font-Pretendard antialiased">
+      <body className="font-Pretendard antialiased min-h-screen">
         <Provider>
-          <ErrorModal>
-            <Header />
-            {children}
-            <Footer />
-          </ErrorModal>
+          <Header />
+          {children}
+          <Footer />
+          <ErrorModal />
         </Provider>
       </body>
     </html>
