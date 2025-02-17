@@ -5,7 +5,8 @@ import PageButton from "@/components/maple/ranking/PageButton";
 import Link from "next/link";
 import ArrowRoundBack from "@/assets/ArrowRoundBack";
 
-const UnionRankingList = async ({ params }: { params: { page: number } }) => {
+const UnionRankingList = async (props: { params: Promise<{ page: number }> }) => {
+  const params = await props.params;
   const { ranking } = await unionRanking();
 
   const contentsIndex = params.page * 20;
@@ -19,7 +20,7 @@ const UnionRankingList = async ({ params }: { params: { page: number } }) => {
         </Link>
         TODAY 유니온 랭킹
       </h2>
-      <div className="flex flex-col gap-4 p-5 bg-bg-200 sm:min-w-80">
+      <div className="flex flex-col gap-4 p-5 sm:min-w-80">
         {contents.map((item) => (
           <Link
             href={`/maple/result?character_name=${item.character_name}&type=stat`}

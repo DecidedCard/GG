@@ -5,7 +5,8 @@ import { RebootOverallRanking } from "@/api/maple/fetch";
 import PageButton from "@/components/maple/ranking/PageButton";
 import LevelRanking from "@/components/maple/ranking/LevelRanking";
 
-const RebootRanking = async ({ params }: { params: { page: number } }) => {
+const RebootRanking = async (props: { params: Promise<{ page: number }> }) => {
+  const params = await props.params;
   const { ranking } = await RebootOverallRanking();
 
   const contentsIndex = params.page * 20;

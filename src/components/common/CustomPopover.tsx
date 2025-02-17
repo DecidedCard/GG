@@ -9,7 +9,7 @@ const CustomPopover = ({ children, popoverContents }: CustomPopoverProps) => {
   return (
     <div>
       <div>{children}</div>
-      <div className="bg-bg-300">{popoverContents}</div>
+      <div>{popoverContents}</div>
     </div>
   );
 };

@@ -40,23 +40,13 @@ const config: Config = {
       },
       colors: {
         primary: {
-          100: "#0D6E6E",
-          200: "#4a9d9c",
-          300: "#afffff",
+          100: "#0077C2",
+          200: "#59a5f5",
         },
-        accent: {
-          100: "#FF3D3D",
-          200: "#ffe0c8",
-          300: "#e51e1b",
-        },
-        text: {
-          100: "#FFFFFF",
-          200: "#e0e0e0",
-        },
-        bg: {
-          100: "#0D1F2D",
-          200: "#1d2e3d",
-          300: "#354656",
+        secondary: {
+          100: "#333333",
+          200: "#5c5c5c",
+          300: "#cccbc8",
         },
       },
       screens: {

@@ -8,7 +8,8 @@ import { seedRanking } from "@/api/maple/fetch";
 
 import formatTime from "@/util/formatTime";
 
-const SeedRankingList = async ({ params }: { params: { page: number } }) => {
+const SeedRankingList = async (props: { params: Promise<{ page: number }> }) => {
+  const params = await props.params;
   const { ranking } = await seedRanking();
 
   const contentsIndex = params.page * 20;
@@ -22,7 +23,7 @@ const SeedRankingList = async ({ params }: { params: { page: number } }) => {
         </Link>
         TODAY 더시드 랭킹
       </h2>
-      <div className="flex flex-col gap-4 p-5 bg-bg-200 sm:min-w-80">
+      <div className="flex flex-col gap-4 p-5 sm:min-w-80">
         {contents.map((item) => (
           <Link
             href={`/maple/result?character_name=${item.character_name}&type=stat`}
