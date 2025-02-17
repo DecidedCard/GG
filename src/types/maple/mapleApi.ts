@@ -8,7 +8,7 @@ import {
 } from "./union";
 
 // 종합 랭킹 type
-export type OverallRanking = {
+export interface OverallRanking {
   date: string;
   ranking: number;
   character_name: string;
@@ -19,14 +19,14 @@ export type OverallRanking = {
   character_exp: number;
   character_popularity: number;
   character_guildname: string;
-};
+}
 
 export interface ResponseOverallRanking {
   ranking: OverallRanking[];
 }
 
 // 유니온 랭킹 type
-export type UnionRanking = {
+export interface UnionRanking {
   date: string;
   ranking: number;
   character_name: string;
@@ -35,7 +35,7 @@ export type UnionRanking = {
   sub_class_name: string;
   union_level: number;
   union_power: number;
-};
+}
 
 export interface ResponseUnionRanking {
   ranking: UnionRanking[];
@@ -57,7 +57,7 @@ export interface ResponseDojangRanking {
   ranking: DojangRanking[];
 }
 
-export type SeedRanking = {
+export interface SeedRanking {
   date: string;
   ranking: number;
   character_name: string;
@@ -67,7 +67,7 @@ export type SeedRanking = {
   character_level: number;
   theseed_floor: number;
   theseed_time_record: number;
-};
+}
 
 export interface ResponseSeedRanking {
   ranking: SeedRanking[];
@@ -92,7 +92,7 @@ export interface CharacterData {
   popularityInfo: Popularity;
 }
 
-export type Basic = {
+export interface Basic {
   date: string;
   character_name: string;
   world_name: string;
@@ -107,24 +107,24 @@ export type Basic = {
   character_date_create: string;
   access_flag: string;
   liberation_quest_clear_flag: string;
-};
+}
 
-export type Popularity = {
+export interface Popularity {
   date: string;
   popularity: number;
-};
+}
 
-export type FinalStat = {
+export interface FinalStat {
   stat_name: string;
   stat_value: string;
-};
+}
 
-export type CharacterStatInfo = {
+export interface CharacterStatInfo {
   date: string;
   character_class: string;
   final_stat: FinalStat[];
   remain_ap: number;
-};
+}
 
 export interface CharacterInfo {
   basicInfo: Basic;
