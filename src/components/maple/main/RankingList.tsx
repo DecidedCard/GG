@@ -5,9 +5,20 @@ import RankingBar from "./RankingBar";
 import RankingTitle from "./RankingTitle";
 import ArrowRoundForward from "@/assets/ArrowRoundForward";
 
-import type { MapleRankingList } from "@/types/maple/props";
+// import type { MapleRankingList } from "@/types/maple/props";
+import type { BaseRanking } from "@/types/maple/mapleApi";
 
-const RankingList = ({ ranking, text, link }: MapleRankingList) => {
+interface RankingListProps<T extends BaseRanking> {
+  ranking: T[];
+  text: string;
+  link: string;
+}
+
+const RankingList = <T extends BaseRanking>({
+  ranking,
+  text,
+  link,
+}: RankingListProps<T>) => {
   return (
     <div className="flex flex-col gap-2 p-3 bg-bg-300 text-text-100">
       <div className="flex justify-between items-center">
