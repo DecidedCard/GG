@@ -12,42 +12,42 @@ const LevelRanking = ({
   contents: OverallRanking[];
   text: string;
 }) => {
+  console.log(contents);
   return (
     <>
-      <h2 className="flex justify-between text-title/28px sm:text-title/20px">
+      <h2 className="flex justify-between items-center text-title/20px sm:text-title/12px">
         <Link href={"/maple"}>
           <ArrowRoundBack />
         </Link>
         {text}
       </h2>
-      <div className="flex flex-col gap-4 p-5 bg-bg-200 md:text-body/14px sm:p-2 sm:min-w-80 sm:text-body/8px">
+      <div className="flex flex-col md:text-body/14px sm:min-w-80 sm:text-body/8px">
+        <div className="bg-secondary-300">
+          <ol className="flex justify-between items-center text-center">
+            <p className="w-12 md:w-8 sm:w-4">#</p>
+            <p className="w-28 md:w-18 sm:w-14">캐릭터</p>
+            <p className="w-10 md:w-8 sm:w-4">레벨</p>
+            <p className="w-28 md:w-18 sm:w-14">직업</p>
+            <p className="w-28 md:w-18 sm:w-14">월드</p>
+          </ol>
+        </div>
         {contents.map((item) => (
           <Link
             href={`/maple/result?character_name=${item.character_name}&type=stat`}
             key={item.ranking}
+            className="flex items-center h-10 border-b border-solid border-secondary-300"
           >
             <ol
               key={item.ranking}
-              className="flex justify-between items-center px-4"
+              className="flex justify-between items-center w-full text-center"
             >
-              <div className="flex gap-4 text-center">
-                <p className="w-12 md:w-8 sm:w-4">{item.ranking}</p>
-                <p className="w-28 md:w-18 sm:w-14">{item.character_name}</p>
-                <p className="w-10 md:w-8 sm:w-4">{item.character_level}</p>
-                <p className="w-28 md:w-18 sm:w-14">
-                  {item.sub_class_name ? item.sub_class_name : item.class_name}
-                </p>
-              </div>
-              <div className="flex gap-4 text-center">
-                <p className="w-20 md:w-10 sm:w-6">
-                  {item.character_popularity}
-                </p>
-                <p className="w-20 md:w-16 sm:w-10">
-                  {item.character_guildname
-                    ? item.character_guildname
-                    : "길드없음"}
-                </p>
-              </div>
+              <p className="w-12 md:w-8 sm:w-4">{item.ranking}</p>
+              <p className="w-28 md:w-18 sm:w-14">{item.character_name}</p>
+              <p className="w-10 md:w-8 sm:w-4">{item.character_level}</p>
+              <p className="w-28 md:w-18 sm:w-14">
+                {item.sub_class_name ? item.sub_class_name : item.class_name}
+              </p>
+              <p className="w-28 md:w-18 sm:w-14">{item.world_name}</p>
             </ol>
           </Link>
         ))}
