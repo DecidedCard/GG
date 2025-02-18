@@ -34,7 +34,7 @@ const RootLayout = ({
       <body className="font-Pretendard antialiased min-h-screen flex flex-col">
         <Provider>
           <Header />
-          {children}
+          <div className="flex-grow">{children}</div>
           <Footer />
           <ErrorModal />
         </Provider>
