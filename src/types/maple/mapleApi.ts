@@ -1,7 +1,7 @@
-import { CashItem } from "./cashItem";
+import type { CashItem } from "./cashItem";
 import type { Item } from "./item";
-import { LinkSkill, Skill } from "./skill";
-import {
+import type { LinkSkill, Skill } from "./skill";
+import type {
   UnionArtifactCharacterInfo,
   UnionCharacterInfo,
   UnionRaiderCharacterInfo,
